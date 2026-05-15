@@ -1,0 +1,1316 @@
+[
+  {
+    "id": "66f61e17-d877-4207-893d-bff2ccb08202",
+    "subject": "Numbers & Math",
+    "topic": "Counting 1–10",
+    "difficulty": "Easy",
+    "sequence_order": 1,
+    "grade_level": "Pre-K / K",
+    "age_range": "3–5",
+    "learning_objective": "Count objects from 1 to 10 and recognise each numeral",
+    "estimated_duration_min": 10,
+    "video_url": "https://www.youtube.com/watch?v=iPLZwwTyPM8",
+    "tags": "math,numbers,counting,pre-k",
+    "quiz_data": [
+      {
+        "question": "How many 🍎🍎🍎 apples are there?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": "3",
+        "explanation": "Count each one: 1, 2, 3!"
+      },
+      {
+        "question": "What comes after 5?",
+        "options": [
+          "4",
+          "6",
+          "7",
+          "3"
+        ],
+        "answer": "6",
+        "explanation": "5 is followed by 6."
+      },
+      {
+        "question": "Pick the number seven.",
+        "options": [
+          "6",
+          "8",
+          "7",
+          "9"
+        ],
+        "answer": "7",
+        "explanation": "Seven is written as 7."
+      },
+      {
+        "question": "How many fingers on one hand?",
+        "options": [
+          "4",
+          "5",
+          "6",
+          "3"
+        ],
+        "answer": "5",
+        "explanation": "A hand has 5 fingers."
+      },
+      {
+        "question": "What is 1 + 1?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": "2",
+        "explanation": "One plus one equals 2."
+      }
+    ],
+    "min_pass_score": 70,
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "Score < 60 % → replay video, then retry quiz."
+  },
+  {
+    "id": "7e5897d8-fc0a-4fd2-9096-f70e6487e8af",
+    "subject": "Numbers & Math",
+    "topic": "Basic Addition & Subtraction",
+    "difficulty": "Medium",
+    "sequence_order": 2,
+    "grade_level": "Grade 1",
+    "age_range": "5–7",
+    "learning_objective": "Add and subtract single-digit numbers up to 10",
+    "estimated_duration_min": 15,
+    "video_url": "https://www.youtube.com/watch?v=YSDdPEV8cs4",
+    "tags": "math,addition,subtraction,grade1",
+    "quiz_data": [
+      {
+        "question": "2 + 3 = ?",
+        "options": [
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "answer": "5",
+        "explanation": "2 plus 3 equals 5."
+      },
+      {
+        "question": "9 - 4 = ?",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "answer": "5",
+        "explanation": "9 take away 4 leaves 5."
+      },
+      {
+        "question": "4 + 4 = ?",
+        "options": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "answer": "8",
+        "explanation": "4 plus 4 equals 8."
+      },
+      {
+        "question": "7 - 7 = ?",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "answer": "0",
+        "explanation": "Any number minus itself is 0."
+      },
+      {
+        "question": "5 + 5 = ?",
+        "options": [
+          "8",
+          "9",
+          "10",
+          "11"
+        ],
+        "answer": "10",
+        "explanation": "5 plus 5 equals 10."
+      }
+    ],
+    "min_pass_score": 70,
+    "prerequisite_topic_id": "66f61e17-d877-4207-893d-bff2ccb08202",
+    "adaptive_hint": "Score < 60 % → suggest Easy topic in same subject."
+  },
+  {
+    "id": "39e3a7dc-1335-4799-ac93-582cca5ab9ca",
+    "subject": "Numbers & Math",
+    "topic": "Multiplication (×1–×5)",
+    "difficulty": "Hard",
+    "sequence_order": 3,
+    "grade_level": "Grade 2",
+    "age_range": "7–9",
+    "learning_objective": "Multiply numbers up to 5 × 5 and recognise number patterns",
+    "estimated_duration_min": 20,
+    "video_url": "https://www.youtube.com/watch?v=FG18571ruVQ",
+    "tags": "math,multiplication,tables,grade2",
+    "quiz_data": [
+      {
+        "question": "2 × 3 = ?",
+        "options": [
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "answer": "6",
+        "explanation": "2 groups of 3 = 6."
+      },
+      {
+        "question": "4 × 2 = ?",
+        "options": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "answer": "8",
+        "explanation": "4 groups of 2 = 8."
+      },
+      {
+        "question": "5 × 5 = ?",
+        "options": [
+          "20",
+          "22",
+          "25",
+          "30"
+        ],
+        "answer": "25",
+        "explanation": "5 groups of 5 = 25."
+      },
+      {
+        "question": "1, 3, 5, 7, __?",
+        "options": [
+          "8",
+          "9",
+          "10",
+          "11"
+        ],
+        "answer": "9",
+        "explanation": "Odd numbers add 2 each time."
+      },
+      {
+        "question": "What rule? 3, 6, 9, 12",
+        "options": [
+          "×2",
+          "+2",
+          "+3",
+          "+4"
+        ],
+        "answer": "+3",
+        "explanation": "Adding 3 each step."
+      }
+    ],
+    "min_pass_score": 50,
+    "prerequisite_topic_id": "7e5897d8-fc0a-4fd2-9096-f70e6487e8af",
+    "adaptive_hint": "Score < 50 % → revert to Medium level in same subject."
+  },
+  {
+    "id": "529b1326-e313-4b04-b89c-0929723239c2",
+    "subject": "Language Basics",
+    "topic": "Hello, Goodbye & Colours",
+    "difficulty": "Easy",
+    "sequence_order": 1,
+    "grade_level": "Pre-K / K",
+    "age_range": "3–5",
+    "learning_objective": "Use greetings (hello/goodbye) and name 6 basic colours in English",
+    "estimated_duration_min": 10,
+    "video_url": "https://www.youtube.com/watch?v=_UR-l3QI2nE",
+    "tags": "language,english,greetings,colours",
+    "quiz_data": [
+      {
+        "question": "What do you say when you meet someone?",
+        "options": [
+          "Bye",
+          "Hello",
+          "Sorry",
+          "Thanks"
+        ],
+        "answer": "Hello",
+        "explanation": "Hello or Hi is a greeting."
+      },
+      {
+        "question": "What do you say in the morning?",
+        "options": [
+          "Good night",
+          "Good morning",
+          "Good evening",
+          "Bye"
+        ],
+        "answer": "Good morning",
+        "explanation": "Good morning is for the morning time."
+      },
+      {
+        "question": "🍎 An apple is usually __?",
+        "options": [
+          "Blue",
+          "Red",
+          "Green",
+          "Purple"
+        ],
+        "answer": "Red",
+        "explanation": "Apples are often red."
+      },
+      {
+        "question": "🌳 Leaves are __?",
+        "options": [
+          "Red",
+          "Green",
+          "Pink",
+          "Orange"
+        ],
+        "answer": "Green",
+        "explanation": "Leaves are green."
+      },
+      {
+        "question": "🌞 The sun looks __?",
+        "options": [
+          "Purple",
+          "Blue",
+          "Yellow",
+          "White"
+        ],
+        "answer": "Yellow",
+        "explanation": "The sun looks yellow."
+      }
+    ],
+    "min_pass_score": 70,
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "Score < 60 % → replay video, then retry quiz."
+  },
+  {
+    "id": "c708cbeb-ac34-42d1-aed5-2e18a06d3fc0",
+    "subject": "Language Basics",
+    "topic": "Opposites & Simple Sentences",
+    "difficulty": "Medium",
+    "sequence_order": 2,
+    "grade_level": "Grade 1",
+    "age_range": "5–7",
+    "learning_objective": "Match opposite word pairs and build simple Subject-Verb-Object sentences",
+    "estimated_duration_min": 15,
+    "video_url": "https://www.youtube.com/watch?v=zFzgHsM6V_U",
+    "tags": "language,opposites,sentences,vocabulary",
+    "quiz_data": [
+      {
+        "question": "Opposite of HOT?",
+        "options": [
+          "Warm",
+          "Cool",
+          "Cold",
+          "Mild"
+        ],
+        "answer": "Cold",
+        "explanation": "Hot ↔ Cold."
+      },
+      {
+        "question": "Opposite of BIG?",
+        "options": [
+          "Tiny",
+          "Huge",
+          "Small",
+          "Short"
+        ],
+        "answer": "Small",
+        "explanation": "Big ↔ Small."
+      },
+      {
+        "question": "Which is a complete sentence?",
+        "options": [
+          "The cat",
+          "Runs fast",
+          "The cat runs.",
+          "Quickly"
+        ],
+        "answer": "The cat runs.",
+        "explanation": "A sentence needs a subject and a verb."
+      },
+      {
+        "question": "'The dog __ a bone.' Fill in:",
+        "options": [
+          "eat",
+          "eats",
+          "eating",
+          "ate"
+        ],
+        "answer": "eats",
+        "explanation": "Present tense: the dog eats."
+      },
+      {
+        "question": "What is the subject in \"Birds fly\"?",
+        "options": [
+          "Fly",
+          "Birds",
+          "Sky",
+          "Fast"
+        ],
+        "answer": "Birds",
+        "explanation": "Subject = who does the action."
+      }
+    ],
+    "min_pass_score": 60,
+    "prerequisite_topic_id": "529b1326-e313-4b04-b89c-0929723239c2",
+    "adaptive_hint": "Score < 60 % → suggest Easy topic in same subject."
+  },
+  {
+    "id": "f8f394c5-f18f-4068-a9ab-cfc5c0aaafbe",
+    "subject": "Language Basics",
+    "topic": "Question Words (Who/What/Where/When/Why)",
+    "difficulty": "Hard",
+    "sequence_order": 3,
+    "grade_level": "Grade 2",
+    "age_range": "7–9",
+    "learning_objective": "Use Who, What, Where, When, Why and How correctly in questions",
+    "estimated_duration_min": 20,
+    "video_url": "https://www.youtube.com/watch?v=zFzgHsM6V_U",
+    "tags": "language,questions,grammar,grade2",
+    "quiz_data": [
+      {
+        "question": "___ are you? (asking name)",
+        "options": [
+          "What",
+          "Who",
+          "Where",
+          "Why"
+        ],
+        "answer": "What",
+        "explanation": "'What is your name?' asks for a name."
+      },
+      {
+        "question": "___ do you live? (asking place)",
+        "options": [
+          "What",
+          "Who",
+          "Where",
+          "When"
+        ],
+        "answer": "Where",
+        "explanation": "Where asks about place."
+      },
+      {
+        "question": "___ is your birthday? (asking time)",
+        "options": [
+          "Who",
+          "Where",
+          "When",
+          "How"
+        ],
+        "answer": "When",
+        "explanation": "When asks about time."
+      },
+      {
+        "question": "___ is 2 + 2? (asking for answer)",
+        "options": [
+          "How",
+          "Why",
+          "When",
+          "What"
+        ],
+        "answer": "What",
+        "explanation": "What asks about a thing or number."
+      },
+      {
+        "question": "___ is the sky blue? (asking reason)",
+        "options": [
+          "When",
+          "Where",
+          "Why",
+          "Who"
+        ],
+        "answer": "Why",
+        "explanation": "Why asks for a reason."
+      }
+    ],
+    "min_pass_score": 50,
+    "prerequisite_topic_id": "c708cbeb-ac34-42d1-aed5-2e18a06d3fc0",
+    "adaptive_hint": "Score < 50 % → revert to Medium level in same subject."
+  },
+  {
+    "id": "c97cb79f-0b2d-496e-aa20-2e2585a85e6e",
+    "subject": "Shapes & Colors",
+    "topic": "Basic 2-D Shapes",
+    "difficulty": "Easy",
+    "sequence_order": 1,
+    "grade_level": "Pre-K / K",
+    "age_range": "3–5",
+    "learning_objective": "Identify circle, square, triangle and rectangle by name and sides",
+    "estimated_duration_min": 10,
+    "video_url": "https://www.youtube.com/watch?v=beTDz9HSNOM",
+    "tags": "shapes,2D,circle,square,triangle",
+    "quiz_data": [
+      {
+        "question": "Which shape has 3 sides?",
+        "options": [
+          "Circle",
+          "Square",
+          "Triangle",
+          "Rectangle"
+        ],
+        "answer": "Triangle",
+        "explanation": "A triangle has 3 sides and 3 corners."
+      },
+      {
+        "question": "A wheel looks like a __?",
+        "options": [
+          "Square",
+          "Circle",
+          "Triangle",
+          "Star"
+        ],
+        "answer": "Circle",
+        "explanation": "A circle is perfectly round."
+      },
+      {
+        "question": "How many sides does a square have?",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "answer": "4",
+        "explanation": "A square has 4 equal sides."
+      },
+      {
+        "question": "A door is shaped like a __?",
+        "options": [
+          "Circle",
+          "Triangle",
+          "Rectangle",
+          "Diamond"
+        ],
+        "answer": "Rectangle",
+        "explanation": "A rectangle has 4 sides — 2 long, 2 short."
+      },
+      {
+        "question": "Which has no corners?",
+        "options": [
+          "Square",
+          "Triangle",
+          "Circle",
+          "Rectangle"
+        ],
+        "answer": "Circle",
+        "explanation": "A circle has no corners or straight sides."
+      }
+    ],
+    "min_pass_score": 70,
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "Score < 60 % → replay video, then retry quiz."
+  },
+  {
+    "id": "5da6cb5a-394e-48b0-843e-b7fc2e17d246",
+    "subject": "Shapes & Colors",
+    "topic": "Primary & Secondary Colours",
+    "difficulty": "Medium",
+    "sequence_order": 2,
+    "grade_level": "Grade 1",
+    "age_range": "5–7",
+    "learning_objective": "Mix primary colours (red/blue/yellow) to produce secondary colours",
+    "estimated_duration_min": 15,
+    "video_url": "https://www.youtube.com/watch?v=2aKep6PUFfI",
+    "tags": "colors,primary,secondary,mixing,art",
+    "quiz_data": [
+      {
+        "question": "Red + Blue = ?",
+        "options": [
+          "Green",
+          "Orange",
+          "Purple",
+          "Brown"
+        ],
+        "answer": "Purple",
+        "explanation": "Red and blue mixed make purple."
+      },
+      {
+        "question": "Blue + Yellow = ?",
+        "options": [
+          "Orange",
+          "Green",
+          "Purple",
+          "Pink"
+        ],
+        "answer": "Green",
+        "explanation": "Blue and yellow make green."
+      },
+      {
+        "question": "Red + Yellow = ?",
+        "options": [
+          "Purple",
+          "Green",
+          "Orange",
+          "Brown"
+        ],
+        "answer": "Orange",
+        "explanation": "Red and yellow make orange."
+      },
+      {
+        "question": "Which are PRIMARY colours?",
+        "options": [
+          "Red,Green,Blue",
+          "Red,Blue,Yellow",
+          "Orange,Purple,Green",
+          "Pink,Brown,Grey"
+        ],
+        "answer": "Red,Blue,Yellow",
+        "explanation": "The 3 primary colours are red, blue, and yellow."
+      },
+      {
+        "question": "What do ALL primary colours mixed make?",
+        "options": [
+          "White",
+          "Black",
+          "Grey",
+          "Brown"
+        ],
+        "answer": "Brown",
+        "explanation": "All primary colours mixed together make brown."
+      }
+    ],
+    "min_pass_score": 60,
+    "prerequisite_topic_id": "c97cb79f-0b2d-496e-aa20-2e2585a85e6e",
+    "adaptive_hint": "Score < 60 % → suggest Easy topic in same subject."
+  },
+  {
+    "id": "1d20c06e-c6e5-4eaf-87dc-2208e40997ef",
+    "subject": "Shapes & Colors",
+    "topic": "3-D Shapes & Symmetry",
+    "difficulty": "Hard",
+    "sequence_order": 3,
+    "grade_level": "Grade 2",
+    "age_range": "7–9",
+    "learning_objective": "Recognise cube, sphere, cylinder, cone and identify lines of symmetry",
+    "estimated_duration_min": 20,
+    "video_url": "https://www.youtube.com/watch?v=WMboDU3Wcgc",
+    "tags": "shapes,3D,cube,sphere,symmetry,geometry",
+    "quiz_data": [
+      {
+        "question": "A ball is a __?",
+        "options": [
+          "Cube",
+          "Cone",
+          "Sphere",
+          "Cylinder"
+        ],
+        "answer": "Sphere",
+        "explanation": "A sphere is perfectly round like a ball."
+      },
+      {
+        "question": "A dice is a __?",
+        "options": [
+          "Sphere",
+          "Cylinder",
+          "Cube",
+          "Cone"
+        ],
+        "answer": "Cube",
+        "explanation": "A cube has 6 square faces."
+      },
+      {
+        "question": "How many faces does a cube have?",
+        "options": [
+          "4",
+          "5",
+          "6",
+          "8"
+        ],
+        "answer": "6",
+        "explanation": "Top, bottom, front, back, left, right = 6 faces."
+      },
+      {
+        "question": "A shape that looks the same on both sides is __?",
+        "options": [
+          "Asymmetric",
+          "Symmetric",
+          "Uneven",
+          "Random"
+        ],
+        "answer": "Symmetric",
+        "explanation": "Symmetry means both halves match."
+      },
+      {
+        "question": "How many lines of symmetry does a circle have?",
+        "options": [
+          "1",
+          "2",
+          "4",
+          "Infinite"
+        ],
+        "answer": "Infinite",
+        "explanation": "A circle has infinite lines of symmetry."
+      }
+    ],
+    "min_pass_score": 50,
+    "prerequisite_topic_id": "5da6cb5a-394e-48b0-843e-b7fc2e17d246",
+    "adaptive_hint": "Score < 50 % → revert to Medium level in same subject."
+  },
+  {
+    "id": "098465de-9e97-4d06-867c-b66b7d4e9013",
+    "subject": "Animals & Nature",
+    "topic": "Farm Animals & Their Sounds",
+    "difficulty": "Easy",
+    "sequence_order": 1,
+    "grade_level": "Pre-K / K",
+    "age_range": "3–5",
+    "learning_objective": "Name common farm animals and match each to its sound",
+    "estimated_duration_min": 10,
+    "video_url": "https://www.youtube.com/watch?v=3ovC3hhrcqk",
+    "tags": "animals,farm,sounds,pre-k",
+    "quiz_data": [
+      {
+        "question": "Which animal says MOO?",
+        "options": [
+          "Pig",
+          "Cow",
+          "Horse",
+          "Sheep"
+        ],
+        "answer": "Cow",
+        "explanation": "Cows say moo!"
+      },
+      {
+        "question": "A baby dog is called a __?",
+        "options": [
+          "Cub",
+          "Kitten",
+          "Puppy",
+          "Foal"
+        ],
+        "answer": "Puppy",
+        "explanation": "A baby dog is a puppy."
+      },
+      {
+        "question": "Which animal gives us milk?",
+        "options": [
+          "Pig",
+          "Chicken",
+          "Cow",
+          "Goat"
+        ],
+        "answer": "Cow",
+        "explanation": "Cows give us milk."
+      },
+      {
+        "question": "Which animal says OINK?",
+        "options": [
+          "Cow",
+          "Sheep",
+          "Horse",
+          "Pig"
+        ],
+        "answer": "Pig",
+        "explanation": "Pigs say oink!"
+      },
+      {
+        "question": "Which bird lays the eggs we eat most?",
+        "options": [
+          "Duck",
+          "Hen",
+          "Turkey",
+          "Parrot"
+        ],
+        "answer": "Hen",
+        "explanation": "Hens (female chickens) lay eggs we eat."
+      }
+    ],
+    "min_pass_score": 70,
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "Score < 60 % → replay video, then retry quiz."
+  },
+  {
+    "id": "7da7a764-dae0-4401-a89f-11fdfbf6e90b",
+    "subject": "Animals & Nature",
+    "topic": "Wild Animals & Habitats",
+    "difficulty": "Medium",
+    "sequence_order": 2,
+    "grade_level": "Grade 1",
+    "age_range": "5–7",
+    "learning_objective": "Identify jungle and savanna animals and match them to their habitats",
+    "estimated_duration_min": 15,
+    "video_url": "https://www.youtube.com/watch?v=a-Ptgpv4_0Y",
+    "tags": "animals,wild,jungle,safari,habitat",
+    "quiz_data": [
+      {
+        "question": "The king of the jungle is the __?",
+        "options": [
+          "Tiger",
+          "Lion",
+          "Bear",
+          "Cheetah"
+        ],
+        "answer": "Lion",
+        "explanation": "Lions are called the king of the jungle."
+      },
+      {
+        "question": "Which animal has a very long neck?",
+        "options": [
+          "Elephant",
+          "Zebra",
+          "Giraffe",
+          "Hippo"
+        ],
+        "answer": "Giraffe",
+        "explanation": "Giraffes have the longest necks of any animal."
+      },
+      {
+        "question": "A camel lives in the __?",
+        "options": [
+          "Forest",
+          "Ocean",
+          "Desert",
+          "Arctic"
+        ],
+        "answer": "Desert",
+        "explanation": "Camels are adapted to hot deserts."
+      },
+      {
+        "question": "Polar bears live in the __?",
+        "options": [
+          "Jungle",
+          "Desert",
+          "Arctic",
+          "Rainforest"
+        ],
+        "answer": "Arctic",
+        "explanation": "Polar bears are adapted to the cold Arctic."
+      },
+      {
+        "question": "Which animal has black and white stripes?",
+        "options": [
+          "Cheetah",
+          "Leopard",
+          "Zebra",
+          "Tiger"
+        ],
+        "answer": "Zebra",
+        "explanation": "Zebras have black and white stripes."
+      }
+    ],
+    "min_pass_score": 60,
+    "prerequisite_topic_id": "098465de-9e97-4d06-867c-b66b7d4e9013",
+    "adaptive_hint": "Score < 60 % → suggest Easy topic in same subject."
+  },
+  {
+    "id": "b3308c58-78a3-455d-ad7d-04526218262d",
+    "subject": "Animals & Nature",
+    "topic": "Animal Life Cycles & Metamorphosis",
+    "difficulty": "Hard",
+    "sequence_order": 3,
+    "grade_level": "Grade 2",
+    "age_range": "7–9",
+    "learning_objective": "Explain butterfly and frog life cycles and define metamorphosis",
+    "estimated_duration_min": 20,
+    "video_url": "https://www.youtube.com/watch?v=FbtanQ25N-M",
+    "tags": "animals,lifecycle,metamorphosis,science,grade2",
+    "quiz_data": [
+      {
+        "question": "A butterfly starts life as a __?",
+        "options": [
+          "Larva",
+          "Pupa",
+          "Egg",
+          "Caterpillar"
+        ],
+        "answer": "Egg",
+        "explanation": "Life cycle: Egg → Caterpillar → Chrysalis → Butterfly."
+      },
+      {
+        "question": "What comes after a caterpillar?",
+        "options": [
+          "Butterfly",
+          "Egg",
+          "Chrysalis",
+          "Larva"
+        ],
+        "answer": "Chrysalis",
+        "explanation": "Caterpillar → Chrysalis → Butterfly."
+      },
+      {
+        "question": "How many stages in a frog's life?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "answer": "4",
+        "explanation": "Egg → Tadpole → Froglet → Frog = 4 stages."
+      },
+      {
+        "question": "What do most birds hatch from?",
+        "options": [
+          "Pouches",
+          "Eggs",
+          "Seeds",
+          "Pods"
+        ],
+        "answer": "Eggs",
+        "explanation": "Birds lay eggs; chicks hatch from them."
+      },
+      {
+        "question": "Metamorphosis means a __?",
+        "options": [
+          "Growth spurt",
+          "Change in form",
+          "Name change",
+          "Colour change"
+        ],
+        "answer": "Change in form",
+        "explanation": "Metamorphosis is a big change in body shape."
+      }
+    ],
+    "min_pass_score": 50,
+    "prerequisite_topic_id": "7da7a764-dae0-4401-a89f-11fdfbf6e90b",
+    "adaptive_hint": "Score < 50 % → revert to Medium level in same subject."
+  },
+  {
+    "id": "46899661-ec68-4dc7-a0f3-68ad9133675d",
+    "subject": "Letters & Phonics",
+    "topic": "The Alphabet A–Z",
+    "difficulty": "Easy",
+    "sequence_order": 1,
+    "grade_level": "Pre-K / K",
+    "age_range": "3–5",
+    "learning_objective": "Recite and recognise all 26 letters of the alphabet in order",
+    "estimated_duration_min": 10,
+    "video_url": "https://www.youtube.com/watch?v=_UR-l3QI2nE",
+    "tags": "letters,alphabet,ABC,pre-k",
+    "quiz_data": [
+      {
+        "question": "What letter comes after C?",
+        "options": [
+          "B",
+          "D",
+          "E",
+          "F"
+        ],
+        "answer": "D",
+        "explanation": "A B C D — D comes after C."
+      },
+      {
+        "question": "Which letter does 🍎 apple start with?",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "answer": "A",
+        "explanation": "Apple starts with A."
+      },
+      {
+        "question": "What is the last letter?",
+        "options": [
+          "X",
+          "Y",
+          "Z",
+          "W"
+        ],
+        "answer": "Z",
+        "explanation": "Z is the last letter of the alphabet."
+      },
+      {
+        "question": "How many letters are in the alphabet?",
+        "options": [
+          "24",
+          "25",
+          "26",
+          "27"
+        ],
+        "answer": "26",
+        "explanation": "The English alphabet has 26 letters."
+      },
+      {
+        "question": "Which comes first: H or M?",
+        "options": [
+          "H",
+          "M",
+          "Both same",
+          "Neither"
+        ],
+        "answer": "H",
+        "explanation": "H comes before M in the alphabet."
+      }
+    ],
+    "min_pass_score": 70,
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "Score < 60 % → replay video, then retry quiz."
+  },
+  {
+    "id": "fee454ac-35d1-46a6-ad35-12cc76edb2c2",
+    "subject": "Letters & Phonics",
+    "topic": "Vowels, Consonants & CVC Words",
+    "difficulty": "Medium",
+    "sequence_order": 2,
+    "grade_level": "Grade 1",
+    "age_range": "5–7",
+    "learning_objective": "Identify vowels and consonants, and blend 3-letter CVC words",
+    "estimated_duration_min": 15,
+    "video_url": "https://www.youtube.com/watch?v=oDVAhDyHZaA",
+    "tags": "phonics,vowels,consonants,CVC,blending",
+    "quiz_data": [
+      {
+        "question": "How many vowels are in the alphabet?",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "answer": "5",
+        "explanation": "The 5 vowels are A, E, I, O, U."
+      },
+      {
+        "question": "Which of these is a vowel?",
+        "options": [
+          "B",
+          "C",
+          "E",
+          "F"
+        ],
+        "answer": "E",
+        "explanation": "E is one of the 5 vowels."
+      },
+      {
+        "question": "Blend: C-A-T = ?",
+        "options": [
+          "COT",
+          "CUT",
+          "CAT",
+          "CIT"
+        ],
+        "answer": "CAT",
+        "explanation": "C + A + T = CAT."
+      },
+      {
+        "question": "Blend: D-O-G = ?",
+        "options": [
+          "DIG",
+          "DOG",
+          "DAG",
+          "DEG"
+        ],
+        "answer": "DOG",
+        "explanation": "D + O + G = DOG."
+      },
+      {
+        "question": "Which word rhymes with HEN?",
+        "options": [
+          "HAT",
+          "HIM",
+          "TEN",
+          "HOP"
+        ],
+        "answer": "TEN",
+        "explanation": "HEN and TEN both end in -EN."
+      }
+    ],
+    "min_pass_score": 60,
+    "prerequisite_topic_id": "46899661-ec68-4dc7-a0f3-68ad9133675d",
+    "adaptive_hint": "Score < 60 % → suggest Easy topic in same subject."
+  },
+  {
+    "id": "62629f6e-17ee-40f7-ba1c-99dce06e7237",
+    "subject": "Letters & Phonics",
+    "topic": "Sight Words & Phonics Sounds",
+    "difficulty": "Hard",
+    "sequence_order": 3,
+    "grade_level": "Grade 2",
+    "age_range": "7–9",
+    "learning_objective": "Memorise the 20 most common sight words and decode words using phonics sounds",
+    "estimated_duration_min": 20,
+    "video_url": "https://www.youtube.com/watch?v=tKsIi1MH4lw",
+    "tags": "phonics,sightwords,dolch,reading,grade2",
+    "quiz_data": [
+      {
+        "question": "Which is a sight word?",
+        "options": [
+          "zyx",
+          "the",
+          "qrp",
+          "vwx"
+        ],
+        "answer": "the",
+        "explanation": "'The' is the most common English word."
+      },
+      {
+        "question": "Fill in: ___ is my friend.",
+        "options": [
+          "Her",
+          "She",
+          "Him",
+          "They"
+        ],
+        "answer": "She",
+        "explanation": "She, he, and they are common pronouns."
+      },
+      {
+        "question": "What sound does 'Sh' make in SHIP?",
+        "options": [
+          "S",
+          "Sh",
+          "H",
+          "Ch"
+        ],
+        "answer": "Sh",
+        "explanation": "Sh makes a shh sound."
+      },
+      {
+        "question": "Which sentence uses a sight word?",
+        "options": [
+          "Xylophone runs.",
+          "I am here.",
+          "Zzzz goes.",
+          "Qwerty!"
+        ],
+        "answer": "I am here.",
+        "explanation": "'I', 'am', 'here' are all sight words."
+      },
+      {
+        "question": "Which sight word means 'also'?",
+        "options": [
+          "And",
+          "Too",
+          "But",
+          "So"
+        ],
+        "answer": "Too",
+        "explanation": "'Too' means also — it's a sight word."
+      }
+    ],
+    "min_pass_score": 50,
+    "prerequisite_topic_id": "fee454ac-35d1-46a6-ad35-12cc76edb2c2",
+    "adaptive_hint": "Score < 50 % → revert to Medium level in same subject."
+  },
+  {
+    "id": "50af5a83-4f74-4631-a8fc-51648d2dc6b9",
+    "subject": "Games & Activities",
+    "topic": "Memory Match & Concentration",
+    "difficulty": "Easy",
+    "sequence_order": 1,
+    "grade_level": "Pre-K / K",
+    "age_range": "3–5",
+    "learning_objective": "Improve short-term memory by matching picture pairs",
+    "estimated_duration_min": 10,
+    "video_url": "https://www.youtube.com/watch?v=T7Hy6GD8amw",
+    "tags": "games,memory,concentration,pre-k",
+    "quiz_data": [
+      {
+        "question": "Memory game: you flip 2 cards and they match. What do you do?",
+        "options": [
+          "Flip again",
+          "Keep them face up",
+          "Put them back",
+          "Skip turn"
+        ],
+        "answer": "Keep them face up",
+        "explanation": "When cards match, you keep them revealed."
+      },
+      {
+        "question": "What helps you remember card positions?",
+        "options": [
+          "Guessing",
+          "Paying attention",
+          "Closing eyes",
+          "Random flipping"
+        ],
+        "answer": "Paying attention",
+        "explanation": "Concentration helps you remember where each card is."
+      },
+      {
+        "question": "In a 4×4 memory grid, how many cards total?",
+        "options": [
+          "8",
+          "12",
+          "16",
+          "20"
+        ],
+        "answer": "16",
+        "explanation": "4 × 4 = 16 cards."
+      },
+      {
+        "question": "How many matches are in a 16-card game?",
+        "options": [
+          "8",
+          "16",
+          "4",
+          "12"
+        ],
+        "answer": "8",
+        "explanation": "16 cards ÷ 2 = 8 matching pairs."
+      },
+      {
+        "question": "Which skill does memory match most build?",
+        "options": [
+          "Running",
+          "Concentration",
+          "Drawing",
+          "Singing"
+        ],
+        "answer": "Concentration",
+        "explanation": "Memory games strengthen focus and recall."
+      }
+    ],
+    "min_pass_score": 70,
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "Score < 60 % → replay video, then retry quiz."
+  },
+  {
+    "id": "c5f607a4-32e4-49b5-8b29-b5de48f56e59",
+    "subject": "Games & Activities",
+    "topic": "Sorting, Classifying & Patterns",
+    "difficulty": "Medium",
+    "sequence_order": 2,
+    "grade_level": "Grade 1",
+    "age_range": "5–7",
+    "learning_objective": "Sort objects by colour, shape or size and continue AB/ABC colour patterns",
+    "estimated_duration_min": 15,
+    "video_url": "https://www.youtube.com/watch?v=beTDz9HSNOM",
+    "tags": "games,sorting,patterns,classifying,logic",
+    "quiz_data": [
+      {
+        "question": "You have red and blue blocks. How do you sort them?",
+        "options": [
+          "By weight",
+          "By colour",
+          "By smell",
+          "Randomly"
+        ],
+        "answer": "By colour",
+        "explanation": "Sorting by colour groups similar colours together."
+      },
+      {
+        "question": "Which does NOT belong: cat, dog, rose, rabbit?",
+        "options": [
+          "Cat",
+          "Dog",
+          "Rose",
+          "Rabbit"
+        ],
+        "answer": "Rose",
+        "explanation": "Rose is a plant; the rest are animals."
+      },
+      {
+        "question": "Pattern: Red, Blue, Red, Blue — next?",
+        "options": [
+          "Green",
+          "Yellow",
+          "Red",
+          "Blue"
+        ],
+        "answer": "Red",
+        "explanation": "The pattern repeats: Red, Blue, Red, Blue, Red…"
+      },
+      {
+        "question": "Big ball, small ball, medium ball — sorted by?",
+        "options": [
+          "Colour",
+          "Shape",
+          "Size",
+          "Weight"
+        ],
+        "answer": "Size",
+        "explanation": "They are sorted from large to small."
+      },
+      {
+        "question": "Classifying helps us to __?",
+        "options": [
+          "Run faster",
+          "Organise and understand things",
+          "Sing better",
+          "Count faster"
+        ],
+        "answer": "Organise and understand things",
+        "explanation": "Classification brings order and clarity."
+      }
+    ],
+    "min_pass_score": 60,
+    "prerequisite_topic_id": "50af5a83-4f74-4631-a8fc-51648d2dc6b9",
+    "adaptive_hint": "Score < 60 % → suggest Easy topic in same subject."
+  },
+  {
+    "id": "9f9eefac-efd5-4598-b0c7-55343d4e2a3e",
+    "subject": "Games & Activities",
+    "topic": "Puzzles, Strategy & Creative Drawing",
+    "difficulty": "Hard",
+    "sequence_order": 3,
+    "grade_level": "Grade 2",
+    "age_range": "7–9",
+    "learning_objective": "Complete jigsaw/tangram puzzles and apply art techniques like shading and perspective",
+    "estimated_duration_min": 20,
+    "video_url": "https://www.youtube.com/watch?v=2aKep6PUFfI",
+    "tags": "games,puzzles,drawing,creativity,strategy",
+    "quiz_data": [
+      {
+        "question": "Where do you look first in a jigsaw puzzle?",
+        "options": [
+          "Middle pieces",
+          "Edge pieces",
+          "Any piece",
+          "Colour pieces"
+        ],
+        "answer": "Edge pieces",
+        "explanation": "Always start with the straight-edge border pieces."
+      },
+      {
+        "question": "A tangram uses how many pieces?",
+        "options": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "answer": "7",
+        "explanation": "A tangram has exactly 7 geometric pieces."
+      },
+      {
+        "question": "Which tool makes the thinnest lines?",
+        "options": [
+          "Crayon",
+          "Marker",
+          "Pencil",
+          "Brush"
+        ],
+        "answer": "Pencil",
+        "explanation": "Pencils create fine, thin lines."
+      },
+      {
+        "question": "What is perspective in drawing?",
+        "options": [
+          "Colour choice",
+          "Objects look smaller far away",
+          "Line thickness",
+          "Shade of colour"
+        ],
+        "answer": "Objects look smaller far away",
+        "explanation": "Perspective shows depth — far things look smaller."
+      },
+      {
+        "question": "Which element adds depth to a drawing?",
+        "options": [
+          "Colour only",
+          "Shading and shadow",
+          "Erasing",
+          "Outlining only"
+        ],
+        "answer": "Shading and shadow",
+        "explanation": "Shading creates the illusion of 3D depth."
+      }
+    ],
+    "min_pass_score": 50,
+    "prerequisite_topic_id": "c5f607a4-32e4-49b5-8b29-b5de48f56e59",
+    "adaptive_hint": "Score < 50 % → revert to Medium level in same subject."
+  }
+]

@@ -1,0 +1,32 @@
+# Core Flask Dependencies
+Flask==3.0.0
+Flask-Cors==4.0.0
+Flask-Bcrypt==1.0.1
+Flask-Mail==0.9.1
+Werkzeug==3.1.4
+
+# Database
+supabase==2.4.0
+
+# Environment & Configuration
+python-dotenv==1.0.0
+
+# Authentication
+PyJWT==2.8.0
+
+# External APIs (REMOVED - Using Local Custom Models)
+# google-api-python-client, google-genai, groq removed
+
+# Text-to-Speech
+gTTS==2.5.4
+
+# PDF Generation
+reportlab==4.0.9
+
+# Additional Dependencies
+requests==2.31.0
+click==8.1.8
+
+# Video Generation
+moviepy==1.0.3
+Pillow==10.2.0

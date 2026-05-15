@@ -1,0 +1,108 @@
+{
+  "explanations": {
+    "Language Basics": {
+      "Phonics (Letter Sounds)": {
+        "Easy": "Letters make sounds! The letter A says 'ah' like in Apple. The letter B says 'buh' like in Ball. Learning sounds helps us read big words!",
+        "Medium": "Phonics is how we connect sounds to letters. When you see 'C-A-T', your brain says 'Cuh-Ah-Tuh', which makes 'Cat'! It's like a secret code for reading.",
+        "Hard": "Phonics involves understanding the relationship between written letters and their spoken sounds. Mastering these patterns allows for fluent reading and correct spelling of complex vocabulary."
+      },
+      "Simple Words (cat, bat, ball)": {
+        "Easy": "Let's read short words! C-A-T is Cat. B-A-T is Bat. These words are easy to say and fun to learn!",
+        "Medium": "Three-letter words usually have a vowel in the middle. Like 'P-I-G' or 'D-O-G'. Once you know the sounds, you can read hundreds of these words!",
+        "Hard": "Blending consonant-vowel-consonant (CVC) structures is the first major milestone in literacy development, forming the basis for recognizing more complex phonetic structures."
+      }
+    },
+    "Numbers & Math": {
+      "Number Recognition": {
+        "Easy": "Numbers are everywhere! Look at the number 1, it looks like a stick. Number 2 looks like a duck. Can you find the numbers in your room?",
+        "Medium": "Numbers help us count. We can count our fingers, our toys, and even the stars! Learning what each number looks like is the first step to being a math wizard.",
+        "Hard": "Numerical literacy involves identifying symbols from 0 to 9 and understanding their relative values. This foundational skill is essential for all future mathematical operations."
+      }
+    }
+  },
+  "quizzes": {
+    "Language Basics": {
+      "Phonics (Letter Sounds)": {
+        "Easy": [
+          { "id": 1, "question": "Which letter makes the 'ah' sound? 🍎", "options": ["A", "B", "C", "D"], "correctAnswer": 0, "explanation": "A says ah like in Apple!", "emoji": "🍎" },
+          { "id": 2, "question": "What is the sound of letter 'B'? ⚽", "options": ["Buh", "Ah", "Cuh", "Duh"], "correctAnswer": 0, "explanation": "B says buh like in Ball!", "emoji": "⚽" },
+          { "id": 3, "question": "Cat starts with which sound? 🐱", "options": ["Cuh", "Ah", "Tuh", "Suh"], "correctAnswer": 0, "explanation": "C says cuh like in Cat!", "emoji": "🐱" },
+          { "id": 4, "question": "Dog starts with which sound? 🐶", "options": ["Duh", "Ah", "Guh", "Ouh"], "correctAnswer": 0, "explanation": "D says duh like in Dog!", "emoji": "🐶" },
+          { "id": 5, "question": "Elephant starts with? 🐘", "options": ["Eh", "Ah", "Cuh", "Duh"], "correctAnswer": 0, "explanation": "E says eh like in Elephant!", "emoji": "🐘" }
+        ],
+        "Medium": [
+          { "id": 1, "question": "Which letter makes the 'Mmm' sound? 🐒", "options": ["N", "M", "L", "K"], "correctAnswer": 1, "explanation": "M is for Monkey and makes the mmm sound!", "emoji": "🐒" },
+          { "id": 2, "question": "Find the word that starts with 'Suh' sound:", "options": ["Apple", "Sun", "Dog", "Bear"], "correctAnswer": 1, "explanation": "Sun starts with the S sound!", "emoji": "☀️" },
+          { "id": 3, "question": "Which letter is at the end of 'BAT'?", "options": ["B", "A", "T", "S"], "correctAnswer": 2, "explanation": "T is at the end of Bat!", "emoji": "🦇" },
+          { "id": 4, "question": "What sound does 'P' make? 🍿", "options": ["Puh", "Muh", "Suh", "Buh"], "correctAnswer": 0, "explanation": "P says puh like in Popcorn!", "emoji": "🍿" },
+          { "id": 5, "question": "Which letter starts the word 'Lion'? 🦁", "options": ["R", "L", "N", "M"], "correctAnswer": 1, "explanation": "L is for Lion!", "emoji": "🦁" }
+        ],
+        "Hard": [
+          { "id": 1, "question": "Which of these words has a short 'i' sound?", "options": ["Bike", "Sit", "Like", "Ride"], "correctAnswer": 1, "explanation": "Sit has the short 'i' sound!", "emoji": "🪑" },
+          { "id": 2, "question": "Identify the silent letter in 'KNOW':", "options": ["K", "N", "O", "W"], "correctAnswer": 0, "explanation": "The K is silent in Know!", "emoji": "🧠" },
+          { "id": 3, "question": "Which blend is at the start of 'CLOCK'?", "options": ["BL", "CL", "SL", "PL"], "correctAnswer": 1, "explanation": "CL makes the start of Clock!", "emoji": "⏰" },
+          { "id": 4, "question": "Which word ends with the 'CH' sound?", "options": ["Cat", "Fish", "Lunch", "Ship"], "correctAnswer": 2, "explanation": "Lunch ends with the CH sound!", "emoji": "🥪" },
+          { "id": 5, "question": "Find the word with three syllables:", "options": ["Apple", "Banana", "Cat", "Dog"], "correctAnswer": 1, "explanation": "Ba-na-na has three syllables!", "emoji": "🍌" }
+        ]
+      }
+    }
+  },
+  "motivations": {
+    "excellent": [
+      "🌟 Wow! You scored {score}%! You are a superstar! Keep shining bright like the sun!",
+      "🏆 Amazing job! {score}% is an incredible score. You're becoming a real expert!",
+      "🚀 To the moon! You're learning so fast. {score}% is out of this world!"
+    ],
+    "good": [
+      "✨ Great effort! You got {score}%! You're doing a wonderful job, keep it up!",
+      "👍 Good work! You're getting better and better every time you practice.",
+      "🌈 Well done! You're on the right track. Keep going!"
+    ],
+    "needs_practice": [
+      "🌻 Don't worry! Practice makes perfect! You're learning new things, and that's awesome.",
+      "💪 Keep trying! Every mistake is a step closer to being a master.",
+      "🎈 You can do it! Let's try again and see how much more you can learn."
+    ],
+    "try_again": [
+      "⭐ Every mistake helps you learn! Don't give up, you're getting stronger every day.",
+      "🌱 Just like a plant, your brain is growing! Let's give it another try.",
+      "🚲 Learning is like riding a bike, sometimes we wobble, but then we fly! Try again!"
+    ]
+  },
+  "teacher_help": {
+    "Language Basics": [
+      "Use colorful letter cards and ask the child to match them to objects around the room.",
+      "Play 'I Spy' with letter sounds: 'I spy with my little eye, something starting with Buh'.",
+      "Sing alphabet songs together and emphasize the sounds of each letter.",
+      "Use sand or playdough to trace letters while saying their sounds aloud."
+    ],
+    "Numbers & Math": [
+      "Count real objects like pieces of fruit, toys, or steps while walking.",
+      "Use number blocks or magnets to build sequences and patterns.",
+      "Play 'Number Hunter' - find numbers on signs, clocks, and books.",
+      "Use drawings to represent numbers: 'Draw 3 big happy circles'."
+    ]
+  },
+  "video_bank": {
+    "Language Basics": {
+      "Phonics (Letter Sounds)": {
+        "Easy": [
+          { "videoId": "9hcM7U-XjEw", "title": "ABC Phonics Song", "thumbnail": "https://i.ytimg.com/vi/9hcM7U-XjEw/mqdefault.jpg", "embedUrl": "https://www.youtube.com/embed/9hcM7U-XjEw" }
+        ],
+        "Medium": [
+          { "videoId": "BELlZuPZ9v8", "title": "Phonics Fun for Kids", "thumbnail": "https://i.ytimg.com/vi/BELlZuPZ9v8/mqdefault.jpg", "embedUrl": "https://www.youtube.com/embed/BELlZuPZ9v8" }
+        ],
+        "Hard": [
+          { "videoId": "pyvd8p7D9Qo", "title": "Advanced Phonics Blends", "thumbnail": "https://i.ytimg.com/vi/pyvd8p7D9Qo/mqdefault.jpg", "embedUrl": "https://www.youtube.com/embed/pyvd8p7D9Qo" }
+        ]
+      }
+    },
+    "Numbers & Math": {
+      "Number Recognition": {
+        "Easy": [
+          { "videoId": "V_vXN_V5D-4", "title": "Counting 1 to 10 for Kids", "thumbnail": "https://i.ytimg.com/vi/V_vXN_V5D-4/mqdefault.jpg", "embedUrl": "https://www.youtube.com/embed/V_vXN_V5D-4" }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+# Virtual Environment
+backend/venv/
+venv/
+env/
+ENV/
+
+# Python Cache
+backend/__pycache__/
+backend/routes/__pycache__/
+backend/controllers/__pycache__/
+backend/models/__pycache__/
+backend/config/__pycache__/
+backend/middleware/__pycache__/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Node Modules
+frontend/node_modules/
+frontend/dist/
+node_modules/
+dist/
+
+# Environment Variables
+.env
+.env.*
+*.env
+backend/.env
+frontend/.env
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Built artifacts
+build/
+*.egg-info/
+
+# Generated E-Learning Content
+backend/temp_assets/
