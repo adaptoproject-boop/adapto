@@ -79,4 +79,4 @@ def home():
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5612))
-    app.run(port=port, debug=True, use_reloader=False)
+    app.run(port=port, debug=True, use_reloader=True)

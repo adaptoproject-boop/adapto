@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import axios from 'axios';
+import { FiArrowLeft } from 'react-icons/fi';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -26,6 +28,7 @@ ChartJS.register(
 );
 
 const TeacherAnalytics = () => {
+    const navigate = useNavigate();
     const { t } = useLearning();
     const [analyticsData, setAnalyticsData] = useState({
         totalStudents: 0,
@@ -125,8 +128,11 @@ const TeacherAnalytics = () => {
     }
 
     return (
-        <div className="min-h-screen bg-slate-50 pt-20 pb-10 px-6">
-            <div className="max-w-6xl mx-auto space-y-8">
+        <div className="min-h-screen bg-pastel-gradient pt-32 px-8 pb-12 relative overflow-hidden">
+            <div className="deco-blob deco-blob-pink w-64 h-64 -top-20 -left-20" />
+            <div className="deco-blob deco-blob-blue w-72 h-72 top-1/2 -right-20" />
+
+            <div className="max-w-6xl mx-auto space-y-8 relative z-10">
 
                 {/* Header */}
                 <motion.div
@@ -134,9 +140,17 @@ const TeacherAnalytics = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex justify-between items-center"
                 >
-                    <div>
-                        <h1 className="text-3xl font-bold text-gray-800">{t('analytics_title')}</h1>
-                        <p className="text-gray-500">{t('analytics_subtitle')}</p>
+                    <div className="flex items-center gap-4">
+                        <button
+                            onClick={() => navigate('/teacher/dashboard')}
+                            className="bg-white/80 p-3 rounded-xl shadow-sm hover:shadow-md transition-all text-gray-500"
+                        >
+                            <FiArrowLeft size={20} />
+                        </button>
+                        <div>
+                            <h1 className="text-3xl font-bold text-gray-800">{t('analytics_title') || 'Class Analytics'}</h1>
+                            <p className="text-gray-500">{t('analytics_subtitle') || 'Monitor class performance and adaptive insights'}</p>
+                        </div>
                     </div>
                 </motion.div>
 

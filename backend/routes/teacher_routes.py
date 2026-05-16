@@ -373,10 +373,6 @@ def get_teacher_analytics():
         # 1. Fetch Quiz Results (Legacy/Core)
         res = supabase.table('quiz_results').select('*').execute()
         quiz_results = res.data
-
-        # 2. Fetch ADAPTO Session Data (New ML Signals)
-        session_res = supabase.table('sessions').select('*').execute()
-        sessions = session_res.data
         
         if not quiz_results:
             return jsonify({
@@ -467,6 +463,7 @@ def get_teacher_analytics():
         adaptive_insights = {
             "avg_confused_ratio": 0.0,
             "avg_retries": 0.0,
+            "avg_pace": 0.85, # Default steady pace
             "total_adaptive_sessions": len(quiz_results)
         }
         if quiz_results:
