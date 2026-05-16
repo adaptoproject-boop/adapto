@@ -10,6 +10,8 @@ const TeacherMaterials = () => {
     const [loading, setLoading] = useState(true);
     const [showAddForm, setShowAddForm] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+    const [editMode, setEditMode] = useState(false);
+    const [editId, setEditId] = useState(null);
 
     // Form State
     const [formData, setFormData] = useState({
@@ -46,8 +48,13 @@ const TeacherMaterials = () => {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:5612/api/teacher/add-study-material', {
-                method: 'POST',
+            const url = editMode 
+                ? `http://localhost:5612/api/teacher/study-material/${editId}`
+                : 'http://localhost:5612/api/teacher/add-study-material';
+            const method = editMode ? 'PUT' : 'POST';
+
+            const response = await fetch(url, {
+                method: method,
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             });
@@ -56,6 +63,8 @@ const TeacherMaterials = () => {
 
             if (response.ok) {
                 setShowAddForm(false);
+                setEditMode(false);
+                setEditId(null);
                 setFormData({
                     subject: 'Alphabets',
                     topic: '',
@@ -73,6 +82,20 @@ const TeacherMaterials = () => {
         } finally {
             setSubmitting(false);
         }
+    };
+
+    const handleEditClick = (material) => {
+        setFormData({
+            subject: material.subject,
+            topic: material.topic,
+            difficulty: material.difficulty,
+            content_type: material.content_type,
+            youtube_url: material.youtube_url,
+            description: material.description || ''
+        });
+        setEditMode(true);
+        setEditId(material._id || material.id);
+        setShowAddForm(true);
     };
 
     const handleDelete = async (id) => {
@@ -130,7 +153,19 @@ const TeacherMaterials = () => {
                                 className="bg-white/70 backdrop-blur-sm pl-11 pr-4 py-3 rounded-2xl border border-white focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all w-64"
                             />
                         </div>
-                        <CartoonButton variant="primary" onClick={() => setShowAddForm(true)}>
+                        <CartoonButton variant="primary" onClick={() => {
+                            setEditMode(false);
+                            setEditId(null);
+                            setFormData({
+                                subject: 'Alphabets',
+                                topic: '',
+                                difficulty: 'Easy',
+                                content_type: 'Fun',
+                                youtube_url: '',
+                                description: ''
+                            });
+                            setShowAddForm(true);
+                        }}>
                             <FiPlus className="mr-2" /> Add New
                         </CartoonButton>
                     </div>
@@ -153,7 +188,7 @@ const TeacherMaterials = () => {
                                 </button>
 
                                 <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-                                    <FiYoutube className="text-red-500" /> Add YouTube Material
+                                    <FiYoutube className="text-red-500" /> {editMode ? 'Edit YouTube Material' : 'Add YouTube Material'}
                                 </h2>
 
                                 {error && (
@@ -247,7 +282,7 @@ const TeacherMaterials = () => {
                                             className="flex-1"
                                             disabled={submitting}
                                         >
-                                            {submitting ? 'Saving...' : 'Add Material'}
+                                            {submitting ? 'Saving...' : (editMode ? 'Update Material' : 'Add Material')}
                                         </CartoonButton>
                                     </div>
                                 </form>
@@ -315,8 +350,16 @@ const TeacherMaterials = () => {
                                                     <FiExternalLink />
                                                 </a>
                                                 <button
-                                                    onClick={() => handleDelete(material._id)}
+                                                    onClick={() => handleEditClick(material)}
+                                                    className="w-10 h-10 bg-white/70 rounded-xl flex items-center justify-center text-blue-500 hover:bg-blue-50 transition-all shadow-sm"
+                                                    title="Edit Material"
+                                                >
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                                </button>
+                                                <button
+                                                    onClick={() => handleDelete(material._id || material.id)}
                                                     className="w-10 h-10 bg-white/70 rounded-xl flex items-center justify-center text-red-500 hover:bg-red-50 transition-all shadow-sm"
+                                                    title="Delete Material"
                                                 >
                                                     <FiTrash2 />
                                                 </button>

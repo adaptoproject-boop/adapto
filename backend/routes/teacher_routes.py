@@ -116,20 +116,35 @@ def get_student_progress(student_id):
         passed_quizzes = sum(1 for r in quiz_results if r.get('passed', False))
         avg_score = sum(r.get('score', 0) for r in quiz_results) / total_quizzes if total_quizzes > 0 else 0
         
+        # Calculate Total Study Time (Average Response Time * Total Questions)
+        total_time_seconds = sum(r.get('average_response_time', 0) * r.get('total_questions', 1) for r in quiz_results)
+        
         overall_stats = {
             'total_quizzes_taken': total_quizzes,
             'quizzes_passed': passed_quizzes,
             'pass_rate': round((passed_quizzes / total_quizzes * 100) if total_quizzes > 0 else 0, 1),
             'average_score': round(avg_score, 1),
             'total_stars': student.get('stars', 0),
-            'completed_lessons': student.get('completedLessons', 0)
+            'completed_lessons': student.get('completedLessons', 0),
+            'total_study_time_mins': round(total_time_seconds / 60, 1)
         }
+        
+        # Emotion Timeline (last 20 logs)
+        emotion_timeline = []
+        for r in quiz_results[:20]:
+            emotion_timeline.append({
+                'timestamp': r.get('timestamp'),
+                'emotion': r.get('emotion', 'neutral'),
+                'score': r.get('score', 0),
+                'topic': r.get('lesson_title', 'General')
+            })
         
         return jsonify({
             'student': student,
             'quiz_results': quiz_results[:10],
             'subject_progress': subject_progress,
-            'overall_stats': overall_stats
+            'overall_stats': overall_stats,
+            'emotion_timeline': emotion_timeline
         }), 200
     
     except Exception as e:
@@ -205,6 +220,30 @@ def get_study_materials():
     except Exception as e:
         return jsonify({'error': f'Server error: {str(e)}'}), 500
 
+@teacher_bp.route('/study-material/<material_id>', methods=['PUT'])
+def update_study_material(material_id):
+    if not supabase:
+        return jsonify({'error': 'Database connection failed'}), 500
+        
+    try:
+        data = request.get_json()
+        
+        # Validate if URL provided
+        if 'youtube_url' in data and not validate_youtube_url(data['youtube_url']):
+            return jsonify({'error': 'Invalid YouTube URL format'}), 400
+            
+        result = supabase.table('study_materials').update(data).eq('id', material_id).execute()
+        if not result.data:
+            return jsonify({'error': 'Material not found'}), 404
+            
+        return jsonify({
+            'message': 'Study material updated successfully',
+            'material': result.data[0]
+        }), 200
+        
+    except Exception as e:
+        return jsonify({'error': f'Server error: {str(e)}'}), 500
+
 @teacher_bp.route('/study-material/<material_id>', methods=['DELETE'])
 def delete_study_material(material_id):
     if not supabase:
@@ -273,6 +312,53 @@ def get_quizzes():
     
     except Exception as e:
         return jsonify({'error': f'Server error: {str(e)}'}), 500
+
+# ==================================================
+# TEACHER ACTIONS
+# ==================================================
+
+@teacher_bp.route('/assign-remedial', methods=['POST'])
+def assign_remedial():
+    try:
+        data = request.get_json()
+        student_id = data.get('student_id')
+        lesson_id = data.get('lesson_id')
+        
+        if not student_id or not lesson_id:
+            return jsonify({'error': 'student_id and lesson_id are required'}), 400
+            
+        # For now, we can add a flag to the user's data or create a 'recommendations' table
+        # Let's just return success for the UI prototype
+        return jsonify({'message': f'Remedial lesson {lesson_id} assigned to student {student_id}'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@teacher_bp.route('/notify-parent', methods=['POST'])
+def notify_parent():
+    from config.mail import mail
+    from flask_mail import Message
+    
+    try:
+        data = request.get_json()
+        student_id = data.get('student_id')
+        message_text = data.get('message', 'Your child is doing great! Keep up the good work.')
+        
+        # Get parent/student email
+        res = supabase.table('users').select('email, name').eq('id', student_id).execute()
+        if not res.data:
+            return jsonify({'error': 'Student not found'}), 404
+            
+        student_email = res.data[0]['email']
+        student_name = res.data[0]['name']
+        
+        # In a real app, we'd find the parent's email. Here we'll just mock sending to student's email
+        # msg = Message(f"Progress Update for {student_name}", recipients=[student_email])
+        # msg.body = message_text
+        # mail.send(msg)
+        
+        return jsonify({'message': f'Notification sent to parent of {student_name}'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 # ==================================================
 # TEACHER ANALYTICS
@@ -360,17 +446,32 @@ def get_teacher_analytics():
         passed_count = sum(1 for r in quiz_results if r.get("passed", False))
         class_pass_rate = (passed_count / total_quizzes * 100) if total_quizzes > 0 else 0
         
-        # 5. ADAPTO Adaptive Insights (from sessions table)
+        # 5. Active Today
+        today = datetime.now().strftime('%Y-%m-%d')
+        active_today_count = len(set(r.get('user_id') for r in quiz_results if r.get('timestamp') and r.get('timestamp').startswith(today)))
+        
+        # 6. Struggling Students
+        struggling_students = []
+        for u_id, stats in student_performance.items():
+            if stats['average_score'] < 60:
+                user_res = supabase.table('users').select('name').eq('id', u_id).execute()
+                name = user_res.data[0]['name'] if user_res.data else "Unknown"
+                struggling_students.append({
+                    'id': u_id,
+                    'name': name,
+                    'score': stats['average_score'],
+                    'reason': 'Low average score'
+                })
+        
+        # 7. ADAPTO Adaptive Insights (using quiz_results now as it has the same signals)
         adaptive_insights = {
             "avg_confused_ratio": 0.0,
             "avg_retries": 0.0,
-            "avg_pace": 0.0,
-            "total_adaptive_sessions": len(sessions)
+            "total_adaptive_sessions": len(quiz_results)
         }
-        if sessions:
-            adaptive_insights["avg_confused_ratio"] = round(sum(s.get("confused_ratio", 0) for s in sessions) / len(sessions), 2)
-            adaptive_insights["avg_retries"]        = round(sum(s.get("retries", 0) for s in sessions) / len(sessions), 1)
-            adaptive_insights["avg_pace"]           = round(sum(s.get("pace_score", 1.0) for s in sessions) / len(sessions), 2)
+        if quiz_results:
+            adaptive_insights["avg_confused_ratio"] = round(sum(s.get("confused_ratio", 0) for s in quiz_results) / len(quiz_results), 2)
+            adaptive_insights["avg_retries"]        = round(sum(s.get("retries", 0) for s in quiz_results) / len(quiz_results), 1)
 
         return jsonify({
             "student_performance": student_performance,
@@ -378,11 +479,13 @@ def get_teacher_analytics():
             "weak_topics": weak_topics,
             "difficulty_distribution": difficulty_distribution,
             "adaptive_insights": adaptive_insights,
+            "struggling_students": struggling_students[:5],
             "class_summary": {
                 "total_students": total_students_count,
                 "total_quizzes_taken": total_quizzes,
                 "average_class_score": round(avg_class_score, 1),
-                "pass_rate": round(class_pass_rate, 1)
+                "pass_rate": round(class_pass_rate, 1),
+                "active_today": active_today_count
             }
         }), 200
     

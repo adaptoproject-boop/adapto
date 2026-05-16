@@ -92,6 +92,60 @@ const TeacherQuizzes = () => {
         }
     };
 
+    const handleAIGenerate = async () => {
+        if (!formData.subject || !formData.topic) {
+            setError('Please enter a subject and topic to generate questions.');
+            return;
+        }
+
+        setSubmitting(true);
+        setError('');
+
+        try {
+            const response = await fetch('http://localhost:5612/api/gemini/quiz', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    subject: formData.subject,
+                    topic: formData.topic,
+                    difficulty: formData.difficulty
+                })
+            });
+
+            const data = await response.json();
+
+            if (response.ok && data.content && Array.isArray(data.content)) {
+                // Map API response to our form structure
+                const generatedQuestions = data.content.map(q => ({
+                    question: q.question,
+                    options: q.options || ['', '', '', ''],
+                    correct_answer: q.correctAnswer !== undefined ? q.correctAnswer : 0
+                }));
+                
+                // Ensure we have 5 questions
+                while (generatedQuestions.length < 5) {
+                    generatedQuestions.push({
+                        question: '',
+                        options: ['', '', '', ''],
+                        correct_answer: 0
+                    });
+                }
+                
+                setFormData(prev => ({
+                    ...prev,
+                    questions: generatedQuestions.slice(0, 5)
+                }));
+            } else {
+                setError(data.error || 'Failed to generate quiz with AI.');
+            }
+        } catch (error) {
+            console.error('Error generating AI quiz:', error);
+            setError('Server error while generating AI quiz.');
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
     return (
         <div className="min-h-screen bg-pastel-gradient pt-32 px-8 pb-12 relative overflow-hidden">
             <div className="deco-blob deco-blob-pink w-64 h-64 -top-20 -left-20" />
@@ -140,9 +194,19 @@ const TeacherQuizzes = () => {
                                     <FiPlus className="rotate-45" size={24} />
                                 </button>
 
-                                <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-                                    <FiCheckCircle className="text-green-500" /> Design New Quiz
-                                </h2>
+                                <div className="flex justify-between items-center mb-6">
+                                    <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-3">
+                                        <FiCheckCircle className="text-green-500" /> Design New Quiz
+                                    </h2>
+                                    <button 
+                                        type="button"
+                                        onClick={handleAIGenerate}
+                                        disabled={submitting}
+                                        className="bg-indigo-50 text-indigo-600 hover:bg-indigo-100 px-4 py-2 rounded-lg font-bold text-sm transition-colors border border-indigo-200"
+                                    >
+                                        ✨ Auto-Generate with AI
+                                    </button>
+                                </div>
 
                                 {error && (
                                     <div className="bg-red-50 text-red-500 p-4 rounded-xl mb-6 border border-red-100 italic">

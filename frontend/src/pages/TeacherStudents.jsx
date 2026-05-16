@@ -8,6 +8,7 @@ const TeacherStudents = () => {
     const navigate = useNavigate();
     const [students, setStudents] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [sortBy, setSortBy] = useState('name'); // name, stars, lessons
 
     useEffect(() => {
         fetchStudents();
@@ -70,6 +71,19 @@ const TeacherStudents = () => {
                             <p className="text-gray-500">View and manage all your students' progress</p>
                         </div>
                     </div>
+                    
+                    <div className="flex items-center gap-3 bg-white/60 p-2 rounded-2xl border border-white">
+                        <span className="text-sm font-bold text-gray-500 pl-2">Sort by:</span>
+                        <select 
+                            value={sortBy} 
+                            onChange={(e) => setSortBy(e.target.value)}
+                            className="bg-transparent border-none outline-none text-gray-700 font-bold pr-4 cursor-pointer"
+                        >
+                            <option value="name">Name (A-Z)</option>
+                            <option value="stars">Most Stars</option>
+                            <option value="lessons">Most Lessons Completed</option>
+                        </select>
+                    </div>
                 </div>
 
                 {loading ? (
@@ -79,7 +93,12 @@ const TeacherStudents = () => {
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {students.length > 0 ? (
-                            students.map((student, i) => (
+                            [...students].sort((a, b) => {
+                                if (sortBy === 'name') return a.name.localeCompare(b.name);
+                                if (sortBy === 'stars') return (b.totalStars || 0) - (a.totalStars || 0);
+                                if (sortBy === 'lessons') return (b.completedLessons || 0) - (a.completedLessons || 0);
+                                return 0;
+                            }).map((student, i) => (
                                 <motion.div
                                     key={student._id}
                                     initial={{ opacity: 0, y: 20 }}

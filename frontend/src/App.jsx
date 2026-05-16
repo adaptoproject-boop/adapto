@@ -21,6 +21,8 @@ import TeacherAnalytics from './pages/TeacherAnalytics';
 import TeacherStudentDetail from './pages/TeacherStudentDetail';
 import TouchLearning from './pages/TouchLearning';
 import SubjectDetail from './pages/SubjectDetail';
+import TeacherLessons from './pages/TeacherLessons';
+import TeacherEditLesson from './pages/TeacherEditLesson';
 
 const PageTransition = ({ children }) => (
   <motion.div
@@ -144,6 +146,18 @@ const AnimatedRoutes = () => {
         <Route path="/teacher/analytics" element={
           <PrivateRoute role="teacher">
             <PageTransition><TeacherAnalytics /></PageTransition>
+          </PrivateRoute>
+        } />
+        
+        <Route path="/teacher/lessons" element={
+          <PrivateRoute role="teacher">
+            <PageTransition><TeacherLessons /></PageTransition>
+          </PrivateRoute>
+        } />
+
+        <Route path="/teacher/edit-lesson/:id" element={
+          <PrivateRoute role="teacher">
+            <PageTransition><TeacherEditLesson /></PageTransition>
           </PrivateRoute>
         } />
       </Routes>

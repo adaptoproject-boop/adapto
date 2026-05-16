@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import { motion } from 'framer-motion';
 import {
     Chart as ChartJS,
@@ -109,7 +110,17 @@ const TeacherStudentDetail = () => {
                 data: quiz_results.slice().reverse().map(r => r.quizScore || r.score),
                 borderColor: '#FF7F50',
                 backgroundColor: 'rgba(255, 127, 80, 0.5)',
-                tension: 0.4
+                tension: 0.4,
+                yAxisID: 'y',
+            },
+            {
+                label: 'Confusion Level',
+                data: quiz_results.slice().reverse().map(r => (r.confused_ratio || 0) * 100),
+                borderColor: '#818cf8',
+                backgroundColor: 'rgba(129, 140, 248, 0.5)',
+                tension: 0.4,
+                borderDash: [5, 5],
+                yAxisID: 'y',
             }
         ]
     };
@@ -142,17 +153,24 @@ const TeacherStudentDetail = () => {
                 </div>
 
                 {/* Overall Stats */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
                     <StatCard icon={<FiStar />} label="Total Stars" value={overall_stats.total_stars} color="text-yellow-500 bg-yellow-50" />
                     <StatCard icon={<FiBookOpen />} label="Lessons Completed" value={overall_stats.completed_lessons} color="text-blue-500 bg-blue-50" />
                     <StatCard icon={<FiCheckCircle />} label="Quizzes Passed" value={overall_stats.quizzes_passed} color="text-green-500 bg-green-50" />
                     <StatCard icon={<FiAward />} label="Average Score" value={`${overall_stats.average_score}%`} color="text-purple-500 bg-purple-50" />
+                    <StatCard icon={<FiClock />} label="Study Time" value={`${overall_stats.total_study_time_mins}m`} color="text-orange-500 bg-orange-50" />
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Performance Chart */}
                     <div className="lg:col-span-2 glass-card p-6">
-                        <h3 className="font-bold text-gray-700 mb-4">📈 Score Trend</h3>
+                        <div className="flex items-center justify-between mb-4">
+                            <h3 className="font-bold text-gray-700">📈 Score & Emotion Trend</h3>
+                            <div className="flex gap-4">
+                                <span className="text-xs text-gray-400 flex items-center gap-1"><span className="w-2 h-2 bg-coral rounded-full"></span> Score</span>
+                                <span className="text-xs text-gray-400 flex items-center gap-1"><span className="w-2 h-2 bg-indigo-400 rounded-full"></span> Emotion Intensity</span>
+                            </div>
+                        </div>
                         <div className="h-64">
                             {quiz_results.length > 0 ? (
                                 <Line
@@ -172,9 +190,9 @@ const TeacherStudentDetail = () => {
                     </div>
 
                     {/* Subject Progress */}
-                    <div className="glass-card p-6">
+                    <div className="glass-card p-6 flex flex-col">
                         <h3 className="font-bold text-gray-700 mb-4">📚 Subject Performance</h3>
-                        <div className="space-y-4">
+                        <div className="space-y-4 flex-1">
                             {Object.entries(subject_progress).map(([subject, stats]) => (
                                 <div key={subject} className="flex items-center justify-between p-3 bg-white/50 rounded-xl">
                                     <div>
@@ -189,10 +207,48 @@ const TeacherStudentDetail = () => {
                                     </div>
                                 </div>
                             ))}
-                            {Object.keys(subject_progress).length === 0 && (
-                                <p className="text-gray-400 text-center">No subject data yet.</p>
-                            )}
                         </div>
+
+                        {/* Quick Teacher Actions */}
+                        <div className="mt-6 pt-6 border-t border-gray-100 space-y-3">
+                            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Teacher Actions</h4>
+                            <button 
+                                onClick={async () => {
+                                    const res = await axios.post('http://localhost:5612/api/teacher/notify-parent', { student_id: id });
+                                    alert(res.data.message);
+                                }}
+                                className="w-full py-2 bg-white border border-gray-200 text-gray-700 rounded-lg text-sm font-bold hover:border-coral hover:text-coral transition-all"
+                            >
+                                📧 Notify Parent
+                            </button>
+                            <button 
+                                onClick={() => navigate('/teacher/lessons')}
+                                className="w-full py-2 bg-coral text-white rounded-lg text-sm font-bold shadow-sm hover:shadow-md transition-all"
+                            >
+                                🎯 Assign Remedial
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Emotion Timeline */}
+                <div className="glass-card p-6">
+                    <h3 className="font-bold text-gray-700 mb-4 flex items-center gap-2">
+                        <FiActivity className="text-coral" /> Real-time Emotion Timeline
+                    </h3>
+                    <div className="flex flex-wrap gap-4">
+                        {(studentData.emotion_timeline || []).map((log, i) => (
+                            <div key={i} className="flex flex-col items-center gap-1 p-3 bg-white/40 rounded-xl border border-white min-w-[100px]">
+                                <span className="text-2xl">
+                                    {log.emotion === 'happy' ? '😊' : log.emotion === 'confused' ? '😕' : log.emotion === 'neutral' ? '😐' : '😮'}
+                                </span>
+                                <span className="text-[10px] font-bold text-gray-400 uppercase">{log.emotion}</span>
+                                <span className="text-[9px] text-gray-400">{new Date(log.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                                <div className="mt-1 w-full bg-gray-200 h-1 rounded-full overflow-hidden">
+                                    <div className="bg-coral h-full" style={{ width: `${log.score}%` }}></div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
 

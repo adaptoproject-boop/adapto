@@ -28,8 +28,11 @@ const TeacherDashboard = () => {
         totalStudents: 0,
         studyMaterials: 0,
         quizzes: 0,
-        avgClassScore: 0
+        avgClassScore: 0,
+        activeToday: 0,
+        strugglingCount: 0
     });
+    const [strugglingStudents, setStrugglingStudents] = useState([]);
 
     useEffect(() => {
         fetchDashboardStats();
@@ -57,8 +60,11 @@ const TeacherDashboard = () => {
                 totalStudents: studentsData.students?.length || 0,
                 studyMaterials: materialsData.materials?.length || 0,
                 quizzes: quizzesData.quizzes?.length || 0,
-                avgClassScore: analyticsData.class_summary?.average_class_score || 0
+                avgClassScore: analyticsData.class_summary?.average_class_score || 0,
+                activeToday: analyticsData.class_summary?.active_today || 0,
+                strugglingCount: analyticsData.struggling_students?.length || 0
             });
+            setStrugglingStudents(analyticsData.struggling_students || []);
         } catch (error) {
             console.error('Error fetching stats:', error);
         }
@@ -67,7 +73,8 @@ const TeacherDashboard = () => {
     const menuItems = [
         { icon: FiHome, label: t('teacher_sidebar_dash'), path: '/teacher/dashboard', color: 'text-blue-500', bg: 'bg-blue-50' },
         { icon: FiUsers, label: t('teacher_sidebar_students'), path: '/teacher/students', color: 'text-green-500', bg: 'bg-green-50' },
-        { icon: FiBook, label: t('teacher_sidebar_materials'), path: '/teacher/materials', color: 'text-purple-500', bg: 'bg-purple-50' },
+        { icon: FiBook, label: 'Study Materials', path: '/teacher/materials', color: 'text-purple-500', bg: 'bg-purple-50' },
+        { icon: FiBook, label: 'Manage Curriculum', path: '/teacher/lessons', color: 'text-indigo-500', bg: 'bg-indigo-50' },
         { icon: FiFileText, label: t('teacher_sidebar_quizzes'), path: '/teacher/quizzes', color: 'text-pink-500', bg: 'bg-pink-50' },
         { icon: FiBarChart2, label: t('teacher_sidebar_analytics'), path: '/teacher/analytics', color: 'text-coral', bg: 'bg-coral/10' }
     ];
@@ -158,11 +165,13 @@ const TeacherDashboard = () => {
                 {/* Dashboard Content */}
                 <main className="space-y-10">
                     {/* Stats Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
                             { label: t('teacher_stats_total_students'), value: stats.totalStudents, icon: FiUsers, color: 'from-blue-400 to-blue-500' },
-                            { label: t('teacher_stats_materials'), value: stats.studyMaterials, icon: FiBook, color: 'from-green-400 to-green-500' },
-                            { label: t('teacher_stats_quizzes'), value: stats.quizzes, icon: FiFileText, color: 'from-purple-400 to-purple-500' },
+                            { label: 'Active Today', value: stats.activeToday, icon: FiUsers, color: 'from-green-400 to-green-500' },
+                            { label: 'Struggling Students', value: stats.strugglingCount, icon: FiX, color: 'from-red-400 to-red-500' },
+                            { label: t('teacher_stats_materials'), value: stats.studyMaterials, icon: FiBook, color: 'from-purple-400 to-purple-500' },
+                            { label: t('teacher_stats_quizzes'), value: stats.quizzes, icon: FiFileText, color: 'from-indigo-400 to-indigo-500' },
                             { label: t('teacher_stats_avg_score'), value: `${stats.avgClassScore.toFixed(1)}%`, icon: FiBarChart2, color: 'from-pink-400 to-pink-500' }
                         ].map((stat, i) => (
                             <motion.div

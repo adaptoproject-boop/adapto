@@ -22,6 +22,10 @@ def _load_curriculum():
     with open(_DATA_PATH, 'r', encoding='utf-8') as f:
         return json.load(f)
 
+def _save_curriculum(data):
+    with open(_DATA_PATH, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
 CURRICULUM = _load_curriculum()
 
 
@@ -153,3 +157,66 @@ def get_lesson(lesson_id):
     if not lesson:
         return jsonify({'success': False, 'message': 'Lesson not found'}), 404
     return jsonify({'success': True, 'lesson': lesson})
+
+
+@curriculum_bp.route('/lesson/<lesson_id>', methods=['PUT'])
+def update_lesson(lesson_id):
+    """Update an existing lesson in curriculum.json."""
+    global CURRICULUM
+    data = request.get_json()
+    
+    lesson_idx = next((i for i, l in enumerate(CURRICULUM) if l['id'] == lesson_id), None)
+    if lesson_idx is None:
+        return jsonify({'success': False, 'message': 'Lesson not found'}), 404
+    
+    # Update lesson data (be selective or allow full overwrite)
+    updated_lesson = {**CURRICULUM[lesson_idx], **data}
+    CURRICULUM[lesson_idx] = updated_lesson
+    
+    _save_curriculum(CURRICULUM)
+    return jsonify({'success': True, 'lesson': updated_lesson})
+
+
+@curriculum_bp.route('/lesson', methods=['POST'])
+def create_lesson():
+    """Add a new lesson to curriculum.json."""
+    global CURRICULUM
+    data = request.get_json()
+    
+    import uuid
+    new_lesson = {
+        'id': str(uuid.uuid4()),
+        'subject': data.get('subject', 'General'),
+        'topic': data.get('topic', 'New Topic'),
+        'difficulty': data.get('difficulty', 'Easy'),
+        'sequence_order': data.get('sequence_order', 1),
+        'grade_level': data.get('grade_level', ''),
+        'age_range': data.get('age_range', ''),
+        'learning_objective': data.get('learning_objective', ''),
+        'estimated_duration_min': data.get('estimated_duration_min', 10),
+        'video_url': data.get('video_url', ''),
+        'tags': data.get('tags', ''),
+        'quiz_data': data.get('quiz_data', []),
+        'min_pass_score': data.get('min_pass_score', 70),
+        'prerequisite_topic_id': data.get('prerequisite_topic_id', None),
+        'adaptive_hint': data.get('adaptive_hint', '')
+    }
+    
+    CURRICULUM.append(new_lesson)
+    _save_curriculum(CURRICULUM)
+    return jsonify({'success': True, 'lesson': new_lesson}), 201
+
+
+@curriculum_bp.route('/lesson/<lesson_id>', methods=['DELETE'])
+def delete_lesson(lesson_id):
+    """Remove a lesson from curriculum.json."""
+    global CURRICULUM
+    
+    initial_len = len(CURRICULUM)
+    CURRICULUM = [l for l in CURRICULUM if l['id'] != lesson_id]
+    
+    if len(CURRICULUM) == initial_len:
+        return jsonify({'success': False, 'message': 'Lesson not found'}), 404
+    
+    _save_curriculum(CURRICULUM)
+    return jsonify({'success': True, 'message': 'Lesson deleted'})
