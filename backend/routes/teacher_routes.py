@@ -313,6 +313,24 @@ def get_quizzes():
     except Exception as e:
         return jsonify({'error': f'Server error: {str(e)}'}), 500
 
+@teacher_bp.route('/quiz/<quiz_id>', methods=['DELETE'])
+def delete_quiz(quiz_id):
+    if not supabase:
+        return jsonify({'error': 'Database connection failed'}), 500
+        
+    try:
+        result = supabase.table('quizzes').update({'status': 'inactive'}).eq('id', quiz_id).execute()
+        if not result.data:
+            return jsonify({'error': 'Quiz not found'}), 404
+            
+        return jsonify({
+            'message': 'Quiz deleted successfully',
+            'quiz': result.data[0]
+        }), 200
+        
+    except Exception as e:
+        return jsonify({'error': f'Server error: {str(e)}'}), 500
+
 # ==================================================
 # TEACHER ACTIONS
 # ==================================================

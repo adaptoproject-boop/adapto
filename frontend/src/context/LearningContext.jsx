@@ -34,6 +34,7 @@ export const LearningProvider = ({ children }) => {
     const [videoProgress, setVideoProgress] = useState({});
     const [teacherMaterials, setTeacherMaterials] = useState([]);
     const [teacherQuizzes, setTeacherQuizzes] = useState([]);
+    const [curriculumLessons, setCurriculumLessons] = useState([]);
 
     const fetchServerProgress = async () => {
         if (!userInfo) return;
@@ -68,11 +69,23 @@ export const LearningProvider = ({ children }) => {
         }
     };
 
+    const fetchCurriculumLessons = async () => {
+        try {
+            const response = await axios.get('http://localhost:5612/api/curriculum/all');
+            if (response.data && response.data.lessons) {
+                setCurriculumLessons(response.data.lessons);
+            }
+        } catch (error) {
+            console.error("Failed to fetch curriculum lessons:", error);
+        }
+    };
+
     // Sync Authenticated User to Learning Progress
     useEffect(() => {
         fetchServerProgress();
         fetchTeacherMaterials();
         fetchTeacherQuizzes();
+        fetchCurriculumLessons();
     }, [userInfo]);
 
     // Save to localStorage on change (using current userId)
@@ -463,7 +476,8 @@ export const LearningProvider = ({ children }) => {
             logEmotion,
             logVideoEvent,
             teacherMaterials,
-            teacherQuizzes
+            teacherQuizzes,
+            curriculumLessons
         }}>
             {children}
         </LearningContext.Provider>

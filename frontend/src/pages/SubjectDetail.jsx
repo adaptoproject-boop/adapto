@@ -33,16 +33,78 @@ const SubjectDetail = () => {
     // Current difficulty for this subject (from adaptive engine)
     const currentDiff = (getCurrentLevel ? getCurrentLevel(subjectName) : userProgress?.currentLevels?.[subjectName] || 'easy').toLowerCase();
 
-    // Filter lessons by subject - use Supabase data (teacherMaterials)
-    const allSubjectLessons = teacherMaterials && teacherMaterials.length > 0
-        ? teacherMaterials.filter(l => l.subject === subjectName)
-        : mockLessons.filter(l => l.subject === subjectName);
+    const [curriculumLessons, setCurriculumLessons] = useState([]);
+    const [isLoadingCurriculum, setIsLoadingCurriculum] = useState(true);
 
-    // Sort: current-difficulty lessons first, then others
-    const subjectLessons = [
-        ...allSubjectLessons.filter(l => (l.difficulty || 'easy').toLowerCase() === currentDiff),
-        ...allSubjectLessons.filter(l => (l.difficulty || 'easy').toLowerCase() !== currentDiff),
-    ];
+    useEffect(() => {
+        const fetchCurriculum = async () => {
+            setIsLoadingCurriculum(true);
+            try {
+                const response = await fetch(`http://localhost:5612/api/curriculum/subject/${encodeURIComponent(subjectName)}`);
+                const data = await response.json();
+                if (data.success && data.lessons) {
+                    const combined = [...data.lessons];
+                    const seenIds = new Set(data.lessons.map(l => l.id || l._id));
+                    
+                    const subMaterials = (teacherMaterials || []).filter(m => m.subject.toLowerCase() === subjectName.toLowerCase());
+                    subMaterials.forEach(m => {
+                        const mid = m.id || m._id;
+                        if (mid && !seenIds.has(mid)) {
+                            seenIds.add(mid);
+                            combined.push(m);
+                        }
+                    });
+                    
+                    setCurriculumLessons(combined);
+                } else {
+                    const combinedMock = mockLessons.filter(l => l.subject === subjectName);
+                    const seenIds = new Set(combinedMock.map(l => l.id || l._id));
+                    
+                    const subMaterials = (teacherMaterials || []).filter(m => m.subject.toLowerCase() === subjectName.toLowerCase());
+                    subMaterials.forEach(m => {
+                        const mid = m.id || m._id;
+                        if (mid && !seenIds.has(mid)) {
+                            seenIds.add(mid);
+                            combinedMock.push(m);
+                        }
+                    });
+                    
+                    setCurriculumLessons(combinedMock);
+                }
+            } catch (err) {
+                console.error("Error fetching curriculum:", err);
+                const combinedMock = mockLessons.filter(l => l.subject === subjectName);
+                const seenIds = new Set(combinedMock.map(l => l.id || l._id));
+                
+                const subMaterials = (teacherMaterials || []).filter(m => m.subject.toLowerCase() === subjectName.toLowerCase());
+                subMaterials.forEach(m => {
+                    const mid = m.id || m._id;
+                    if (mid && !seenIds.has(mid)) {
+                        seenIds.add(mid);
+                        combinedMock.push(m);
+                    }
+                });
+                
+                setCurriculumLessons(combinedMock);
+            } finally {
+                setIsLoadingCurriculum(false);
+            }
+        };
+        fetchCurriculum();
+    }, [subjectName]);
+
+    // Sort lessons Easy -> Medium -> Hard
+    const diffWeights = { 'Easy': 1, 'Medium': 2, 'Hard': 3, 'easy': 1, 'medium': 2, 'hard': 3 };
+    const subjectLessons = [...curriculumLessons].sort((a, b) => {
+        return (diffWeights[a.difficulty] || 99) - (diffWeights[b.difficulty] || 99);
+    });
+
+    // Helper to check if a lesson is locked because its prerequisite isn't completed yet
+    const isLessonLocked = (lesson) => {
+        if (!lesson.prerequisite_topic_id) return false;
+        // Check if prerequisite lesson is completed
+        return !userProgress.completedLessons?.includes(lesson.prerequisite_topic_id);
+    };
 
     const subjectEmoji = subjectLessons[0]?.emoji || (subjectName === 'Numbers & Math' ? '🔢' : '📚');
     
@@ -248,9 +310,72 @@ const SubjectDetail = () => {
                             </h3>
 
                             <div className="space-y-3 relative z-10">
-                                {subjectLessons.map((lesson, idx) => {
+                                {isLoadingCurriculum ? (
+                                    [1, 2, 3].map(i => (
+                                        <div key={i} className="h-16 bg-slate-100 rounded-2xl animate-pulse" />
+                                    ))
+                                ) : subjectLessons.map((lesson, idx) => {
                                         const lessonDiff = (lesson.difficulty || 'easy').toLowerCase();
                                         const isCurrent  = lessonDiff === currentDiff;
+                                        const isLocked   = isLessonLocked(lesson);
+                                        
+                                        const linkContent = (
+                                            <div className="flex items-center gap-4">
+                                                <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-black ${
+                                                    isLocked
+                                                        ? 'bg-slate-200 text-slate-400'
+                                                        : userProgress.completedLessons?.includes(lesson.id || lesson._id)
+                                                            ? 'bg-green-500 text-white shadow-md shadow-green-100'
+                                                            : isCurrent 
+                                                                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-100' 
+                                                                : 'bg-white text-slate-400 border border-slate-100'
+                                                }`}>
+                                                    {isLocked ? (
+                                                        <FaRocket className="opacity-50" />
+                                                    ) : userProgress.completedLessons?.includes(lesson.id || lesson._id) 
+                                                        ? <FaCheck size={10} /> 
+                                                        : idx + 1
+                                                    }
+                                                </div>
+                                                <div className="flex-1 overflow-hidden">
+                                                    <span className={`font-bold block text-sm truncate ${
+                                                        isLocked
+                                                            ? 'text-slate-400 line-through'
+                                                            : userProgress.completedLessons?.includes(lesson.id || lesson._id) 
+                                                                ? 'text-green-600' 
+                                                                : 'text-gray-700'
+                                                    }`}>{lesson.topic || lesson.title}</span>
+                                                    <div className="flex items-center gap-2 mt-1">
+                                                        <DiffBadge diff={lesson.difficulty} />
+                                                        {isCurrent && !isLocked && !userProgress.completedLessons?.includes(lesson.id || lesson._id) && (
+                                                            <span className="text-[8px] font-black text-indigo-500 uppercase tracking-widest animate-pulse">Your Recommended Level 🌟</span>
+                                                        )}
+                                                        {userProgress.completedLessons?.includes(lesson.id || lesson._id) && (
+                                                            <span className="text-[8px] font-black text-green-500 uppercase tracking-widest">Completed ✨</span>
+                                                        )}
+                                                        {isLocked && (
+                                                            <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Locked 🔒</span>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                                {!isLocked && (
+                                                    <FaChevronRight className="text-slate-300 text-[10px] group-hover:text-indigo-400 group-hover:translate-x-1 transition-all" />
+                                                )}
+                                            </div>
+                                        );
+
+                                        if (isLocked) {
+                                            return (
+                                                <div
+                                                    key={lesson.id || lesson._id}
+                                                    className="p-4 rounded-2xl bg-slate-100/50 border-2 border-dashed border-slate-200 cursor-not-allowed opacity-60"
+                                                    title="Complete prerequisite lessons first!"
+                                                >
+                                                    {linkContent}
+                                                </div>
+                                            );
+                                        }
+
                                         return (
                                             <Link
                                                 key={lesson.id || lesson._id}
@@ -261,35 +386,7 @@ const SubjectDetail = () => {
                                                         : 'bg-slate-50 hover:bg-white border-transparent hover:border-indigo-100 hover:shadow-md'
                                                 }`}
                                             >
-                                                <div className="flex items-center gap-4">
-                                                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-black ${
-                                                        userProgress.completedLessons?.includes(lesson.id || lesson._id)
-                                                            ? 'bg-green-500 text-white shadow-md shadow-green-100'
-                                                            : isCurrent 
-                                                                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-100' 
-                                                                : 'bg-white text-slate-400 border border-slate-100'
-                                                    }`}>
-                                                        {userProgress.completedLessons?.includes(lesson.id || lesson._id) 
-                                                            ? <FaCheck size={10} /> 
-                                                            : idx + 1
-                                                        }
-                                                    </div>
-                                                    <div className="flex-1 overflow-hidden">
-                                                        <span className={`font-bold block text-sm truncate ${
-                                                            userProgress.completedLessons?.includes(lesson.id || lesson._id) ? 'text-green-600' : 'text-gray-700'
-                                                        }`}>{lesson.topic || lesson.title}</span>
-                                                        <div className="flex items-center gap-2 mt-1">
-                                                            <DiffBadge diff={lesson.difficulty} />
-                                                            {isCurrent && !userProgress.completedLessons?.includes(lesson.id || lesson._id) && (
-                                                                <span className="text-[8px] font-black text-indigo-500 uppercase tracking-widest">Your Level</span>
-                                                            )}
-                                                            {userProgress.completedLessons?.includes(lesson.id || lesson._id) && (
-                                                                <span className="text-[8px] font-black text-green-500 uppercase tracking-widest">Completed ✨</span>
-                                                            )}
-                                                        </div>
-                                                    </div>
-                                                    <FaChevronRight className="text-slate-300 text-[10px] group-hover:text-indigo-400 group-hover:translate-x-1 transition-all" />
-                                                </div>
+                                                {linkContent}
                                             </Link>
                                         );
                                     })}

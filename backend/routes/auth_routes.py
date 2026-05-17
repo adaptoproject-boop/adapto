@@ -118,8 +118,13 @@ def forgot_password():
         msg.body = f"Your OTP for password reset is {otp}. It is valid for 10 minutes."
         mail.send(msg)
     except Exception as e:
-        print("Failed to send email:", str(e))
-        return jsonify({'message': 'Error sending email. Please try again later.'}), 500
+        print("\n" + "="*80)
+        print(f"⚠️  FAILED TO SEND EMAIL SMTP CONFIG: {str(e)}")
+        print(f"🌟 DEVELOPMENT BYPASS (CONSOLE ONLY): OTP generated for {email} is -> [{otp}] <-")
+        print("="*80 + "\n")
+        return jsonify({
+            'message': 'Failed to send OTP via email. Please check SMTP settings.'
+        }), 500
         
     return jsonify({'message': 'If this email exists, an OTP will be sent.'}), 200
 

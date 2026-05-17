@@ -27,11 +27,29 @@ ChartJS.register(
 );
 
 const ParentDashboard = () => {
-    const { userProgress, getLessonResults, resetProgress, t, teacherMaterials } = useLearning();
+    const { userProgress, getLessonResults, resetProgress, t, teacherMaterials, curriculumLessons } = useLearning();
     const [loading, setLoading] = useState(false);
 
-    // Use real data if available, fallback to mock
-    const allLessons = (teacherMaterials && teacherMaterials.length > 0) ? teacherMaterials : mockLessons;
+    // Combine curriculum lessons and teacher materials
+    const combined = [];
+    const seenIds = new Set();
+
+    const appendLessons = (list) => {
+        if (Array.isArray(list)) {
+            list.forEach(l => {
+                const lid = l.id || l._id;
+                if (lid && !seenIds.has(lid)) {
+                    seenIds.add(lid);
+                    combined.push(l);
+                }
+            });
+        }
+    };
+
+    appendLessons(curriculumLessons);
+    appendLessons(teacherMaterials);
+
+    const allLessons = combined.length > 0 ? combined : mockLessons;
 
     const handleGenerateReport = async () => {
         const studentId = userProgress.userId || userProgress._id;

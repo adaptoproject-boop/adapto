@@ -45,6 +45,7 @@ const Quiz = () => {
                     }
                 }
             } else if (id) {
+                // 1. Check if it exists in local teacher materials
                 const material = teacherMaterials?.find(m => m._id === id || m.id === id);
                 if (material && material.quiz_data) {
                     setLessonData({ title: material.topic, subject: material.subject, _id: material.id || material._id });
@@ -72,6 +73,7 @@ const Quiz = () => {
                     return;
                 }
 
+                // 2. Check if it exists in local teacher quizzes
                 const teacherQuiz = teacherQuizzes?.find(q => q._id === id);
                 if (teacherQuiz) {
                     setLessonData({ title: teacherQuiz.topic, subject: teacherQuiz.subject, _id: teacherQuiz._id });
@@ -93,6 +95,38 @@ const Quiz = () => {
                     return;
                 }
 
+                // 3. Try to fetch from curriculum dataset lessons API
+                try {
+                    const response = await fetch(`http://localhost:5612/api/curriculum/lesson/${id}`);
+                    const data = await response.json();
+                    if (data.success && data.lesson) {
+                        const lesson = data.lesson;
+                        setLessonData({ title: lesson.topic, subject: lesson.subject, _id: lesson.id });
+                        
+                        const rawQuestions = lesson.quiz_data || [];
+                        const formattedQuestions = rawQuestions.map((q, i) => ({
+                            id: `curriculum_${lesson.id}_${i}`,
+                            question: q.question || q.text,
+                            options: q.options,
+                            correctAnswer: typeof q.answer === 'string'
+                                ? q.options.indexOf(q.answer)
+                                : (q.correctAnswer ?? q.answer),
+                            explanation: q.explanation
+                        }));
+
+                        setQuizData({
+                            lessonTitle: lesson.topic,
+                            subject: lesson.subject,
+                            level: lesson.difficulty || 'Easy',
+                            questions: formattedQuestions
+                        });
+                        return;
+                    }
+                } catch (err) {
+                    console.error("Error fetching lesson from curriculum API:", err);
+                }
+
+                // Fallback options
                 let lookupId = decodeURIComponent(id).trim();
                 const cleanLookup = lookupId.toLowerCase();
                 if (cleanLookup === "body parts") lookupId = "G1";

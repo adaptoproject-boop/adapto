@@ -83,7 +83,7 @@ def get_my_progress():
                 raise loop_e
 
         total_stars = user.get('stars') or 0
-        calculated_stars = sum(r['stars_earned'] for r in formatted_results)
+        calculated_stars = sum(r['starsEarned'] for r in formatted_results)
         
         # Derive completed lessons from quiz results
         derived_completed = list(set(r['lessonId'] for r in formatted_results if r['passed'] and r.get('lessonId')))
