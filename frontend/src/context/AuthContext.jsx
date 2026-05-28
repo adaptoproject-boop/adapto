@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
     );
 
     const [currentView, setCurrentView] = useState(
-        localStorage.getItem('currentView') || 'kid'
+        localStorage.getItem('currentView') || 'parent'
     );
 
     /**
@@ -73,7 +73,7 @@ export const AuthProvider = ({ children }) => {
      * No re-login required for family accounts.
      */
     const switchView = (view) => {
-        if (userInfo && (userInfo.role === 'kid' || userInfo.role === 'parent')) {
+        if (userInfo && userInfo.role === 'parent') {
             const updatedUser = { ...userInfo, role: view };
             setUserInfo(updatedUser);
             setCurrentView(view);
@@ -84,7 +84,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = () => {
         setUserInfo(null);
-        setCurrentView('kid');
+        setCurrentView('parent');
         localStorage.removeItem('userInfo');
         localStorage.removeItem('currentView');
         localStorage.removeItem('learningProgress');

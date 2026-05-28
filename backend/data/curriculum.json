@@ -1,92 +1,119 @@
 [
   {
-    "id": "66f61e17-d877-4207-893d-bff2ccb08202",
-    "subject": "Numbers & Math",
-    "topic": "Counting 1–10",
+    "id": "69ee223d-a62e-4814-b3f7-8922330f66a8",
+    "subject": "🔢 Numbers & Math",
+    "topic": "Counting 1 to 5",
     "difficulty": "Easy",
     "sequence_order": 1,
-    "grade_level": "Pre-K / K",
-    "age_range": "3–5",
-    "learning_objective": "Count objects from 1 to 10 and recognise each numeral",
-    "estimated_duration_min": 10,
+    "grade_level": "Toddler",
+    "age_range": "2-4",
+    "age_label": "Toddler 🍼",
+    "learning_objective": "Point to and count objects from 1 to 5",
+    "estimated_duration_min": 8,
     "video_url": "https://www.youtube.com/watch?v=iPLZwwTyPM8",
-    "tags": "math,numbers,counting,pre-k",
+    "tags": "numbers,counting,toddler",
+    "question_mode": "image + audio only",
     "quiz_data": [
       {
-        "question": "How many 🍎🍎🍎 apples are there?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🍎",
+        "image_alt": "One red apple",
         "options": [
-          "1",
-          "2",
-          "3",
-          "4"
+          "1️⃣",
+          "2️⃣",
+          "3️⃣",
+          "4️⃣"
         ],
-        "answer": "3",
-        "explanation": "Count each one: 1, 2, 3!"
+        "answer": "1️⃣",
+        "explanation": "One apple means the number 1.",
+        "audio_script": "Look at the apple! How many apples do you see? One! The answer is ONE."
       },
       {
-        "question": "What comes after 5?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🍎🍎",
+        "image_alt": "Two red apples",
         "options": [
-          "4",
-          "6",
-          "7",
-          "3"
+          "1️⃣",
+          "2️⃣",
+          "3️⃣",
+          "4️⃣"
         ],
-        "answer": "6",
-        "explanation": "5 is followed by 6."
+        "answer": "2️⃣",
+        "explanation": "Two apples means the number 2.",
+        "audio_script": "Count the apples with me! One… Two! The answer is TWO."
       },
       {
-        "question": "Pick the number seven.",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🌟🌟🌟",
+        "image_alt": "Three yellow stars",
         "options": [
-          "6",
-          "8",
-          "7",
-          "9"
+          "1️⃣",
+          "2️⃣",
+          "3️⃣",
+          "4️⃣"
         ],
-        "answer": "7",
-        "explanation": "Seven is written as 7."
+        "answer": "3️⃣",
+        "explanation": "Three stars means the number 3.",
+        "audio_script": "Count the stars! One, Two, Three! The answer is THREE."
       },
       {
-        "question": "How many fingers on one hand?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🐱🐱🐱🐱",
+        "image_alt": "Four little cats",
         "options": [
-          "4",
-          "5",
-          "6",
-          "3"
+          "2️⃣",
+          "3️⃣",
+          "4️⃣",
+          "5️⃣"
         ],
-        "answer": "5",
-        "explanation": "A hand has 5 fingers."
+        "answer": "4️⃣",
+        "explanation": "Four cats means the number 4.",
+        "audio_script": "Count the cats! One, Two, Three, Four! The answer is FOUR."
       },
       {
-        "question": "What is 1 + 1?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🎈🎈🎈🎈🎈",
+        "image_alt": "Five colourful balloons",
         "options": [
-          "1",
-          "2",
-          "3",
-          "4"
+          "3️⃣",
+          "4️⃣",
+          "5️⃣",
+          "6️⃣"
         ],
-        "answer": "2",
-        "explanation": "One plus one equals 2."
+        "answer": "5️⃣",
+        "explanation": "Five balloons means the number 5.",
+        "audio_script": "Count the balloons! One, Two, Three, Four, Five! The answer is FIVE."
       }
     ],
     "min_pass_score": 70,
     "prerequisite_topic_id": null,
-    "adaptive_hint": "Score < 60 % → replay video, then retry quiz."
+    "adaptive_hint": "Replay video with emotion model set to slow pace; use sound & tap interactions only."
   },
   {
-    "id": "7e5897d8-fc0a-4fd2-9096-f70e6487e8af",
-    "subject": "Numbers & Math",
-    "topic": "Basic Addition & Subtraction",
+    "id": "e2a54260-b782-4faa-b284-fe5917c9bad5",
+    "subject": "🔢 Numbers & Math",
+    "topic": "Adding & Subtracting (1–10)",
     "difficulty": "Medium",
     "sequence_order": 2,
-    "grade_level": "Grade 1",
-    "age_range": "5–7",
+    "grade_level": "Pre-K / Grade 1",
+    "age_range": "5-7",
+    "age_label": "Pre-K / Kinder 🧒",
     "learning_objective": "Add and subtract single-digit numbers up to 10",
-    "estimated_duration_min": 15,
+    "estimated_duration_min": 12,
     "video_url": "https://www.youtube.com/watch?v=YSDdPEV8cs4",
-    "tags": "math,addition,subtraction,grade1",
+    "tags": "numbers,addition,subtraction,grade1",
+    "question_mode": "image + short text + audio",
     "quiz_data": [
       {
-        "question": "2 + 3 = ?",
+        "question_type": "image_text",
+        "question_text": "2 + 3 = ?",
+        "image_emoji": "🍎🍎 + 🍎🍎🍎",
+        "image_alt": "Two apples plus three apples",
         "options": [
           "4",
           "5",
@@ -94,10 +121,14 @@
           "7"
         ],
         "answer": "5",
-        "explanation": "2 plus 3 equals 5."
+        "explanation": "2 apples plus 3 apples = 5 apples!",
+        "audio_script": "We have TWO apples, and we add THREE more. Count them all! The answer is FIVE."
       },
       {
-        "question": "9 - 4 = ?",
+        "question_type": "image_text",
+        "question_text": "9 - 4 = ?",
+        "image_emoji": "🐟🐟🐟🐟🐟🐟🐟🐟🐟 minus 🐟🐟🐟🐟",
+        "image_alt": "Nine fish take away four fish",
         "options": [
           "3",
           "4",
@@ -105,10 +136,14 @@
           "6"
         ],
         "answer": "5",
-        "explanation": "9 take away 4 leaves 5."
+        "explanation": "9 take away 4 leaves 5.",
+        "audio_script": "We start with NINE fish, and take away FOUR. How many are left? FIVE!"
       },
       {
-        "question": "4 + 4 = ?",
+        "question_type": "image_text",
+        "question_text": "4 + 4 = ?",
+        "image_emoji": "🌈",
+        "image_alt": "Four plus four balloons",
         "options": [
           "6",
           "7",
@@ -116,21 +151,29 @@
           "9"
         ],
         "answer": "8",
-        "explanation": "4 plus 4 equals 8."
+        "explanation": "4 plus 4 equals 8.",
+        "audio_script": "Four plus four equals EIGHT. Count on your fingers!"
       },
       {
-        "question": "7 - 7 = ?",
+        "question_type": "image_text",
+        "question_text": "10 - 3 = ?",
+        "image_emoji": "🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪",
+        "image_alt": "Ten cookies, eat three",
         "options": [
-          "0",
-          "1",
-          "2",
-          "3"
+          "6",
+          "7",
+          "8",
+          "9"
         ],
-        "answer": "0",
-        "explanation": "Any number minus itself is 0."
+        "answer": "7",
+        "explanation": "10 cookies take away 3 = 7 cookies left.",
+        "audio_script": "Ten cookies, take away THREE. Seven cookies are left!"
       },
       {
-        "question": "5 + 5 = ?",
+        "question_type": "image_text",
+        "question_text": "5 + 5 = ?",
+        "image_emoji": "🤲",
+        "image_alt": "Two hands with five fingers each",
         "options": [
           "8",
           "9",
@@ -138,28 +181,34 @@
           "11"
         ],
         "answer": "10",
-        "explanation": "5 plus 5 equals 10."
+        "explanation": "5 fingers on each hand = 10 fingers total!",
+        "audio_script": "Count all your fingers on BOTH hands! Five plus five equals TEN."
       }
     ],
     "min_pass_score": 70,
-    "prerequisite_topic_id": "66f61e17-d877-4207-893d-bff2ccb08202",
-    "adaptive_hint": "Score < 60 % → suggest Easy topic in same subject."
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "If score < 60% → replay video; simplify to image-only quiz next attempt."
   },
   {
-    "id": "39e3a7dc-1335-4799-ac93-582cca5ab9ca",
-    "subject": "Numbers & Math",
-    "topic": "Multiplication (×1–×5)",
+    "id": "256b6a16-6bae-4deb-8a3f-bf9c7aaf5193",
+    "subject": "🔢 Numbers & Math",
+    "topic": "Multiplication & Number Patterns",
     "difficulty": "Hard",
     "sequence_order": 3,
-    "grade_level": "Grade 2",
-    "age_range": "7–9",
-    "learning_objective": "Multiply numbers up to 5 × 5 and recognise number patterns",
-    "estimated_duration_min": 20,
+    "grade_level": "Grade 2–3",
+    "age_range": "8-10",
+    "age_label": "Early Primary 📚",
+    "learning_objective": "Multiply up to 5×5 and identify rules in number patterns",
+    "estimated_duration_min": 18,
     "video_url": "https://www.youtube.com/watch?v=FG18571ruVQ",
-    "tags": "math,multiplication,tables,grade2",
+    "tags": "numbers,multiplication,patterns,grade2",
+    "question_mode": "image + text",
     "quiz_data": [
       {
-        "question": "2 × 3 = ?",
+        "question_type": "image_text",
+        "question_text": "2 × 3 = ?",
+        "image_emoji": "🥚🥚🥚  🥚🥚🥚",
+        "image_alt": "Two rows of three eggs",
         "options": [
           "4",
           "5",
@@ -167,21 +216,14 @@
           "7"
         ],
         "answer": "6",
-        "explanation": "2 groups of 3 = 6."
+        "explanation": "2 groups of 3 = 6.",
+        "audio_script": ""
       },
       {
-        "question": "4 × 2 = ?",
-        "options": [
-          "6",
-          "7",
-          "8",
-          "9"
-        ],
-        "answer": "8",
-        "explanation": "4 groups of 2 = 8."
-      },
-      {
-        "question": "5 × 5 = ?",
+        "question_type": "image_text",
+        "question_text": "5 × 5 = ?",
+        "image_emoji": "⭐",
+        "image_alt": "Five groups of five stars",
         "options": [
           "20",
           "22",
@@ -189,10 +231,14 @@
           "30"
         ],
         "answer": "25",
-        "explanation": "5 groups of 5 = 25."
+        "explanation": "5 groups of 5 = 25.",
+        "audio_script": ""
       },
       {
-        "question": "1, 3, 5, 7, __?",
+        "question_type": "image_text",
+        "question_text": "1, 3, 5, 7, __ ?",
+        "image_emoji": "📈",
+        "image_alt": "Odd numbers going up",
         "options": [
           "8",
           "9",
@@ -200,112 +246,159 @@
           "11"
         ],
         "answer": "9",
-        "explanation": "Odd numbers add 2 each time."
+        "explanation": "Odd numbers add 2 each time: +2.",
+        "audio_script": ""
       },
       {
-        "question": "What rule? 3, 6, 9, 12",
+        "question_type": "image_text",
+        "question_text": "What rule? 3, 6, 9, 12",
+        "image_emoji": "🔢",
+        "image_alt": "A number sequence on a board",
         "options": [
-          "×2",
           "+2",
           "+3",
-          "+4"
+          "+4",
+          "×2"
         ],
         "answer": "+3",
-        "explanation": "Adding 3 each step."
+        "explanation": "Each step adds 3.",
+        "audio_script": ""
+      },
+      {
+        "question_type": "image_text",
+        "question_text": "4 × 2 = ?",
+        "image_emoji": "🍪🍪  🍪🍪  🍪🍪  🍪🍪",
+        "image_alt": "Four pairs of cookies",
+        "options": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "answer": "8",
+        "explanation": "4 groups of 2 = 8.",
+        "audio_script": ""
       }
     ],
     "min_pass_score": 50,
-    "prerequisite_topic_id": "7e5897d8-fc0a-4fd2-9096-f70e6487e8af",
-    "adaptive_hint": "Score < 50 % → revert to Medium level in same subject."
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "If score < 50% → suggest younger age group topic; flag for teacher review."
   },
   {
-    "id": "529b1326-e313-4b04-b89c-0929723239c2",
-    "subject": "Language Basics",
-    "topic": "Hello, Goodbye & Colours",
+    "id": "39b2db02-fc3b-4f14-84bb-82e43ac6f794",
+    "subject": "🗣️ Language Basics",
+    "topic": "Hello, Bye & Basic Colours",
     "difficulty": "Easy",
     "sequence_order": 1,
-    "grade_level": "Pre-K / K",
-    "age_range": "3–5",
-    "learning_objective": "Use greetings (hello/goodbye) and name 6 basic colours in English",
-    "estimated_duration_min": 10,
-    "video_url": "https://www.youtube.com/watch?v=_UR-l3QI2nE",
-    "tags": "language,english,greetings,colours",
+    "grade_level": "Toddler",
+    "age_range": "2-4",
+    "age_label": "Toddler 🍼",
+    "learning_objective": "Wave hello and goodbye, and point to red, blue, yellow and green",
+    "estimated_duration_min": 8,
+    "video_url": "https://www.youtube.com/watch?v=fN1Cyr0ZK9M",
+    "tags": "language,greetings,colours,toddler",
+    "question_mode": "image + audio only",
     "quiz_data": [
       {
-        "question": "What do you say when you meet someone?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "👋",
+        "image_alt": "A hand waving hello",
         "options": [
-          "Bye",
-          "Hello",
-          "Sorry",
-          "Thanks"
+          "👋 Hello",
+          "😴 Sleep",
+          "🍽️ Eat",
+          "🏃 Run"
         ],
-        "answer": "Hello",
-        "explanation": "Hello or Hi is a greeting."
+        "answer": "👋 Hello",
+        "explanation": "We wave and say Hello when we see someone!",
+        "audio_script": "Look at the waving hand! When we see a friend, we say… HELLO! Can you wave hello?"
       },
       {
-        "question": "What do you say in the morning?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🔴",
+        "image_alt": "A big red circle",
         "options": [
-          "Good night",
-          "Good morning",
-          "Good evening",
-          "Bye"
+          "🔵 Blue",
+          "🟡 Yellow",
+          "🔴 Red",
+          "🟢 Green"
         ],
-        "answer": "Good morning",
-        "explanation": "Good morning is for the morning time."
+        "answer": "🔴 Red",
+        "explanation": "This colour is RED!",
+        "audio_script": "What colour is this? It is RED! Like a strawberry or a fire truck. RED!"
       },
       {
-        "question": "🍎 An apple is usually __?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🌻",
+        "image_alt": "A big yellow sunflower",
         "options": [
-          "Blue",
-          "Red",
-          "Green",
-          "Purple"
+          "🔴 Red",
+          "🟡 Yellow",
+          "🔵 Blue",
+          "🟢 Green"
         ],
-        "answer": "Red",
-        "explanation": "Apples are often red."
+        "answer": "🟡 Yellow",
+        "explanation": "Sunflowers are YELLOW, just like the sun!",
+        "audio_script": "Look at the pretty flower! What colour is it? It is YELLOW, like sunshine!"
       },
       {
-        "question": "🌳 Leaves are __?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🐸",
+        "image_alt": "A green frog sitting on a leaf",
         "options": [
-          "Red",
-          "Green",
-          "Pink",
-          "Orange"
+          "🔴 Red",
+          "🟡 Yellow",
+          "🔵 Blue",
+          "🟢 Green"
         ],
-        "answer": "Green",
-        "explanation": "Leaves are green."
+        "answer": "🟢 Green",
+        "explanation": "Frogs are GREEN, just like grass and leaves!",
+        "audio_script": "Look at the frog! What colour is the frog? It is GREEN!"
       },
       {
-        "question": "🌞 The sun looks __?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🚪",
+        "image_alt": "Someone walking out of a door and waving",
         "options": [
-          "Purple",
-          "Blue",
-          "Yellow",
-          "White"
+          "👋 Goodbye",
+          "🍽️ Eat",
+          "😴 Sleep",
+          "🏃 Run"
         ],
-        "answer": "Yellow",
-        "explanation": "The sun looks yellow."
+        "answer": "👋 Goodbye",
+        "explanation": "We wave and say Goodbye when we leave!",
+        "audio_script": "They are leaving! When we leave, we say… GOODBYE! Can you wave goodbye?"
       }
     ],
     "min_pass_score": 70,
     "prerequisite_topic_id": null,
-    "adaptive_hint": "Score < 60 % → replay video, then retry quiz."
+    "adaptive_hint": "Replay video with emotion model set to slow pace; use sound & tap interactions only."
   },
   {
-    "id": "c708cbeb-ac34-42d1-aed5-2e18a06d3fc0",
-    "subject": "Language Basics",
-    "topic": "Opposites & Simple Sentences",
+    "id": "936a47c1-7a6f-43f6-bfbf-9d147879c33b",
+    "subject": "🗣️ Language Basics",
+    "topic": "Opposites & Simple Words",
     "difficulty": "Medium",
     "sequence_order": 2,
-    "grade_level": "Grade 1",
-    "age_range": "5–7",
-    "learning_objective": "Match opposite word pairs and build simple Subject-Verb-Object sentences",
-    "estimated_duration_min": 15,
-    "video_url": "https://www.youtube.com/watch?v=zFzgHsM6V_U",
-    "tags": "language,opposites,sentences,vocabulary",
+    "grade_level": "Pre-K / Grade 1",
+    "age_range": "5-7",
+    "age_label": "Pre-K / Kinder 🧒",
+    "learning_objective": "Match opposite word pairs and use simple describing words",
+    "estimated_duration_min": 12,
+    "video_url": "https://www.youtube.com/watch?v=RNUZBHlRH4Y",
+    "tags": "language,opposites,vocabulary,describing",
+    "question_mode": "image + short text + audio",
     "quiz_data": [
       {
-        "question": "Opposite of HOT?",
+        "question_type": "image_text",
+        "question_text": "What is the opposite of HOT? 🔥",
+        "image_emoji": "🧊",
+        "image_alt": "A cold ice cube",
         "options": [
           "Warm",
           "Cool",
@@ -313,83 +406,94 @@
           "Mild"
         ],
         "answer": "Cold",
-        "explanation": "Hot ↔ Cold."
+        "explanation": "Hot is the opposite of Cold.",
+        "audio_script": "If HOT is like fire, the opposite is… COLD, like ice!"
       },
       {
-        "question": "Opposite of BIG?",
+        "question_type": "image_text",
+        "question_text": "What is the opposite of BIG? 🐘",
+        "image_emoji": "🐭",
+        "image_alt": "A tiny little mouse",
         "options": [
-          "Tiny",
           "Huge",
+          "Tiny",
           "Small",
           "Short"
         ],
         "answer": "Small",
-        "explanation": "Big ↔ Small."
+        "explanation": "Big is the opposite of Small.",
+        "audio_script": "An elephant is BIG. A mouse is… SMALL!"
       },
       {
-        "question": "Which is a complete sentence?",
+        "question_type": "image_text",
+        "question_text": "What is the opposite of DAY? ☀️",
+        "image_emoji": "🌙",
+        "image_alt": "A night sky with a moon",
         "options": [
-          "The cat",
-          "Runs fast",
-          "The cat runs.",
-          "Quickly"
+          "Dawn",
+          "Dusk",
+          "Morning",
+          "Night"
         ],
-        "answer": "The cat runs.",
-        "explanation": "A sentence needs a subject and a verb."
+        "answer": "Night",
+        "explanation": "Day is the opposite of Night.",
+        "audio_script": "The SUN comes out during the DAY. The MOON comes out at… NIGHT!"
       },
       {
-        "question": "'The dog __ a bone.' Fill in:",
+        "question_type": "image_text",
+        "question_text": "What is the opposite of HAPPY? 😊",
+        "image_emoji": "😢",
+        "image_alt": "A sad face with a tear",
         "options": [
-          "eat",
-          "eats",
-          "eating",
-          "ate"
+          "Glad",
+          "Sad",
+          "Angry",
+          "Tired"
         ],
-        "answer": "eats",
-        "explanation": "Present tense: the dog eats."
+        "answer": "Sad",
+        "explanation": "Happy is the opposite of Sad.",
+        "audio_script": "A smiling face is HAPPY. A crying face is… SAD!"
       },
       {
-        "question": "What is the subject in \"Birds fly\"?",
+        "question_type": "image_text",
+        "question_text": "What is the opposite of FAST? 🐆",
+        "image_emoji": "🐢",
+        "image_alt": "A slow tortoise walking",
         "options": [
-          "Fly",
-          "Birds",
-          "Sky",
-          "Fast"
+          "Quick",
+          "Slow",
+          "Still",
+          "Lazy"
         ],
-        "answer": "Birds",
-        "explanation": "Subject = who does the action."
+        "answer": "Slow",
+        "explanation": "Fast is the opposite of Slow.",
+        "audio_script": "A cheetah is FAST. A tortoise is… SLOW!"
       }
     ],
     "min_pass_score": 60,
-    "prerequisite_topic_id": "529b1326-e313-4b04-b89c-0929723239c2",
-    "adaptive_hint": "Score < 60 % → suggest Easy topic in same subject."
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "If score < 60% → replay video; simplify to image-only quiz next attempt."
   },
   {
-    "id": "f8f394c5-f18f-4068-a9ab-cfc5c0aaafbe",
-    "subject": "Language Basics",
-    "topic": "Question Words (Who/What/Where/When/Why)",
+    "id": "e5acf351-2a73-4174-9679-e76abe6bdeb0",
+    "subject": "🗣️ Language Basics",
+    "topic": "Question Words & Complete Sentences",
     "difficulty": "Hard",
     "sequence_order": 3,
-    "grade_level": "Grade 2",
-    "age_range": "7–9",
-    "learning_objective": "Use Who, What, Where, When, Why and How correctly in questions",
-    "estimated_duration_min": 20,
-    "video_url": "https://www.youtube.com/watch?v=zFzgHsM6V_U",
-    "tags": "language,questions,grammar,grade2",
+    "grade_level": "Grade 2–3",
+    "age_range": "8-10",
+    "age_label": "Early Primary 📚",
+    "learning_objective": "Use Who/What/Where/When/Why correctly and build SVO sentences",
+    "estimated_duration_min": 18,
+    "video_url": "https://www.youtube.com/watch?v=vXWK1-L41f0",
+    "tags": "language,questions,sentences,grammar,grade2",
+    "question_mode": "image + text",
     "quiz_data": [
       {
-        "question": "___ are you? (asking name)",
-        "options": [
-          "What",
-          "Who",
-          "Where",
-          "Why"
-        ],
-        "answer": "What",
-        "explanation": "'What is your name?' asks for a name."
-      },
-      {
-        "question": "___ do you live? (asking place)",
+        "question_type": "image_text",
+        "question_text": "___ do you live? (asking about a place)",
+        "image_emoji": "🗺️",
+        "image_alt": "A map showing different places",
         "options": [
           "What",
           "Who",
@@ -397,10 +501,14 @@
           "When"
         ],
         "answer": "Where",
-        "explanation": "Where asks about place."
+        "explanation": "WHERE asks about a place.",
+        "audio_script": ""
       },
       {
-        "question": "___ is your birthday? (asking time)",
+        "question_type": "image_text",
+        "question_text": "___ is your birthday? (asking about time)",
+        "image_emoji": "📅",
+        "image_alt": "A calendar with a birthday cake",
         "options": [
           "Who",
           "Where",
@@ -408,21 +516,44 @@
           "How"
         ],
         "answer": "When",
-        "explanation": "When asks about time."
+        "explanation": "WHEN asks about time.",
+        "audio_script": ""
       },
       {
-        "question": "___ is 2 + 2? (asking for answer)",
+        "question_type": "image_text",
+        "question_text": "Which is a complete sentence?",
+        "image_emoji": "📝",
+        "image_alt": "A notebook with sentences written",
         "options": [
-          "How",
-          "Why",
-          "When",
-          "What"
+          "The cat",
+          "Runs fast",
+          "The cat runs.",
+          "Quickly"
         ],
-        "answer": "What",
-        "explanation": "What asks about a thing or number."
+        "answer": "The cat runs.",
+        "explanation": "A sentence needs a subject AND a verb.",
+        "audio_script": ""
       },
       {
-        "question": "___ is the sky blue? (asking reason)",
+        "question_type": "image_text",
+        "question_text": "The dog ___ a bone. Fill in the blank.",
+        "image_emoji": "🦴",
+        "image_alt": "A dog with a bone",
+        "options": [
+          "eat",
+          "eats",
+          "eating",
+          "ate"
+        ],
+        "answer": "eats",
+        "explanation": "Present tense: \"The dog eats.\"",
+        "audio_script": ""
+      },
+      {
+        "question_type": "image_text",
+        "question_text": "___ is the sky blue? (asking for a reason)",
+        "image_emoji": "🌤️",
+        "image_alt": "A blue sky with clouds",
         "options": [
           "When",
           "Where",
@@ -430,174 +561,224 @@
           "Who"
         ],
         "answer": "Why",
-        "explanation": "Why asks for a reason."
+        "explanation": "WHY asks for a reason.",
+        "audio_script": ""
       }
     ],
     "min_pass_score": 50,
-    "prerequisite_topic_id": "c708cbeb-ac34-42d1-aed5-2e18a06d3fc0",
-    "adaptive_hint": "Score < 50 % → revert to Medium level in same subject."
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "If score < 50% → suggest younger age group topic; flag for teacher review."
   },
   {
-    "id": "c97cb79f-0b2d-496e-aa20-2e2585a85e6e",
-    "subject": "Shapes & Colors",
-    "topic": "Basic 2-D Shapes",
+    "id": "b19cc474-8172-4835-89bf-4dd02ca17cf5",
+    "subject": "🔷 Shapes & Colors",
+    "topic": "Circle, Square & Triangle",
     "difficulty": "Easy",
     "sequence_order": 1,
-    "grade_level": "Pre-K / K",
-    "age_range": "3–5",
-    "learning_objective": "Identify circle, square, triangle and rectangle by name and sides",
-    "estimated_duration_min": 10,
+    "grade_level": "Toddler",
+    "age_range": "2-4",
+    "age_label": "Toddler 🍼",
+    "learning_objective": "Point to and name a circle, square and triangle",
+    "estimated_duration_min": 8,
     "video_url": "https://www.youtube.com/watch?v=beTDz9HSNOM",
-    "tags": "shapes,2D,circle,square,triangle",
+    "tags": "shapes,circle,square,triangle,toddler",
+    "question_mode": "image + audio only",
     "quiz_data": [
       {
-        "question": "Which shape has 3 sides?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "⭕",
+        "image_alt": "A big round circle",
         "options": [
-          "Circle",
-          "Square",
-          "Triangle",
-          "Rectangle"
+          "⭕ Circle",
+          "⬜ Square",
+          "🔺 Triangle",
+          "🔷 Diamond"
         ],
-        "answer": "Triangle",
-        "explanation": "A triangle has 3 sides and 3 corners."
+        "answer": "⭕ Circle",
+        "explanation": "This round shape is a CIRCLE!",
+        "audio_script": "Look at this round shape with no corners! It is a CIRCLE! Can you draw a circle in the air?"
       },
       {
-        "question": "A wheel looks like a __?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "⬜",
+        "image_alt": "A square with four equal sides",
         "options": [
-          "Square",
-          "Circle",
-          "Triangle",
-          "Star"
+          "⭕ Circle",
+          "⬜ Square",
+          "🔺 Triangle",
+          "⬛ Rectangle"
         ],
-        "answer": "Circle",
-        "explanation": "A circle is perfectly round."
+        "answer": "⬜ Square",
+        "explanation": "This shape with four equal sides is a SQUARE!",
+        "audio_script": "This shape has four sides, all the same size. It is a SQUARE!"
       },
       {
-        "question": "How many sides does a square have?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🔺",
+        "image_alt": "A red triangle pointing up",
         "options": [
-          "3",
-          "4",
-          "5",
-          "6"
+          "⭕ Circle",
+          "⬜ Square",
+          "🔺 Triangle",
+          "🔷 Diamond"
         ],
-        "answer": "4",
-        "explanation": "A square has 4 equal sides."
+        "answer": "🔺 Triangle",
+        "explanation": "A triangle has three sides and three corners!",
+        "audio_script": "Count the corners! One, Two, Three! This shape is a TRIANGLE!"
       },
       {
-        "question": "A door is shaped like a __?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🍕",
+        "image_alt": "A pizza slice shaped like a triangle",
         "options": [
-          "Circle",
-          "Triangle",
-          "Rectangle",
-          "Diamond"
+          "⭕ Circle",
+          "⬜ Square",
+          "🔺 Triangle",
+          "⬛ Rectangle"
         ],
-        "answer": "Rectangle",
-        "explanation": "A rectangle has 4 sides — 2 long, 2 short."
+        "answer": "🔺 Triangle",
+        "explanation": "A pizza slice is shaped like a triangle!",
+        "audio_script": "This pizza slice has THREE sides. That means it is a TRIANGLE!"
       },
       {
-        "question": "Which has no corners?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🎡",
+        "image_alt": "A big round Ferris wheel",
         "options": [
-          "Square",
-          "Triangle",
-          "Circle",
-          "Rectangle"
+          "⭕ Circle",
+          "⬜ Square",
+          "🔺 Triangle",
+          "🔷 Diamond"
         ],
-        "answer": "Circle",
-        "explanation": "A circle has no corners or straight sides."
+        "answer": "⭕ Circle",
+        "explanation": "The Ferris wheel is a circle shape!",
+        "audio_script": "The Ferris wheel is ROUND with no corners at all! That shape is called a CIRCLE!"
       }
     ],
     "min_pass_score": 70,
     "prerequisite_topic_id": null,
-    "adaptive_hint": "Score < 60 % → replay video, then retry quiz."
+    "adaptive_hint": "Replay video with emotion model set to slow pace; use sound & tap interactions only."
   },
   {
-    "id": "5da6cb5a-394e-48b0-843e-b7fc2e17d246",
-    "subject": "Shapes & Colors",
-    "topic": "Primary & Secondary Colours",
+    "id": "516d46fb-bc2b-4809-89ed-9da4f60c6cfe",
+    "subject": "🔷 Shapes & Colors",
+    "topic": "Colours — Mixing & Matching",
     "difficulty": "Medium",
     "sequence_order": 2,
-    "grade_level": "Grade 1",
-    "age_range": "5–7",
-    "learning_objective": "Mix primary colours (red/blue/yellow) to produce secondary colours",
-    "estimated_duration_min": 15,
+    "grade_level": "Pre-K / Grade 1",
+    "age_range": "5-7",
+    "age_label": "Pre-K / Kinder 🧒",
+    "learning_objective": "Name 6 colours and understand that mixing primary colours makes new ones",
+    "estimated_duration_min": 12,
     "video_url": "https://www.youtube.com/watch?v=2aKep6PUFfI",
     "tags": "colors,primary,secondary,mixing,art",
+    "question_mode": "image + short text + audio",
     "quiz_data": [
       {
-        "question": "Red + Blue = ?",
+        "question_type": "image_text",
+        "question_text": "🔴 Red + 🔵 Blue = ?",
+        "image_emoji": "🎨",
+        "image_alt": "A paint palette mixing red and blue",
         "options": [
-          "Green",
-          "Orange",
-          "Purple",
-          "Brown"
+          "🟠 Orange",
+          "🟢 Green",
+          "🟣 Purple",
+          "🟤 Brown"
         ],
-        "answer": "Purple",
-        "explanation": "Red and blue mixed make purple."
+        "answer": "🟣 Purple",
+        "explanation": "Red and blue paint mixed together make purple!",
+        "audio_script": "Mix RED and BLUE together. What colour do you get? PURPLE!"
       },
       {
-        "question": "Blue + Yellow = ?",
+        "question_type": "image_text",
+        "question_text": "🔵 Blue + 🟡 Yellow = ?",
+        "image_emoji": "🎨",
+        "image_alt": "Mixing blue and yellow paint",
         "options": [
-          "Orange",
-          "Green",
-          "Purple",
-          "Pink"
+          "🟠 Orange",
+          "🟢 Green",
+          "🟣 Purple",
+          "🩷 Pink"
         ],
-        "answer": "Green",
-        "explanation": "Blue and yellow make green."
+        "answer": "🟢 Green",
+        "explanation": "Blue and yellow mixed make green!",
+        "audio_script": "Mix BLUE and YELLOW. What colour do you get? GREEN, like grass!"
       },
       {
-        "question": "Red + Yellow = ?",
+        "question_type": "image_text",
+        "question_text": "What colour is the 🍌 banana?",
+        "image_emoji": "🍌",
+        "image_alt": "A ripe yellow banana",
         "options": [
-          "Purple",
-          "Green",
-          "Orange",
-          "Brown"
+          "🔴 Red",
+          "🟡 Yellow",
+          "🔵 Blue",
+          "🟢 Green"
         ],
-        "answer": "Orange",
-        "explanation": "Red and yellow make orange."
+        "answer": "🟡 Yellow",
+        "explanation": "Bananas are yellow!",
+        "audio_script": "Look at the banana! What colour is it? YELLOW!"
       },
       {
-        "question": "Which are PRIMARY colours?",
+        "question_type": "image_text",
+        "question_text": "What colour is the 🌊 ocean?",
+        "image_emoji": "🌊",
+        "image_alt": "Blue ocean waves",
         "options": [
-          "Red,Green,Blue",
-          "Red,Blue,Yellow",
-          "Orange,Purple,Green",
-          "Pink,Brown,Grey"
+          "🔴 Red",
+          "🟠 Orange",
+          "🔵 Blue",
+          "🟢 Green"
         ],
-        "answer": "Red,Blue,Yellow",
-        "explanation": "The 3 primary colours are red, blue, and yellow."
+        "answer": "🔵 Blue",
+        "explanation": "The ocean is blue!",
+        "audio_script": "The ocean looks BLUE! What colour is the ocean?"
       },
       {
-        "question": "What do ALL primary colours mixed make?",
+        "question_type": "image_text",
+        "question_text": "🔴 Red + 🟡 Yellow = ?",
+        "image_emoji": "🎨",
+        "image_alt": "Mixing red and yellow paint",
         "options": [
-          "White",
-          "Black",
-          "Grey",
-          "Brown"
+          "🟣 Purple",
+          "🟢 Green",
+          "🟠 Orange",
+          "🟤 Brown"
         ],
-        "answer": "Brown",
-        "explanation": "All primary colours mixed together make brown."
+        "answer": "🟠 Orange",
+        "explanation": "Red and yellow mixed make orange!",
+        "audio_script": "Mix RED and YELLOW. You get ORANGE, like an orange fruit!"
       }
     ],
     "min_pass_score": 60,
-    "prerequisite_topic_id": "c97cb79f-0b2d-496e-aa20-2e2585a85e6e",
-    "adaptive_hint": "Score < 60 % → suggest Easy topic in same subject."
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "If score < 60% → replay video; simplify to image-only quiz next attempt."
   },
   {
-    "id": "1d20c06e-c6e5-4eaf-87dc-2208e40997ef",
-    "subject": "Shapes & Colors",
-    "topic": "3-D Shapes & Symmetry",
+    "id": "782649d5-b91a-4d65-a047-98aec0e6a6df",
+    "subject": "🔷 Shapes & Colors",
+    "topic": "3-D Shapes & Lines of Symmetry",
     "difficulty": "Hard",
     "sequence_order": 3,
-    "grade_level": "Grade 2",
-    "age_range": "7–9",
-    "learning_objective": "Recognise cube, sphere, cylinder, cone and identify lines of symmetry",
-    "estimated_duration_min": 20,
-    "video_url": "https://www.youtube.com/watch?v=WMboDU3Wcgc",
+    "grade_level": "Grade 2–3",
+    "age_range": "8-10",
+    "age_label": "Early Primary 📚",
+    "learning_objective": "Identify cube, sphere, cylinder and cone; find lines of symmetry",
+    "estimated_duration_min": 18,
+    "video_url": "https://www.youtube.com/watch?v=2cg-Uc556-Q",
     "tags": "shapes,3D,cube,sphere,symmetry,geometry",
+    "question_mode": "image + text",
     "quiz_data": [
       {
-        "question": "A ball is a __?",
+        "question_type": "image_text",
+        "question_text": "What 3-D shape is a football? ⚽",
+        "image_emoji": "⚽",
+        "image_alt": "A round football",
         "options": [
           "Cube",
           "Cone",
@@ -605,10 +786,14 @@
           "Cylinder"
         ],
         "answer": "Sphere",
-        "explanation": "A sphere is perfectly round like a ball."
+        "explanation": "A sphere is perfectly round, like a ball.",
+        "audio_script": ""
       },
       {
-        "question": "A dice is a __?",
+        "question_type": "image_text",
+        "question_text": "What 3-D shape is a dice? 🎲",
+        "image_emoji": "🎲",
+        "image_alt": "A six-sided dice",
         "options": [
           "Sphere",
           "Cylinder",
@@ -616,10 +801,14 @@
           "Cone"
         ],
         "answer": "Cube",
-        "explanation": "A cube has 6 square faces."
+        "explanation": "A cube has 6 square faces, like a dice.",
+        "audio_script": ""
       },
       {
-        "question": "How many faces does a cube have?",
+        "question_type": "image_text",
+        "question_text": "How many faces does a cube have? 🎲",
+        "image_emoji": "📦",
+        "image_alt": "A cube-shaped box",
         "options": [
           "4",
           "5",
@@ -627,10 +816,14 @@
           "8"
         ],
         "answer": "6",
-        "explanation": "Top, bottom, front, back, left, right = 6 faces."
+        "explanation": "A cube has 6 faces: top, bottom, front, back, left, right.",
+        "audio_script": ""
       },
       {
-        "question": "A shape that looks the same on both sides is __?",
+        "question_type": "image_text",
+        "question_text": "A shape that looks the same on both sides is called __?",
+        "image_emoji": "🦋",
+        "image_alt": "A butterfly with symmetric wings",
         "options": [
           "Asymmetric",
           "Symmetric",
@@ -638,207 +831,269 @@
           "Random"
         ],
         "answer": "Symmetric",
-        "explanation": "Symmetry means both halves match."
+        "explanation": "Symmetric means both halves look the same.",
+        "audio_script": ""
       },
       {
-        "question": "How many lines of symmetry does a circle have?",
+        "question_type": "image_text",
+        "question_text": "How many lines of symmetry does a circle have?",
+        "image_emoji": "⭕",
+        "image_alt": "A circle with multiple fold lines",
         "options": [
           "1",
-          "2",
           "4",
+          "8",
           "Infinite"
         ],
         "answer": "Infinite",
-        "explanation": "A circle has infinite lines of symmetry."
+        "explanation": "You can fold a circle perfectly in half in any direction — infinite lines!",
+        "audio_script": ""
       }
     ],
     "min_pass_score": 50,
-    "prerequisite_topic_id": "5da6cb5a-394e-48b0-843e-b7fc2e17d246",
-    "adaptive_hint": "Score < 50 % → revert to Medium level in same subject."
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "If score < 50% → suggest younger age group topic; flag for teacher review."
   },
   {
-    "id": "098465de-9e97-4d06-867c-b66b7d4e9013",
-    "subject": "Animals & Nature",
+    "id": "b92f8b92-212a-4fae-b4d4-035fa81948a0",
+    "subject": "🐾 Animals & Nature",
     "topic": "Farm Animals & Their Sounds",
     "difficulty": "Easy",
     "sequence_order": 1,
-    "grade_level": "Pre-K / K",
-    "age_range": "3–5",
-    "learning_objective": "Name common farm animals and match each to its sound",
-    "estimated_duration_min": 10,
+    "grade_level": "Toddler",
+    "age_range": "2-4",
+    "age_label": "Toddler 🍼",
+    "learning_objective": "Point to a cow, dog, cat and duck and copy their sounds",
+    "estimated_duration_min": 8,
     "video_url": "https://www.youtube.com/watch?v=3ovC3hhrcqk",
-    "tags": "animals,farm,sounds,pre-k",
+    "tags": "animals,farm,sounds,toddler",
+    "question_mode": "image + audio only",
     "quiz_data": [
       {
-        "question": "Which animal says MOO?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🐄",
+        "image_alt": "A big brown cow standing in a field",
         "options": [
-          "Pig",
-          "Cow",
-          "Horse",
-          "Sheep"
+          "🐄 Cow",
+          "🐷 Pig",
+          "🐴 Horse",
+          "🐑 Sheep"
         ],
-        "answer": "Cow",
-        "explanation": "Cows say moo!"
+        "answer": "🐄 Cow",
+        "explanation": "The cow says MOO!",
+        "audio_script": "Look at this big animal! It says MOO! What animal is it? It is a COW! MOO!"
       },
       {
-        "question": "A baby dog is called a __?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🐷",
+        "image_alt": "A pink pig with a curly tail",
         "options": [
-          "Cub",
-          "Kitten",
-          "Puppy",
-          "Foal"
+          "🐄 Cow",
+          "🐷 Pig",
+          "🐴 Horse",
+          "🐑 Sheep"
         ],
-        "answer": "Puppy",
-        "explanation": "A baby dog is a puppy."
+        "answer": "🐷 Pig",
+        "explanation": "The pig says OINK!",
+        "audio_script": "This animal is pink and says OINK OINK! What is it? It is a PIG!"
       },
       {
-        "question": "Which animal gives us milk?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🐔",
+        "image_alt": "A hen sitting on eggs",
         "options": [
-          "Pig",
-          "Chicken",
-          "Cow",
-          "Goat"
+          "🦆 Duck",
+          "🐔 Hen",
+          "🦃 Turkey",
+          "🦅 Eagle"
         ],
-        "answer": "Cow",
-        "explanation": "Cows give us milk."
+        "answer": "🐔 Hen",
+        "explanation": "The hen says CLUCK and lays the eggs we eat!",
+        "audio_script": "This bird lays eggs for us to eat! It says CLUCK CLUCK! It is a HEN!"
       },
       {
-        "question": "Which animal says OINK?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🐶",
+        "image_alt": "A cute puppy wagging its tail",
         "options": [
-          "Cow",
-          "Sheep",
-          "Horse",
-          "Pig"
+          "🐱 Cat",
+          "🐶 Dog",
+          "🐰 Rabbit",
+          "🐹 Hamster"
         ],
-        "answer": "Pig",
-        "explanation": "Pigs say oink!"
+        "answer": "🐶 Dog",
+        "explanation": "The dog says WOOF and is a great friend!",
+        "audio_script": "This fluffy animal wags its tail and says WOOF! It is a DOG!"
       },
       {
-        "question": "Which bird lays the eggs we eat most?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🦆",
+        "image_alt": "A yellow duck swimming in water",
         "options": [
-          "Duck",
-          "Hen",
-          "Turkey",
-          "Parrot"
+          "🐔 Hen",
+          "🐦 Bird",
+          "🦆 Duck",
+          "🦃 Turkey"
         ],
-        "answer": "Hen",
-        "explanation": "Hens (female chickens) lay eggs we eat."
+        "answer": "🦆 Duck",
+        "explanation": "The duck says QUACK QUACK!",
+        "audio_script": "This animal swims and says QUACK QUACK! What is it? A DUCK!"
       }
     ],
     "min_pass_score": 70,
     "prerequisite_topic_id": null,
-    "adaptive_hint": "Score < 60 % → replay video, then retry quiz."
+    "adaptive_hint": "Replay video with emotion model set to slow pace; use sound & tap interactions only."
   },
   {
-    "id": "7da7a764-dae0-4401-a89f-11fdfbf6e90b",
-    "subject": "Animals & Nature",
-    "topic": "Wild Animals & Habitats",
+    "id": "3da3fdbd-ea01-4af9-913c-3d126f380263",
+    "subject": "🐾 Animals & Nature",
+    "topic": "Wild Animals & Where They Live",
     "difficulty": "Medium",
     "sequence_order": 2,
-    "grade_level": "Grade 1",
-    "age_range": "5–7",
-    "learning_objective": "Identify jungle and savanna animals and match them to their habitats",
-    "estimated_duration_min": 15,
+    "grade_level": "Pre-K / Grade 1",
+    "age_range": "5-7",
+    "age_label": "Pre-K / Kinder 🧒",
+    "learning_objective": "Name jungle and ocean animals and match each to its habitat",
+    "estimated_duration_min": 12,
     "video_url": "https://www.youtube.com/watch?v=a-Ptgpv4_0Y",
-    "tags": "animals,wild,jungle,safari,habitat",
+    "tags": "animals,wild,habitat,jungle,ocean",
+    "question_mode": "image + short text + audio",
     "quiz_data": [
       {
-        "question": "The king of the jungle is the __?",
+        "question_type": "image_text",
+        "question_text": "Which animal has the longest neck? 🌿",
+        "image_emoji": "🦒",
+        "image_alt": "A tall giraffe eating leaves from a tree",
         "options": [
-          "Tiger",
-          "Lion",
-          "Bear",
-          "Cheetah"
+          "🐘 Elephant",
+          "🦓 Zebra",
+          "🦒 Giraffe",
+          "🦏 Rhino"
         ],
-        "answer": "Lion",
-        "explanation": "Lions are called the king of the jungle."
+        "answer": "🦒 Giraffe",
+        "explanation": "Giraffes have the longest necks of any animal!",
+        "audio_script": "Which animal can reach the very TOP of a tree? A GIRAFFE!"
       },
       {
-        "question": "Which animal has a very long neck?",
+        "question_type": "image_text",
+        "question_text": "Where does a fish 🐟 live?",
+        "image_emoji": "🌊",
+        "image_alt": "A fish swimming in the ocean",
         "options": [
-          "Elephant",
-          "Zebra",
-          "Giraffe",
-          "Hippo"
+          "🌳 Forest",
+          "🏔️ Mountains",
+          "🌊 Water",
+          "🏜️ Desert"
         ],
-        "answer": "Giraffe",
-        "explanation": "Giraffes have the longest necks of any animal."
+        "answer": "🌊 Water",
+        "explanation": "Fish live in water — rivers, lakes, and oceans!",
+        "audio_script": "A fish needs WATER to breathe and swim!"
       },
       {
-        "question": "A camel lives in the __?",
+        "question_type": "image_text",
+        "question_text": "The king of the jungle is the __?",
+        "image_emoji": "🌿",
+        "image_alt": "A lion sitting proudly in tall grass",
         "options": [
-          "Forest",
-          "Ocean",
-          "Desert",
-          "Arctic"
+          "🐯 Tiger",
+          "🦁 Lion",
+          "🐻 Bear",
+          "🐆 Cheetah"
         ],
-        "answer": "Desert",
-        "explanation": "Camels are adapted to hot deserts."
+        "answer": "🦁 Lion",
+        "explanation": "Lions are called the king of the jungle!",
+        "audio_script": "Which big cat is called the KING of the jungle? A LION!"
       },
       {
-        "question": "Polar bears live in the __?",
+        "question_type": "image_text",
+        "question_text": "Where do penguins 🐧 live?",
+        "image_emoji": "❄️",
+        "image_alt": "Penguins standing on ice",
         "options": [
-          "Jungle",
-          "Desert",
-          "Arctic",
-          "Rainforest"
+          "🌴 Jungle",
+          "🏜️ Desert",
+          "❄️ Cold icy places",
+          "🌳 Forest"
         ],
-        "answer": "Arctic",
-        "explanation": "Polar bears are adapted to the cold Arctic."
+        "answer": "❄️ Cold icy places",
+        "explanation": "Penguins live in very cold, icy places like Antarctica!",
+        "audio_script": "Penguins wear a tuxedo and love the COLD! They live in ICY places!"
       },
       {
-        "question": "Which animal has black and white stripes?",
+        "question_type": "image_text",
+        "question_text": "Which animal has black and white stripes?",
+        "image_emoji": "🌿",
+        "image_alt": "Animal with black and white stripes in a field",
         "options": [
-          "Cheetah",
-          "Leopard",
-          "Zebra",
-          "Tiger"
+          "🐆 Cheetah",
+          "🐯 Tiger",
+          "🦓 Zebra",
+          "🐻 Panda"
         ],
-        "answer": "Zebra",
-        "explanation": "Zebras have black and white stripes."
+        "answer": "🦓 Zebra",
+        "explanation": "Zebras have black and white stripes!",
+        "audio_script": "Which animal looks like it is wearing pyjamas? A ZEBRA!"
       }
     ],
     "min_pass_score": 60,
-    "prerequisite_topic_id": "098465de-9e97-4d06-867c-b66b7d4e9013",
-    "adaptive_hint": "Score < 60 % → suggest Easy topic in same subject."
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "If score < 60% → replay video; simplify to image-only quiz next attempt."
   },
   {
-    "id": "b3308c58-78a3-455d-ad7d-04526218262d",
-    "subject": "Animals & Nature",
-    "topic": "Animal Life Cycles & Metamorphosis",
+    "id": "9cdd101a-dac5-4e91-a466-89f0c9b4b0e6",
+    "subject": "🐾 Animals & Nature",
+    "topic": "Life Cycles & Classification",
     "difficulty": "Hard",
     "sequence_order": 3,
-    "grade_level": "Grade 2",
-    "age_range": "7–9",
-    "learning_objective": "Explain butterfly and frog life cycles and define metamorphosis",
-    "estimated_duration_min": 20,
+    "grade_level": "Grade 2–3",
+    "age_range": "8-10",
+    "age_label": "Early Primary 📚",
+    "learning_objective": "Sequence butterfly and frog life cycles; classify animals by type",
+    "estimated_duration_min": 18,
     "video_url": "https://www.youtube.com/watch?v=FbtanQ25N-M",
-    "tags": "animals,lifecycle,metamorphosis,science,grade2",
+    "tags": "animals,lifecycle,metamorphosis,classification,science",
+    "question_mode": "image + text",
     "quiz_data": [
       {
-        "question": "A butterfly starts life as a __?",
+        "question_type": "image_text",
+        "question_text": "What comes first in a butterfly's life cycle?",
+        "image_emoji": "🦋",
+        "image_alt": "Life cycle diagram: egg → caterpillar → chrysalis → butterfly",
         "options": [
-          "Larva",
-          "Pupa",
-          "Egg",
-          "Caterpillar"
+          "🐛 Caterpillar",
+          "🦋 Butterfly",
+          "🥚 Egg",
+          "🫘 Chrysalis"
         ],
-        "answer": "Egg",
-        "explanation": "Life cycle: Egg → Caterpillar → Chrysalis → Butterfly."
+        "answer": "🥚 Egg",
+        "explanation": "Butterfly life cycle: Egg → Caterpillar → Chrysalis → Butterfly.",
+        "audio_script": ""
       },
       {
-        "question": "What comes after a caterpillar?",
+        "question_type": "image_text",
+        "question_text": "What stage comes AFTER the caterpillar?",
+        "image_emoji": "🐛",
+        "image_alt": "A caterpillar forming a chrysalis",
         "options": [
-          "Butterfly",
-          "Egg",
-          "Chrysalis",
-          "Larva"
+          "🦋 Butterfly",
+          "🥚 Egg",
+          "🫘 Chrysalis",
+          "🐛 Larva"
         ],
-        "answer": "Chrysalis",
-        "explanation": "Caterpillar → Chrysalis → Butterfly."
+        "answer": "🫘 Chrysalis",
+        "explanation": "Caterpillar → Chrysalis → Butterfly.",
+        "audio_script": ""
       },
       {
-        "question": "How many stages in a frog's life?",
+        "question_type": "image_text",
+        "question_text": "How many stages does a frog go through?",
+        "image_emoji": "🐸",
+        "image_alt": "Frog life cycle diagram",
         "options": [
           "2",
           "3",
@@ -846,134 +1101,159 @@
           "5"
         ],
         "answer": "4",
-        "explanation": "Egg → Tadpole → Froglet → Frog = 4 stages."
+        "explanation": "Egg → Tadpole → Froglet → Frog = 4 stages.",
+        "audio_script": ""
       },
       {
-        "question": "What do most birds hatch from?",
+        "question_type": "image_text",
+        "question_text": "Which animals are mammals? 🐾",
+        "image_emoji": "🐘🐬🐶",
+        "image_alt": "Elephant, dolphin and dog grouped together",
         "options": [
-          "Pouches",
-          "Eggs",
-          "Seeds",
-          "Pods"
+          "Fish, Frog, Snake",
+          "Dog, Elephant, Dolphin",
+          "Butterfly, Eagle, Frog",
+          "Lizard, Snake, Turtle"
         ],
-        "answer": "Eggs",
-        "explanation": "Birds lay eggs; chicks hatch from them."
+        "answer": "Dog, Elephant, Dolphin",
+        "explanation": "Mammals have fur/hair, are warm-blooded and feed milk to their young.",
+        "audio_script": ""
       },
       {
-        "question": "Metamorphosis means a __?",
+        "question_type": "image_text",
+        "question_text": "What is metamorphosis?",
+        "image_emoji": "🔄",
+        "image_alt": "Before and after images of a caterpillar and butterfly",
         "options": [
-          "Growth spurt",
-          "Change in form",
-          "Name change",
-          "Colour change"
+          "Growing bigger",
+          "A big change in body form",
+          "Changing colour",
+          "Getting faster"
         ],
-        "answer": "Change in form",
-        "explanation": "Metamorphosis is a big change in body shape."
+        "answer": "A big change in body form",
+        "explanation": "Metamorphosis means a dramatic change in body structure.",
+        "audio_script": ""
       }
     ],
     "min_pass_score": 50,
-    "prerequisite_topic_id": "7da7a764-dae0-4401-a89f-11fdfbf6e90b",
-    "adaptive_hint": "Score < 50 % → revert to Medium level in same subject."
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "If score < 50% → suggest younger age group topic; flag for teacher review."
   },
   {
-    "id": "46899661-ec68-4dc7-a0f3-68ad9133675d",
-    "subject": "Letters & Phonics",
-    "topic": "The Alphabet A–Z",
+    "id": "b3a80d29-f0f7-4997-9889-a1b084425d7f",
+    "subject": "🔤 Letters & Phonics",
+    "topic": "Letters A, B, C, D, E",
     "difficulty": "Easy",
     "sequence_order": 1,
-    "grade_level": "Pre-K / K",
-    "age_range": "3–5",
-    "learning_objective": "Recite and recognise all 26 letters of the alphabet in order",
-    "estimated_duration_min": 10,
-    "video_url": "https://www.youtube.com/watch?v=_UR-l3QI2nE",
-    "tags": "letters,alphabet,ABC,pre-k",
+    "grade_level": "Toddler",
+    "age_range": "2-4",
+    "age_label": "Toddler 🍼",
+    "learning_objective": "Recognise and say the sounds for letters A, B, C, D and E",
+    "estimated_duration_min": 8,
+    "video_url": "https://www.youtube.com/watch?v=tKsIi1MH4lw",
+    "tags": "letters,alphabet,ABC,phonics,toddler",
+    "question_mode": "image + audio only",
     "quiz_data": [
       {
-        "question": "What letter comes after C?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🍎",
+        "image_alt": "A big red apple with a capital letter A beside it",
         "options": [
-          "B",
-          "D",
-          "E",
-          "F"
+          "🅰️ A",
+          "🅱️ B",
+          "©️ C",
+          "🔡 D"
         ],
-        "answer": "D",
-        "explanation": "A B C D — D comes after C."
+        "answer": "🅰️ A",
+        "explanation": "A is for Apple! The letter A says \"aah\"!",
+        "audio_script": "Look at the apple! Apple starts with the letter A! A… A… APPLE! Can you say A?"
       },
       {
-        "question": "Which letter does 🍎 apple start with?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🐻",
+        "image_alt": "A brown bear with the letter B",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D"
+          "🅰️ A",
+          "🅱️ B",
+          "©️ C",
+          "🔡 D"
         ],
-        "answer": "A",
-        "explanation": "Apple starts with A."
+        "answer": "🅱️ B",
+        "explanation": "B is for Bear! The letter B says \"buh\"!",
+        "audio_script": "Bear starts with B! B… B… BEAR! Can you say B like a bear?"
       },
       {
-        "question": "What is the last letter?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🐱",
+        "image_alt": "A cat with the letter C",
         "options": [
-          "X",
-          "Y",
-          "Z",
-          "W"
+          "🅰️ A",
+          "🅱️ B",
+          "©️ C",
+          "🔡 D"
         ],
-        "answer": "Z",
-        "explanation": "Z is the last letter of the alphabet."
+        "answer": "©️ C",
+        "explanation": "C is for Cat! The letter C says \"kuh\"!",
+        "audio_script": "Cat starts with the letter C! C… C… CAT! Say it with me!"
       },
       {
-        "question": "How many letters are in the alphabet?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🐶",
+        "image_alt": "A dog with the letter D",
         "options": [
-          "24",
-          "25",
-          "26",
-          "27"
+          "🅱️ B",
+          "©️ C",
+          "🔡 D",
+          "🔡 E"
         ],
-        "answer": "26",
-        "explanation": "The English alphabet has 26 letters."
+        "answer": "🔡 D",
+        "explanation": "D is for Dog! The letter D says \"duh\"!",
+        "audio_script": "Dog starts with D! D… D… DOG! Can you bark like a dog? Woof!"
       },
       {
-        "question": "Which comes first: H or M?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🐘",
+        "image_alt": "An elephant with the letter E",
         "options": [
-          "H",
-          "M",
-          "Both same",
-          "Neither"
+          "©️ C",
+          "🔡 D",
+          "🔡 E",
+          "🅰️ F"
         ],
-        "answer": "H",
-        "explanation": "H comes before M in the alphabet."
+        "answer": "🔡 E",
+        "explanation": "E is for Elephant! The letter E says \"eh\"!",
+        "audio_script": "Elephant starts with E! E… E… ELEPHANT! Can you make a trunk with your arm?"
       }
     ],
     "min_pass_score": 70,
     "prerequisite_topic_id": null,
-    "adaptive_hint": "Score < 60 % → replay video, then retry quiz."
+    "adaptive_hint": "Replay video with emotion model set to slow pace; use sound & tap interactions only."
   },
   {
-    "id": "fee454ac-35d1-46a6-ad35-12cc76edb2c2",
-    "subject": "Letters & Phonics",
-    "topic": "Vowels, Consonants & CVC Words",
+    "id": "376dc8ff-807c-4548-b4dd-c45d8407dea8",
+    "subject": "🔤 Letters & Phonics",
+    "topic": "Vowels & Blending CVC Words",
     "difficulty": "Medium",
     "sequence_order": 2,
-    "grade_level": "Grade 1",
-    "age_range": "5–7",
-    "learning_objective": "Identify vowels and consonants, and blend 3-letter CVC words",
-    "estimated_duration_min": 15,
+    "grade_level": "Pre-K / Grade 1",
+    "age_range": "5-7",
+    "age_label": "Pre-K / Kinder 🧒",
+    "learning_objective": "Identify the 5 vowels and blend 3-letter consonant-vowel-consonant words",
+    "estimated_duration_min": 12,
     "video_url": "https://www.youtube.com/watch?v=oDVAhDyHZaA",
-    "tags": "phonics,vowels,consonants,CVC,blending",
+    "tags": "phonics,vowels,CVC,blending,grade1",
+    "question_mode": "image + short text + audio",
     "quiz_data": [
       {
-        "question": "How many vowels are in the alphabet?",
-        "options": [
-          "3",
-          "4",
-          "5",
-          "6"
-        ],
-        "answer": "5",
-        "explanation": "The 5 vowels are A, E, I, O, U."
-      },
-      {
-        "question": "Which of these is a vowel?",
+        "question_type": "image_text",
+        "question_text": "Which letter is a VOWEL? 🔤",
+        "image_emoji": "🅰️🅱️©️",
+        "image_alt": "Letters A B C D E on colourful cards",
         "options": [
           "B",
           "C",
@@ -981,10 +1261,14 @@
           "F"
         ],
         "answer": "E",
-        "explanation": "E is one of the 5 vowels."
+        "explanation": "The 5 vowels are A, E, I, O, U. E is a vowel!",
+        "audio_script": "The vowels are A, E, I, O, U. Which one do you see? The answer is E!"
       },
       {
-        "question": "Blend: C-A-T = ?",
+        "question_type": "image_text",
+        "question_text": "Blend the sounds: C - A - T 🐱",
+        "image_emoji": "🐱",
+        "image_alt": "A cute cat sitting",
         "options": [
           "COT",
           "CUT",
@@ -992,10 +1276,14 @@
           "CIT"
         ],
         "answer": "CAT",
-        "explanation": "C + A + T = CAT."
+        "explanation": "C + A + T = CAT!",
+        "audio_script": "Say the sounds slowly: C… A… T… Put them together: CAT!"
       },
       {
-        "question": "Blend: D-O-G = ?",
+        "question_type": "image_text",
+        "question_text": "Blend the sounds: D - O - G 🐶",
+        "image_emoji": "🐶",
+        "image_alt": "A happy dog",
         "options": [
           "DIG",
           "DOG",
@@ -1003,10 +1291,29 @@
           "DEG"
         ],
         "answer": "DOG",
-        "explanation": "D + O + G = DOG."
+        "explanation": "D + O + G = DOG!",
+        "audio_script": "D… O… G… Put them together: DOG!"
       },
       {
-        "question": "Which word rhymes with HEN?",
+        "question_type": "image_text",
+        "question_text": "How many vowels are in the alphabet? 🔤",
+        "image_emoji": "📝",
+        "image_alt": "Alphabet chart with A E I O U highlighted",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "answer": "5",
+        "explanation": "The 5 vowels are A, E, I, O, U.",
+        "audio_script": "Count the vowels: A, E, I, O, U — that is FIVE vowels!"
+      },
+      {
+        "question_type": "image_text",
+        "question_text": "Which word rhymes with HEN? 🐔",
+        "image_emoji": "🐔",
+        "image_alt": "A hen next to a pen and ten",
         "options": [
           "HAT",
           "HIM",
@@ -1014,28 +1321,49 @@
           "HOP"
         ],
         "answer": "TEN",
-        "explanation": "HEN and TEN both end in -EN."
+        "explanation": "HEN and TEN both end in the same -EN sound!",
+        "audio_script": "HEN… TEN… They both end in EN! They RHYME!"
       }
     ],
     "min_pass_score": 60,
-    "prerequisite_topic_id": "46899661-ec68-4dc7-a0f3-68ad9133675d",
-    "adaptive_hint": "Score < 60 % → suggest Easy topic in same subject."
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "If score < 60% → replay video; simplify to image-only quiz next attempt."
   },
   {
-    "id": "62629f6e-17ee-40f7-ba1c-99dce06e7237",
-    "subject": "Letters & Phonics",
-    "topic": "Sight Words & Phonics Sounds",
+    "id": "43f53e1b-12c7-484b-bfd7-d730b5317235",
+    "subject": "🔤 Letters & Phonics",
+    "topic": "Phonics Rules, Digraphs & Sight Words",
     "difficulty": "Hard",
     "sequence_order": 3,
-    "grade_level": "Grade 2",
-    "age_range": "7–9",
-    "learning_objective": "Memorise the 20 most common sight words and decode words using phonics sounds",
-    "estimated_duration_min": 20,
-    "video_url": "https://www.youtube.com/watch?v=tKsIi1MH4lw",
-    "tags": "phonics,sightwords,dolch,reading,grade2",
+    "grade_level": "Grade 2–3",
+    "age_range": "8-10",
+    "age_label": "Early Primary 📚",
+    "learning_objective": "Decode digraphs (sh, ch, th), read blends and recall 20 sight words",
+    "estimated_duration_min": 18,
+    "video_url": "https://www.youtube.com/watch?v=kWtMmRZDY-4",
+    "tags": "phonics,digraphs,sightwords,reading,grade2",
+    "question_mode": "image + text",
     "quiz_data": [
       {
-        "question": "Which is a sight word?",
+        "question_type": "image_text",
+        "question_text": "What sound does \"Sh\" make in SHIP? 🚢",
+        "image_emoji": "🚢",
+        "image_alt": "A ship sailing on water",
+        "options": [
+          "S sound",
+          "Sh sound",
+          "H sound",
+          "Ch sound"
+        ],
+        "answer": "Sh sound",
+        "explanation": "\"Sh\" together makes a soft shushing sound — like telling someone to be quiet!",
+        "audio_script": ""
+      },
+      {
+        "question_type": "image_text",
+        "question_text": "Which is a sight word? 👁️",
+        "image_emoji": "📖",
+        "image_alt": "An open reading book",
         "options": [
           "zyx",
           "the",
@@ -1043,229 +1371,284 @@
           "vwx"
         ],
         "answer": "the",
-        "explanation": "'The' is the most common English word."
+        "explanation": "\"The\" is the most common word in English — memorise it by sight!",
+        "audio_script": ""
       },
       {
-        "question": "Fill in: ___ is my friend.",
+        "question_type": "image_text",
+        "question_text": "Blend: SH + IP = ? 🚢",
+        "image_emoji": "🚢",
+        "image_alt": "A ship on the water",
         "options": [
-          "Her",
-          "She",
-          "Him",
-          "They"
+          "Slip",
+          "Ship",
+          "Chip",
+          "Skip"
         ],
-        "answer": "She",
-        "explanation": "She, he, and they are common pronouns."
+        "answer": "Ship",
+        "explanation": "SH makes the \"shh\" sound. SH + IP = SHIP!",
+        "audio_script": ""
       },
       {
-        "question": "What sound does 'Sh' make in SHIP?",
+        "question_type": "image_text",
+        "question_text": "Which word has the CH sound? 🔊",
+        "image_emoji": "🧀🎡🌸",
+        "image_alt": "Cheese, chair, flower",
         "options": [
-          "S",
-          "Sh",
-          "H",
-          "Ch"
+          "Cat",
+          "Chair",
+          "Shark",
+          "Think"
         ],
-        "answer": "Sh",
-        "explanation": "Sh makes a shh sound."
+        "answer": "Chair",
+        "explanation": "Chair starts with CH — it makes a \"chuh\" sound!",
+        "audio_script": ""
       },
       {
-        "question": "Which sentence uses a sight word?",
+        "question_type": "image_text",
+        "question_text": "Fill in: I ___ here. (sight word)",
+        "image_emoji": "📍",
+        "image_alt": "A child pointing to where they are standing",
         "options": [
-          "Xylophone runs.",
-          "I am here.",
-          "Zzzz goes.",
-          "Qwerty!"
+          "are",
+          "am",
+          "is",
+          "be"
         ],
-        "answer": "I am here.",
-        "explanation": "'I', 'am', 'here' are all sight words."
-      },
-      {
-        "question": "Which sight word means 'also'?",
-        "options": [
-          "And",
-          "Too",
-          "But",
-          "So"
-        ],
-        "answer": "Too",
-        "explanation": "'Too' means also — it's a sight word."
+        "answer": "am",
+        "explanation": "\"Am\" is a common sight word: I AM here.",
+        "audio_script": ""
       }
     ],
     "min_pass_score": 50,
-    "prerequisite_topic_id": "fee454ac-35d1-46a6-ad35-12cc76edb2c2",
-    "adaptive_hint": "Score < 50 % → revert to Medium level in same subject."
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "If score < 50% → suggest younger age group topic; flag for teacher review."
   },
   {
-    "id": "50af5a83-4f74-4631-a8fc-51648d2dc6b9",
-    "subject": "Games & Activities",
-    "topic": "Memory Match & Concentration",
+    "id": "063fea6e-803c-4005-ae76-f92bd348b3d4",
+    "subject": "🎮 Games & Activities",
+    "topic": "Match the Pairs (Memory Game)",
     "difficulty": "Easy",
     "sequence_order": 1,
-    "grade_level": "Pre-K / K",
-    "age_range": "3–5",
-    "learning_objective": "Improve short-term memory by matching picture pairs",
-    "estimated_duration_min": 10,
-    "video_url": "https://www.youtube.com/watch?v=T7Hy6GD8amw",
-    "tags": "games,memory,concentration,pre-k",
+    "grade_level": "Toddler",
+    "age_range": "2-4",
+    "age_label": "Toddler 🍼",
+    "learning_objective": "Flip and match identical picture cards to build memory and focus",
+    "estimated_duration_min": 8,
+    "video_url": "https://www.youtube.com/watch?v=llObUyCEvA0",
+    "tags": "games,memory,matching,toddler",
+    "question_mode": "image + audio only",
     "quiz_data": [
       {
-        "question": "Memory game: you flip 2 cards and they match. What do you do?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🐄🐄",
+        "image_alt": "Two identical cow cards face up",
         "options": [
-          "Flip again",
-          "Keep them face up",
-          "Put them back",
-          "Skip turn"
+          "✅ Match!",
+          "❌ No match",
+          "🔄 Flip again",
+          "⏭️ Skip"
         ],
-        "answer": "Keep them face up",
-        "explanation": "When cards match, you keep them revealed."
+        "answer": "✅ Match!",
+        "explanation": "Two cows that look the same = a MATCH!",
+        "audio_script": "Look! Both cards show a COW! They look the same! That means it is a MATCH! Yay!"
       },
       {
-        "question": "What helps you remember card positions?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🍎🍊",
+        "image_alt": "An apple card and an orange card — different",
         "options": [
-          "Guessing",
-          "Paying attention",
-          "Closing eyes",
-          "Random flipping"
+          "✅ Match!",
+          "❌ No match",
+          "🔄 Flip again",
+          "⏭️ Skip"
         ],
-        "answer": "Paying attention",
-        "explanation": "Concentration helps you remember where each card is."
+        "answer": "❌ No match",
+        "explanation": "An apple and an orange are different — not a match!",
+        "audio_script": "One card shows an apple, the other shows an orange. They are DIFFERENT! That is NOT a match!"
       },
       {
-        "question": "In a 4×4 memory grid, how many cards total?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🌟",
+        "image_alt": "A shining gold star",
         "options": [
-          "8",
-          "12",
-          "16",
-          "20"
+          "🌟 Star",
+          "🌙 Moon",
+          "☀️ Sun",
+          "⭐ Different star"
         ],
-        "answer": "16",
-        "explanation": "4 × 4 = 16 cards."
+        "answer": "🌟 Star",
+        "explanation": "Match the star with its twin!",
+        "audio_script": "This is a STAR! Can you find the card that looks exactly the same? Find the STAR!"
       },
       {
-        "question": "How many matches are in a 16-card game?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🔵🔵",
+        "image_alt": "Two identical blue circles",
         "options": [
-          "8",
-          "16",
-          "4",
-          "12"
+          "✅ Match!",
+          "❌ No match",
+          "🔄 Flip again",
+          "⏭️ Skip"
         ],
-        "answer": "8",
-        "explanation": "16 cards ÷ 2 = 8 matching pairs."
+        "answer": "✅ Match!",
+        "explanation": "Both circles are the same colour and shape — MATCH!",
+        "audio_script": "Both shapes are BLUE and ROUND! They are the same! That is a MATCH!"
       },
       {
-        "question": "Which skill does memory match most build?",
+        "question_type": "image_audio",
+        "question_text": "",
+        "image_emoji": "🐱🐶",
+        "image_alt": "A cat card and a dog card — different animals",
         "options": [
-          "Running",
-          "Concentration",
-          "Drawing",
-          "Singing"
+          "✅ Match!",
+          "❌ No match",
+          "🔄 Flip again",
+          "⏭️ Skip"
         ],
-        "answer": "Concentration",
-        "explanation": "Memory games strengthen focus and recall."
+        "answer": "❌ No match",
+        "explanation": "A cat and a dog are different animals — not a match!",
+        "audio_script": "One card is a CAT, one card is a DOG. They are DIFFERENT! NOT a match!"
       }
     ],
     "min_pass_score": 70,
     "prerequisite_topic_id": null,
-    "adaptive_hint": "Score < 60 % → replay video, then retry quiz."
+    "adaptive_hint": "Replay video with emotion model set to slow pace; use sound & tap interactions only."
   },
   {
-    "id": "c5f607a4-32e4-49b5-8b29-b5de48f56e59",
-    "subject": "Games & Activities",
-    "topic": "Sorting, Classifying & Patterns",
+    "id": "7eb70636-88e1-4fd1-a377-77fb42a95c1a",
+    "subject": "🎮 Games & Activities",
+    "topic": "Sorting, Patterns & Simon Says",
     "difficulty": "Medium",
     "sequence_order": 2,
-    "grade_level": "Grade 1",
-    "age_range": "5–7",
-    "learning_objective": "Sort objects by colour, shape or size and continue AB/ABC colour patterns",
-    "estimated_duration_min": 15,
-    "video_url": "https://www.youtube.com/watch?v=beTDz9HSNOM",
-    "tags": "games,sorting,patterns,classifying,logic",
+    "grade_level": "Pre-K / Grade 1",
+    "age_range": "5-7",
+    "age_label": "Pre-K / Kinder 🧒",
+    "learning_objective": "Sort objects by colour/shape, continue AB patterns, and follow game rules",
+    "estimated_duration_min": 12,
+    "video_url": "https://www.youtube.com/watch?v=MBjjxSx45-Q",
+    "tags": "games,sorting,patterns,simon-says,logic",
+    "question_mode": "image + short text + audio",
     "quiz_data": [
       {
-        "question": "You have red and blue blocks. How do you sort them?",
+        "question_type": "image_text",
+        "question_text": "Sort these by colour 🎨 — which group is all RED?",
+        "image_emoji": "🔴🔵🔴🟢",
+        "image_alt": "Coloured blocks in groups",
         "options": [
-          "By weight",
-          "By colour",
-          "By smell",
-          "Randomly"
+          "🔵🔵🔵 Blue group",
+          "🔴🔴🔴 Red group",
+          "🟢🟢🟢 Green group",
+          "🟡🟡🟡 Yellow group"
         ],
-        "answer": "By colour",
-        "explanation": "Sorting by colour groups similar colours together."
+        "answer": "🔴🔴🔴 Red group",
+        "explanation": "Sorting by colour means putting the same colours together!",
+        "audio_script": "Find all the RED ones and put them together! That is the RED group!"
       },
       {
-        "question": "Which does NOT belong: cat, dog, rose, rabbit?",
+        "question_type": "image_text",
+        "question_text": "Pattern: 🔴🔵🔴🔵 — what comes next?",
+        "image_emoji": "🔴🔵🔴🔵",
+        "image_alt": "Red and blue alternating pattern",
         "options": [
-          "Cat",
-          "Dog",
-          "Rose",
-          "Rabbit"
+          "🟡 Yellow",
+          "🟢 Green",
+          "🔴 Red",
+          "🔵 Blue"
         ],
-        "answer": "Rose",
-        "explanation": "Rose is a plant; the rest are animals."
+        "answer": "🔴 Red",
+        "explanation": "The pattern is Red, Blue, Red, Blue — next is Red!",
+        "audio_script": "RED, BLUE, RED, BLUE… What comes next? RED!"
       },
       {
-        "question": "Pattern: Red, Blue, Red, Blue — next?",
+        "question_type": "image_text",
+        "question_text": "Simon says \"touch your nose\" 👃 — what do you do?",
+        "image_emoji": "👃",
+        "image_alt": "A child touching their nose",
         "options": [
-          "Green",
-          "Yellow",
-          "Red",
-          "Blue"
+          "Touch nose ✅",
+          "Do nothing ❌",
+          "Clap hands",
+          "Jump up"
         ],
-        "answer": "Red",
-        "explanation": "The pattern repeats: Red, Blue, Red, Blue, Red…"
+        "answer": "Touch nose ✅",
+        "explanation": "Simon SAID it, so you do it!",
+        "audio_script": "Simon SAID touch your nose, so we DO it! Touch your nose!"
       },
       {
-        "question": "Big ball, small ball, medium ball — sorted by?",
+        "question_type": "image_text",
+        "question_text": "Which does NOT belong? 🐱🐶🌹🐰",
+        "image_emoji": "🐱🐶🌹🐰",
+        "image_alt": "Cat, dog, rose and rabbit",
         "options": [
-          "Colour",
-          "Shape",
-          "Size",
-          "Weight"
+          "🐱 Cat",
+          "🐶 Dog",
+          "🌹 Rose",
+          "🐰 Rabbit"
         ],
-        "answer": "Size",
-        "explanation": "They are sorted from large to small."
+        "answer": "🌹 Rose",
+        "explanation": "The rose is a plant — the others are all animals!",
+        "audio_script": "Cat, Dog, Rabbit are ANIMALS. What about a Rose? It is a PLANT, not an animal!"
       },
       {
-        "question": "Classifying helps us to __?",
+        "question_type": "image_text",
+        "question_text": "Touch your ear — but Simon did NOT say! What happens?",
+        "image_emoji": "👂",
+        "image_alt": "A child about to touch their ear",
         "options": [
-          "Run faster",
-          "Organise and understand things",
-          "Sing better",
-          "Count faster"
+          "You win! 🏆",
+          "You sit out! ❌",
+          "You get a prize!",
+          "Nothing happens"
         ],
-        "answer": "Organise and understand things",
-        "explanation": "Classification brings order and clarity."
+        "answer": "You sit out! ❌",
+        "explanation": "Moving without \"Simon says\" means you are OUT!",
+        "audio_script": "Simon did NOT say! If you moved, you sit out! Always wait for SIMON SAYS!"
       }
     ],
     "min_pass_score": 60,
-    "prerequisite_topic_id": "50af5a83-4f74-4631-a8fc-51648d2dc6b9",
-    "adaptive_hint": "Score < 60 % → suggest Easy topic in same subject."
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "If score < 60% → replay video; simplify to image-only quiz next attempt."
   },
   {
-    "id": "9f9eefac-efd5-4598-b0c7-55343d4e2a3e",
-    "subject": "Games & Activities",
-    "topic": "Puzzles, Strategy & Creative Drawing",
+    "id": "0504c8b8-1e1d-430e-a164-6c20552a5457",
+    "subject": "🎮 Games & Activities",
+    "topic": "Strategy, Puzzles & Creative Drawing",
     "difficulty": "Hard",
     "sequence_order": 3,
-    "grade_level": "Grade 2",
-    "age_range": "7–9",
-    "learning_objective": "Complete jigsaw/tangram puzzles and apply art techniques like shading and perspective",
-    "estimated_duration_min": 20,
-    "video_url": "https://www.youtube.com/watch?v=2aKep6PUFfI",
-    "tags": "games,puzzles,drawing,creativity,strategy",
+    "grade_level": "Grade 2–3",
+    "age_range": "8-10",
+    "age_label": "Early Primary 📚",
+    "learning_objective": "Apply logical strategies to puzzles and use art concepts like shading and perspective",
+    "estimated_duration_min": 18,
+    "video_url": "https://www.youtube.com/watch?v=Norbweaqljc",
+    "tags": "games,puzzles,drawing,strategy,logic,art",
+    "question_mode": "image + text",
     "quiz_data": [
       {
-        "question": "Where do you look first in a jigsaw puzzle?",
+        "question_type": "image_text",
+        "question_text": "Where do you START a jigsaw puzzle? 🧩",
+        "image_emoji": "🧩",
+        "image_alt": "A jigsaw puzzle with border pieces highlighted",
         "options": [
           "Middle pieces",
-          "Edge pieces",
-          "Any piece",
-          "Colour pieces"
+          "Edge / border pieces",
+          "Any random piece",
+          "The smallest piece"
         ],
-        "answer": "Edge pieces",
-        "explanation": "Always start with the straight-edge border pieces."
+        "answer": "Edge / border pieces",
+        "explanation": "Always start with the straight-edged border pieces to build the frame!",
+        "audio_script": ""
       },
       {
-        "question": "A tangram uses how many pieces?",
+        "question_type": "image_text",
+        "question_text": "A tangram puzzle has how many pieces? 🔷",
+        "image_emoji": "🔷",
+        "image_alt": "Seven tangram shapes laid out",
         "options": [
           "5",
           "6",
@@ -1273,10 +1656,14 @@
           "8"
         ],
         "answer": "7",
-        "explanation": "A tangram has exactly 7 geometric pieces."
+        "explanation": "A tangram always has exactly 7 geometric pieces.",
+        "audio_script": ""
       },
       {
-        "question": "Which tool makes the thinnest lines?",
+        "question_type": "image_text",
+        "question_text": "Which drawing tool makes the thinnest lines? ✏️",
+        "image_emoji": "✏️🖍️🖌️",
+        "image_alt": "Pencil, crayon and paintbrush side by side",
         "options": [
           "Crayon",
           "Marker",
@@ -1284,21 +1671,29 @@
           "Brush"
         ],
         "answer": "Pencil",
-        "explanation": "Pencils create fine, thin lines."
+        "explanation": "A pencil tip is very fine and makes thin, precise lines.",
+        "audio_script": ""
       },
       {
-        "question": "What is perspective in drawing?",
+        "question_type": "image_text",
+        "question_text": "In a drawing, far-away objects look __?",
+        "image_emoji": "🏔️",
+        "image_alt": "Mountains in the distance look small; nearby rock looks large",
         "options": [
-          "Colour choice",
-          "Objects look smaller far away",
-          "Line thickness",
-          "Shade of colour"
+          "Bigger",
+          "The same",
+          "Smaller",
+          "Blurry only"
         ],
-        "answer": "Objects look smaller far away",
-        "explanation": "Perspective shows depth — far things look smaller."
+        "answer": "Smaller",
+        "explanation": "This is called perspective — far things look smaller.",
+        "audio_script": ""
       },
       {
-        "question": "Which element adds depth to a drawing?",
+        "question_type": "image_text",
+        "question_text": "What makes a drawing look 3-D? 🖼️",
+        "image_emoji": "🎨",
+        "image_alt": "A flat circle vs a sphere with shading",
         "options": [
           "Colour only",
           "Shading and shadow",
@@ -1306,11 +1701,12 @@
           "Outlining only"
         ],
         "answer": "Shading and shadow",
-        "explanation": "Shading creates the illusion of 3D depth."
+        "explanation": "Shading adds the illusion of depth and makes flat shapes look 3-D!",
+        "audio_script": ""
       }
     ],
     "min_pass_score": 50,
-    "prerequisite_topic_id": "c5f607a4-32e4-49b5-8b29-b5de48f56e59",
-    "adaptive_hint": "Score < 50 % → revert to Medium level in same subject."
+    "prerequisite_topic_id": null,
+    "adaptive_hint": "If score < 50% → suggest younger age group topic; flag for teacher review."
   }
 ]

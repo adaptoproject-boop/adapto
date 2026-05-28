@@ -136,3 +136,21 @@ def get_community_stats_route():
         }), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+@user_routes.route('/update-level', methods=['PUT'])
+@token_required
+def update_user_level():
+    """Update the authenticated user's difficulty level (easy/medium/hard)."""
+    if not supabase:
+        return jsonify({'error': 'Database connection failed'}), 500
+    try:
+        body = request.get_json()
+        new_level = body.get('level', '').strip().lower()
+        if new_level not in ['easy', 'medium', 'hard']:
+            return jsonify({'error': 'Invalid level. Must be easy, medium, or hard.'}), 400
+
+        user_id = request.user['id']
+        supabase.table('users').update({'level': new_level}).eq('id', user_id).execute()
+        return jsonify({'message': 'Level updated successfully', 'level': new_level}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500

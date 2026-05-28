@@ -8,6 +8,8 @@ import { useLearning } from '../context/LearningContext';
 import { FaPlay, FaSearch, FaStar, FaAward, FaChevronRight, FaRocket, FaFire, FaGamepad, FaMusic, FaPalette } from 'react-icons/fa';
 import Mascot from '../components/Mascot';
 import CartoonButton from '../components/CartoonButton';
+import AgeSelectorModal from '../components/AgeSelectorModal';
+import { FaMicrophone } from 'react-icons/fa';
 
 const ALL_BADGES = [
     {
@@ -70,6 +72,7 @@ const KidDashboard = () => {
     const [matchedLessons, setMatchedLessons] = React.useState([]);
     const [showAllMaterials, setShowAllMaterials] = React.useState(false);
     const [showAllQuizzes, setShowAllQuizzes] = React.useState(false);
+  const [showAgeModal, setShowAgeModal] = React.useState(!localStorage.getItem('ageSelected'));
 
     const debounceTimerRef = React.useRef(null);
 
@@ -167,6 +170,26 @@ const KidDashboard = () => {
         handleSearch(searchQuery);
     };
 
+  const handleMicClick = () => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert('Speech Recognition not supported in this browser.');
+      return;
+    }
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setSearchQuery(transcript);
+    };
+    recognition.onerror = (event) => {
+      console.error('Speech recognition error', event.error);
+    };
+    recognition.start();
+  };
+
     React.useEffect(() => {
         const fetchStats = async () => {
             try {
@@ -253,7 +276,9 @@ const KidDashboard = () => {
     };
 
     return (
-        <div className="min-h-screen bg-slate-50 pb-20 pt-24 px-4 sm:px-6 relative overflow-hidden text-gray-800">
+        <>
+            {showAgeModal && <AgeSelectorModal onClose={() => setShowAgeModal(false)} />}
+            <div className="min-h-screen bg-slate-50 pb-20 pt-24 px-4 sm:px-6 relative overflow-hidden text-gray-800">
             {/* Background Decorations */}
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-100 blur-[150px] rounded-full opacity-40 -z-10" />
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-pink-50 blur-[120px] rounded-full opacity-50 -z-10" />
@@ -320,6 +345,9 @@ const KidDashboard = () => {
                                     {isSearching ? <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <FaSearch />}
                                     <span className="hidden sm:inline">Explore</span>
                                 </button>
+                <button type="button" onClick={handleMicClick} className="absolute left-2.5 top-2.5 bottom-2.5 px-4 bg-indigo-300 rounded-2xl text-white font-black hover:scale-105 active:scale-95 transition-all flex items-center gap-2 shadow-lg">
+                  <FaMicrophone />
+                </button>
                             </form>
                         </div>
                         <div className="hidden lg:block scale-125 hover:scale-135 transition-transform duration-500">
@@ -676,6 +704,7 @@ const KidDashboard = () => {
                 )}
             </AnimatePresence>
         </div>
+</>
     );
 };
 

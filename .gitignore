@@ -57,3 +57,6 @@ build/
 
 # Generated E-Learning Content
 backend/temp_assets/
+
+# Scratch files
+scratch/

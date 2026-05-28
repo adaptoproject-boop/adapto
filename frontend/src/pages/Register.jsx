@@ -11,7 +11,7 @@ const Register = () => {
     const { register } = useAuth();
     const { t } = useLearning();
     const [step, setStep] = useState(1);
-    const [role, setRole] = useState('kid');
+    const [role, setRole] = useState('parent');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -31,9 +31,7 @@ const Register = () => {
 
             if (result.success) {
                 // Navigate based on role
-                if (role === 'kid') {
-                    navigate('/dashboard');
-                } else if (role === 'parent') {
+                if (role === 'parent') {
                     navigate('/parent');
                 } else if (role === 'teacher') {
                     navigate('/teacher/dashboard');
@@ -140,7 +138,7 @@ const Register = () => {
                                     </div>
 
                                     <div className="grid grid-cols-1 gap-3">
-                                        {['kid', 'parent', 'teacher'].map((r) => (
+                                        {['parent', 'teacher'].map((r) => (
                                             <motion.button
                                                 key={r}
                                                 type="button"
@@ -153,10 +151,10 @@ const Register = () => {
                                                     }`}
                                             >
                                                 <span className="text-3xl">
-                                                    {r === 'kid' ? '👧' : r === 'parent' ? '👨‍👩‍👧' : '👨‍🏫'}
+                                                    {r === 'parent' ? '👨‍👩‍👧' : '👨‍🏫'}
                                                 </span>
                                                 <span className={`font-bold capitalize ${role === r ? 'text-coral' : 'text-gray-600'}`}>
-                                                    {r === 'kid' ? t('auth_role_kid') : r === 'parent' ? t('auth_role_parent') : t('auth_role_teacher')}
+                                                    {r === 'parent' ? t('auth_role_parent') : t('auth_role_teacher')}
                                                 </span>
                                                 {role === r && <FaCheck className="ml-auto text-coral" />}
                                             </motion.button>

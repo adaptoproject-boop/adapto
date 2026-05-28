@@ -7,12 +7,13 @@ import { FaChevronLeft, FaCheck, FaTimes, FaStar, FaLock, FaFire } from 'react-i
 import { mockQuizzes, mockLessons } from '../mockData';
 import { useLearning } from '../context/LearningContext';
 import Mascot from '../components/Mascot';
+import axios from 'axios';
 
 const Quiz = () => {
     const { id, subjectName } = useParams();
     const navigate = useNavigate();
     const location = useLocation();
-    const { isVideoComplete, submitQuizResult, generateAiQuiz, getCurrentLevel, teacherMaterials, teacherQuizzes } = useLearning();
+    const { isVideoComplete, submitQuizResult, generateAiQuiz, getCurrentLevel, teacherMaterials, teacherQuizzes, userProgress } = useLearning();
 
     const [quizData, setQuizData] = useState(null);
     const [lessonData, setLessonData] = useState(null);
@@ -56,7 +57,7 @@ const Quiz = () => {
 
                     const formattedQuestions = rawQuestions.map((q, i) => ({
                         id: `db_${i}`,
-                        question: q.question || q.text,
+                        question: q.question || q.text || q.question_text || "Choose the correct answer",
                         options: q.options,
                         correctAnswer: typeof q.answer === 'string' 
                             ? q.options.indexOf(q.answer) 
@@ -106,12 +107,13 @@ const Quiz = () => {
                         const rawQuestions = lesson.quiz_data || [];
                         const formattedQuestions = rawQuestions.map((q, i) => ({
                             id: `curriculum_${lesson.id}_${i}`,
-                            question: q.question || q.text,
+                            question: q.question || q.text || q.question_text || (q.image_emoji ? "What is this?" : "Choose the correct answer"),
                             options: q.options,
                             correctAnswer: typeof q.answer === 'string'
                                 ? q.options.indexOf(q.answer)
                                 : (q.correctAnswer ?? q.answer),
-                            explanation: q.explanation
+                            explanation: q.explanation,
+                            emoji: q.image_emoji || q.emoji
                         }));
 
                         setQuizData({
@@ -164,9 +166,24 @@ const Quiz = () => {
                                 explanation: "This is a fallback question."
                             }]
                         });
-                    }
+                    } // end of topicToUse block
                 } else {
-                    setQuizData(mockQuizzes[lookupId]);
+                    if (mockQuizzes && mockQuizzes[lookupId]) {
+    setQuizData(mockQuizzes[lookupId]);
+} else {
+    setQuizData({
+        lessonTitle: 'Demo Quiz',
+        subject: 'Demo',
+        level: 'Easy',
+        questions: [{
+            id: 'demo1',
+            question: 'Sample Question: What is 2 + 2?',
+            options: ['3', '4', '5', '6'],
+            correctAnswer: 1,
+            emoji: '❓'
+        }]
+    });
+}
                 }
             }
         };
@@ -187,10 +204,92 @@ const Quiz = () => {
     const [retries,           setRetries]           = useState(0);
     const lastWasWrong = useRef(false);
 
+    const [speaking, setSpeaking] = useState(false);
+    const audioRef = useRef(null);
+
+    const handleSpeak = async (text) => {
+        // Stop any current audio or speech synthesis
+        if (audioRef.current) {
+            audioRef.current.pause();
+            audioRef.current = null;
+        }
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+        }
+
+        setSpeaking(true);
+        try {
+            const lang = userProgress?.language || 'en';
+            const emotion = userProgress?.currentEmotion || 'happy';
+
+            const response = await axios.post('http://localhost:5612/api/voice/speak', {
+                text: text,
+                language: lang,
+                emotion: emotion
+            }, { responseType: 'blob' });
+
+            const audioUrl = URL.createObjectURL(response.data);
+            const audio = new Audio(audioUrl);
+            audioRef.current = audio;
+            audio.play();
+            audio.onended = () => {
+                setSpeaking(false);
+                audioRef.current = null;
+            };
+            audio.onerror = () => {
+                speakWithSpeechSynthesis(text, lang);
+            };
+        } catch (error) {
+            console.error("TTS Error, falling back to Web Speech API", error);
+            speakWithSpeechSynthesis(text, userProgress?.language || 'en');
+        }
+    };
+
+    const speakWithSpeechSynthesis = (text, lang) => {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            if (lang === 'hi') utterance.lang = 'hi-IN';
+            else if (lang === 'mr') utterance.lang = 'mr-IN';
+            else utterance.lang = 'en-US';
+
+            utterance.onend = () => {
+                setSpeaking(false);
+            };
+            utterance.onerror = () => {
+                setSpeaking(false);
+            };
+            window.speechSynthesis.speak(utterance);
+        } else {
+            setSpeaking(false);
+        }
+    };
+
     useEffect(() => {
         setStartTime(Date.now());
         lastWasWrong.current = false;
+
+        // Stop speaking on question change
+        if (audioRef.current) {
+            audioRef.current.pause();
+            audioRef.current = null;
+        }
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+        }
+        setSpeaking(false);
     }, [current]);
+
+    useEffect(() => {
+        return () => {
+            if (audioRef.current) {
+                audioRef.current.pause();
+            }
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
+        };
+    }, []);
 
     const handleAnswer = (index) => {
         if (feedback !== null) return;
@@ -384,7 +483,11 @@ const Quiz = () => {
                             className="glass-card p-8"
                         >
                             {/* Question */}
-                            <div className="text-center mb-8">
+                            <div 
+                                className="text-center mb-8 cursor-pointer hover:opacity-80 transition-opacity flex flex-col items-center justify-center gap-2 group select-none"
+                                onClick={() => handleSpeak(question?.question || question?.text || "Unknown Question")}
+                                title="Click to hear the question!"
+                            >
                                 {question.emoji && (
                                     <motion.span
                                         animate={{ scale: [1, 1.1, 1] }}
@@ -394,13 +497,22 @@ const Quiz = () => {
                                         {question.emoji}
                                     </motion.span>
                                 )}
-                                <h2 className="text-2xl font-bold text-gray-700">
-                                    {question?.question || question?.text || "Unknown Question"}
-                                </h2>
+                                <div className="flex items-center justify-center gap-3">
+                                    <h2 className="text-2xl font-bold text-gray-700">
+                                        {question?.question || question?.text || "Unknown Question"}
+                                    </h2>
+                                    <motion.span 
+                                        animate={speaking ? { scale: [1, 1.2, 1] } : {}}
+                                        transition={{ repeat: Infinity, duration: 0.8 }}
+                                        className={`text-xl p-2 rounded-full bg-coral/10 text-coral group-hover:bg-coral group-hover:text-white transition-colors ${speaking ? 'bg-coral text-white' : ''}`}
+                                    >
+                                        🔊
+                                    </motion.span>
+                                </div>
                             </div>
 
                             {/* Options */}
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 gap-4">
                                 {question?.options?.map((option, index) => {
                                     let bgColor = 'bg-white/80 hover:bg-white border-gray-100 hover:border-gray-200';
                                     let textColor = 'text-gray-700';

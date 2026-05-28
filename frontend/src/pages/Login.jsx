@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaUser, FaLock, FaStar } from 'react-icons/fa';
+import { FaUser, FaLock, FaStar, FaCheck } from 'react-icons/fa';
 import CartoonButton from '../components/CartoonButton';
 import { useAuth } from '../context/AuthContext';
 import { useLearning } from '../context/LearningContext';
@@ -10,7 +10,7 @@ const Login = () => {
     const navigate = useNavigate();
     const { login } = useAuth();
     const { t } = useLearning();
-    const [role, setRole] = useState('kid');
+    const [role, setRole] = useState('parent');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
@@ -26,9 +26,7 @@ const Login = () => {
 
         if (result.success) {
             // Navigate based on role
-            if (role === 'kid') {
-                navigate('/dashboard');
-            } else if (role === 'parent') {
+            if (role === 'parent') {
                 navigate('/parent');
             } else if (role === 'teacher') {
                 navigate('/teacher/dashboard');
@@ -108,7 +106,7 @@ const Login = () => {
 
                     {/* Role Selector */}
                     <div className="flex gap-2 p-2 bg-white/40 rounded-2xl mb-8 border border-white/60">
-                        {['kid', 'parent', 'teacher'].map((r) => (
+                        {['parent', 'teacher'].map((r) => (
                             <motion.button
                                 key={r}
                                 type="button"
@@ -116,16 +114,17 @@ const Login = () => {
                                 whileTap={{ scale: 0.98 }}
                                 onClick={() => setRole(r)}
                                 className={`flex-1 py-3 px-2 rounded-xl font-bold transition-all flex flex-col items-center justify-center gap-1 ${role === r
-                                    ? 'bg-white shadow-lg text-coral'
-                                    : 'text-gray-400 hover:text-gray-600'
-                                    }`}
+                                        ? 'bg-white shadow-lg text-coral'
+                                        : 'text-gray-400 hover:text-gray-600'
+                                        }`}
                             >
                                 <span className="text-xl">
-                                    {r === 'kid' ? '👧' : r === 'parent' ? '👨‍👩‍👧' : '👨‍🏫'}
+                                    {r === 'parent' ? '👨‍👩‍👧' : '👨‍🏫'}
                                 </span>
                                 <span className="capitalize text-xs">
-                                    {r === 'kid' ? t('auth_role_kid') : r === 'parent' ? t('auth_role_parent') : t('auth_role_teacher')}
+                                    {r === 'parent' ? t('auth_role_parent') : t('auth_role_teacher')}
                                 </span>
+                                {role === r && <FaCheck className="ml-auto text-coral" />}
                             </motion.button>
                         ))}
                     </div>
