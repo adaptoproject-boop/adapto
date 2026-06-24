@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiFileText, FiPlus, FiArrowLeft, FiCheckCircle, FiHelpCircle, FiTrash2 } from 'react-icons/fi';
 import CartoonButton from '../components/CartoonButton';
+import { API_URL } from '../api/config';
 
 const TeacherQuizzes = () => {
     const navigate = useNavigate();
@@ -31,7 +32,7 @@ const TeacherQuizzes = () => {
 
     const fetchQuizzes = async () => {
         try {
-            const response = await fetch('http://localhost:5612/api/teacher/quizzes');
+            const response = await fetch(`${API_URL}/teacher/quizzes`);
             const data = await response.json();
             setQuizzes(data.quizzes || []);
         } catch (error) {
@@ -61,7 +62,7 @@ const TeacherQuizzes = () => {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:5612/api/teacher/create-quiz', {
+            const response = await fetch(`${API_URL}/teacher/create-quiz`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -102,7 +103,7 @@ const TeacherQuizzes = () => {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:5612/api/gemini/quiz', {
+            const response = await fetch(`${API_URL}/gemini/quiz`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

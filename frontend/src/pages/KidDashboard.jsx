@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import api from '../api/axios';
 import { motion, AnimatePresence } from 'framer-motion';
 import { mockLessons, mockUser } from '../mockData';
 import SubjectCard from '../components/SubjectCard';
@@ -115,7 +115,7 @@ const KidDashboard = () => {
 
         // 2. Supplement with related YouTube content
         try {
-            const response = await axios.post('http://localhost:5612/api/youtube/videos', {
+            const response = await api.post('/youtube/videos', {
                 subject: cleanQuery,
                 topic: cleanQuery,
                 difficulty: 'Easy',
@@ -193,7 +193,7 @@ const KidDashboard = () => {
     React.useEffect(() => {
         const fetchStats = async () => {
             try {
-                const statsRes = await axios.get('http://localhost:5612/api/analytics/stats/community');
+                const statsRes = await api.get('/analytics/stats/community');
                 if (statsRes.data) {
                     setCommunityStats(statsRes.data);
                 }

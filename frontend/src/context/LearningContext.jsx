@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+import { API_URL } from '../api/config';
 import { mockUser, mockLessonResults, decideNextLevel, decideContentStyle, calculateStars } from '../mockData';
 import { useAuth } from './AuthContext';
 import { translations } from '../translations';
@@ -44,7 +45,7 @@ export const LearningProvider = ({ children }) => {
 
         try {
             if (token) {
-                const response = await axios.get('http://localhost:5612/api/users/my-progress', {
+                const response = await axios.get(`${API_URL}/users/my-progress`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 
@@ -71,7 +72,7 @@ export const LearningProvider = ({ children }) => {
 
     const fetchCurriculumLessons = async () => {
         try {
-            const response = await axios.get('http://localhost:5612/api/curriculum/all');
+            const response = await axios.get(`${API_URL}/curriculum/all`);
             if (response.data && response.data.lessons) {
                 setCurriculumLessons(response.data.lessons);
             }
@@ -147,7 +148,7 @@ export const LearningProvider = ({ children }) => {
     const fetchTeacherMaterials = async () => {
         try {
             // No auth required for GET /study-materials in current routes
-            const response = await axios.get('http://localhost:5612/api/teacher/study-materials');
+            const response = await axios.get(`${API_URL}/teacher/study-materials`);
             if (response.data && response.data.materials) {
                 setTeacherMaterials(response.data.materials);
             }
@@ -158,7 +159,7 @@ export const LearningProvider = ({ children }) => {
 
     const fetchTeacherQuizzes = async () => {
         try {
-            const response = await axios.get('http://localhost:5612/api/teacher/quizzes');
+            const response = await axios.get(`${API_URL}/teacher/quizzes`);
             if (response.data && response.data.quizzes) {
                 setTeacherQuizzes(response.data.quizzes);
             }
@@ -201,7 +202,7 @@ export const LearningProvider = ({ children }) => {
             }
 
             if (token) {
-                await axios.post('http://localhost:5612/api/quiz/submit', {
+                await axios.post(`${API_URL}/quiz/submit`, {
                     lessonId:        lessonId,
                     lessonTitle:     lessonTitle,
                     subject:         subject,
@@ -222,7 +223,7 @@ export const LearningProvider = ({ children }) => {
             }
 
             // Orchestrator: full ML signal payload → returns next_difficulty, next_lesson, encouragement, level_up
-            const response = await axios.post('http://localhost:5612/api/learning/next-step', {
+            const response = await axios.post(`${API_URL}/learning/next-step`, {
                 user_id:          userProgress.userId,
                 subject:          subject,
                 topic:            lessonTitle,
@@ -335,7 +336,7 @@ export const LearningProvider = ({ children }) => {
                 if (stored) token = JSON.parse(stored).token;
             }
 
-            const response = await axios.post('http://localhost:5612/api/quiz/generate', {
+            const response = await axios.post(`${API_URL}/quiz/generate`, {
                 subject,
                 topic,
                 difficulty: difficulty || getCurrentLevel(subject)
@@ -393,7 +394,7 @@ export const LearningProvider = ({ children }) => {
     const logEmotion = async (emotion) => {
         if (!userProgress.userId) return;
         try {
-            const response = await axios.post('http://localhost:5612/api/emotion/log', {
+            const response = await axios.post(`${API_URL}/emotion/log`, {
                 kid_id: userProgress.userId,
                 session_id: `session_${userProgress.userId}_${new Date().toDateString()}`,
                 emotion: emotion || 'engaged',
@@ -411,7 +412,7 @@ export const LearningProvider = ({ children }) => {
     // Log video interaction event (play/pause/replay)
     const logVideoEvent = async (event, details = {}) => {
         try {
-            await axios.post('http://localhost:5612/api/learning/video-event', {
+            await axios.post(`${API_URL}/learning/video-event`, {
                 event,
                 session_id: `session_${userProgress.userId}_${new Date().toDateString()}`,
                 ...details

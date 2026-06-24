@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiPlus, FiEdit2, FiTrash2, FiSearch, FiFilter, FiPlayCircle, FiHelpCircle, FiArrowLeft } from 'react-icons/fi';
-import axios from 'axios';
+import api from '../api/axios';
 import CartoonButton from '../components/CartoonButton';
 import { useLearning } from '../context/LearningContext';
 
@@ -22,7 +22,7 @@ const TeacherLessons = () => {
     const fetchLessons = async () => {
         try {
             setLoading(true);
-            const response = await axios.get('http://localhost:5612/api/curriculum/all');
+            const response = await api.get('/curriculum/all');
             if (response.data.success) {
                 setLessons(response.data.lessons);
             }
@@ -36,7 +36,7 @@ const TeacherLessons = () => {
     const handleDelete = async (id) => {
         if (!window.confirm('Are you sure you want to delete this lesson?')) return;
         try {
-            const response = await axios.delete(`http://localhost:5612/api/curriculum/lesson/${id}`);
+            const response = await api.delete(`/curriculum/lesson/${id}`);
             if (response.data.success) {
                 setLessons(lessons.filter(l => l.id !== id));
             }

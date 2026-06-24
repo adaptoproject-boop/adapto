@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaLock, FaKey, FaArrowRight, FaCheckCircle, FaStar } from 'react-icons/fa';
 import CartoonButton from '../components/CartoonButton';
-import axios from 'axios';
+import api from '../api/axios';
 
 const ForgotPassword = () => {
   const [step, setStep] = useState(1);
@@ -21,7 +21,7 @@ const ForgotPassword = () => {
     setMessage('');
     setLoading(true);
     try {
-      const { data } = await axios.post('http://localhost:5612/api/auth/forgot-password', { email });
+      const { data } = await api.post('/auth/forgot-password', { email });
       setMessage(data.message);
       setStep(2);
     } catch (err) {
@@ -37,7 +37,7 @@ const ForgotPassword = () => {
     setMessage('');
     setLoading(true);
     try {
-      const { data } = await axios.post('http://localhost:5612/api/auth/reset-password', {
+      const { data } = await api.post('/auth/reset-password', {
         email,
         otp,
         new_password: newPassword

@@ -6,6 +6,7 @@ import CartoonButton from '../components/CartoonButton';
 import EmotionTracker from '../components/EmotionTracker';
 import { mockLessons, emotionOptions, contentStyleLabels, decideContentStyle } from '../mockData';
 import { useLearning } from '../context/LearningContext';
+import { API_URL } from '../api/config';
 
 const LessonDetail = () => {
     const { id } = useParams();
@@ -126,7 +127,7 @@ const LessonDetail = () => {
                     ? `${displayTopic} funny cartoon song for kids nursery rhyme` 
                     : `${displayTopic} for kids educational lesson`;
 
-                const response = await fetch('http://localhost:5612/api/youtube/videos', {
+                const response = await fetch(`${API_URL}/youtube/videos`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

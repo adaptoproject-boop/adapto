@@ -7,6 +7,7 @@ import {
 } from 'react-icons/fi';
 import CartoonButton from '../components/CartoonButton';
 import { useLearning } from '../context/LearningContext';
+import { API_URL } from '../api/config';
 
 /**
  * TeacherDashboard - Main teacher panel with navigation
@@ -41,19 +42,19 @@ const TeacherDashboard = () => {
     const fetchDashboardStats = async () => {
         try {
             // Fetch students count
-            const studentsRes = await fetch('http://localhost:5612/api/teacher/students');
+            const studentsRes = await fetch(`${API_URL}/teacher/students`);
             const studentsData = await studentsRes.json();
 
             // Fetch materials count
-            const materialsRes = await fetch('http://localhost:5612/api/teacher/study-materials');
+            const materialsRes = await fetch(`${API_URL}/teacher/study-materials`);
             const materialsData = await materialsRes.json();
 
             // Fetch quizzes count
-            const quizzesRes = await fetch('http://localhost:5612/api/teacher/quizzes');
+            const quizzesRes = await fetch(`${API_URL}/teacher/quizzes`);
             const quizzesData = await quizzesRes.json();
 
             // Fetch analytics
-            const analyticsRes = await fetch('http://localhost:5612/api/teacher/analytics');
+            const analyticsRes = await fetch(`${API_URL}/teacher/analytics`);
             const analyticsData = await analyticsRes.json();
 
             setStats({

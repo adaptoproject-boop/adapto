@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiBook, FiPlus, FiArrowLeft, FiYoutube, FiSearch, FiTrash2, FiExternalLink } from 'react-icons/fi';
 import CartoonButton from '../components/CartoonButton';
+import { API_URL } from '../api/config';
 
 const TeacherMaterials = () => {
     const navigate = useNavigate();
@@ -32,7 +33,7 @@ const TeacherMaterials = () => {
 
     const fetchMaterials = async () => {
         try {
-            const response = await fetch('http://localhost:5612/api/teacher/study-materials');
+            const response = await fetch(`${API_URL}/teacher/study-materials`);
             const data = await response.json();
             setMaterials(data.materials || []);
         } catch (error) {
@@ -49,8 +50,8 @@ const TeacherMaterials = () => {
 
         try {
             const url = editMode 
-                ? `http://localhost:5612/api/teacher/study-material/${editId}`
-                : 'http://localhost:5612/api/teacher/add-study-material';
+                ? `${API_URL}/teacher/study-material/${editId}`
+                : `${API_URL}/teacher/add-study-material`;
             const method = editMode ? 'PUT' : 'POST';
 
             const response = await fetch(url, {
@@ -102,7 +103,7 @@ const TeacherMaterials = () => {
         if (!window.confirm('Are you sure you want to delete this material?')) return;
 
         try {
-            const response = await fetch(`http://localhost:5612/api/teacher/study-material/${id}`, {
+            const response = await fetch(`${API_URL}/teacher/study-material/${id}`, {
                 method: 'DELETE'
             });
 

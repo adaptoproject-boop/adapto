@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLearning } from '../context/LearningContext';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaVolumeUp } from 'react-icons/fa';
-import axios from 'axios';
+import api from '../api/axios';
 
 const TouchLearning = () => {
     const { userProgress, currentEmotion, t } = useLearning();
@@ -103,7 +103,7 @@ const TouchLearning = () => {
         setPlaying(identifier);
 
         try {
-            const response = await axios.post('http://localhost:5612/api/voice/speak', {
+            const response = await api.post('/voice/speak', {
                 text: text,
                 language: userProgress.language,
                 emotion: currentEmotion

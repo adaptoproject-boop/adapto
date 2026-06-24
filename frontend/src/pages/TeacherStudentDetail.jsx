@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api/axios';
+import { API_URL } from '../api/config';
 import { motion } from 'framer-motion';
 import {
     Chart as ChartJS,
@@ -35,7 +36,7 @@ const TeacherStudentDetail = () => {
     useEffect(() => {
         const fetchProgress = async () => {
             try {
-                const response = await fetch(`http://localhost:5612/api/teacher/student-progress/${id}`);
+                const response = await fetch(`${API_URL}/teacher/student-progress/${id}`);
                 const data = await response.json();
                 setStudentData(data);
             } catch (error) {
@@ -52,7 +53,7 @@ const TeacherStudentDetail = () => {
     const handleGenerateReport = async () => {
         try {
             setLoading(true);
-            const response = await fetch(`http://localhost:5612/api/reports/generate-report/${id}`);
+            const response = await fetch(`${API_URL}/reports/generate-report/${id}`);
 
             if (response.ok) {
                 const blob = await response.blob();
@@ -214,7 +215,7 @@ const TeacherStudentDetail = () => {
                             <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Teacher Actions</h4>
                             <button 
                                 onClick={async () => {
-                                    const res = await axios.post('http://localhost:5612/api/teacher/notify-parent', { student_id: id });
+                                    const res = await api.post('/teacher/notify-parent', { student_id: id });
                                     alert(res.data.message);
                                 }}
                                 className="w-full py-2 bg-white border border-gray-200 text-gray-700 rounded-lg text-sm font-bold hover:border-coral hover:text-coral transition-all"

@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const API_URL = 'http://localhost:5612/api';
+import { API_URL } from './config';
 
 /**
  * Update the user's difficulty level based on selected age group.

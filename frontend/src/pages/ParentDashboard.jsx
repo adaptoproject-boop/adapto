@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaStar, FaCheck, FaTimes, FaArrowUp, FaArrowDown, FaMinus, FaRedo, FaYoutube, FaFilePdf } from 'react-icons/fa';
 import { useLearning } from '../context/LearningContext';
 import { mockLessons, contentStyleLabels } from '../mockData';
+import { API_URL } from '../api/config';
 
 import {
     Chart as ChartJS,
@@ -62,7 +63,7 @@ const ParentDashboard = () => {
 
         try {
             setLoading(true);
-            const response = await fetch(`http://localhost:5612/api/reports/generate-report/${studentId}`);
+            const response = await fetch(`${API_URL}/reports/generate-report/${studentId}`);
 
             if (response.ok) {
                 const blob = await response.blob();

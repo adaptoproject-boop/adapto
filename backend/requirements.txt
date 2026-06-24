@@ -27,6 +27,9 @@ reportlab==4.0.9
 requests==2.31.0
 click==8.1.8
 
+# Production WSGI Server
+gunicorn==21.2.0
+
 # Video Generation
 moviepy==1.0.3
 Pillow==10.2.0

@@ -7,7 +7,8 @@ import { FaChevronLeft, FaCheck, FaTimes, FaStar, FaLock, FaFire } from 'react-i
 import { mockQuizzes, mockLessons } from '../mockData';
 import { useLearning } from '../context/LearningContext';
 import Mascot from '../components/Mascot';
-import axios from 'axios';
+import api from '../api/axios';
+import { API_URL } from '../api/config';
 
 const Quiz = () => {
     const { id, subjectName } = useParams();
@@ -98,7 +99,7 @@ const Quiz = () => {
 
                 // 3. Try to fetch from curriculum dataset lessons API
                 try {
-                    const response = await fetch(`http://localhost:5612/api/curriculum/lesson/${id}`);
+                    const response = await fetch(`${API_URL}/curriculum/lesson/${id}`);
                     const data = await response.json();
                     if (data.success && data.lesson) {
                         const lesson = data.lesson;
@@ -222,7 +223,7 @@ const Quiz = () => {
             const lang = userProgress?.language || 'en';
             const emotion = userProgress?.currentEmotion || 'happy';
 
-            const response = await axios.post('http://localhost:5612/api/voice/speak', {
+            const response = await api.post('/voice/speak', {
                 text: text,
                 language: lang,
                 emotion: emotion

@@ -82,4 +82,5 @@ def home():
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5612))
-    app.run(port=port, debug=True, use_reloader=True)
+    debug = os.getenv('NODE_ENV', 'development') != 'production'
+    app.run(host='0.0.0.0', port=port, debug=debug, use_reloader=debug)

@@ -7,6 +7,7 @@ import { useLearning } from '../context/LearningContext';
 import Mascot from '../components/Mascot';
 import CartoonButton from '../components/CartoonButton';
 import { FaCheck } from 'react-icons/fa';
+import { API_URL } from '../api/config';
 
 const DIFF_BADGE = {
     easy:   { label: 'Easy',   cls: 'bg-green-100 text-green-700 border-green-200' },
@@ -40,7 +41,7 @@ const SubjectDetail = () => {
         const fetchCurriculum = async () => {
             setIsLoadingCurriculum(true);
             try {
-                const response = await fetch(`http://localhost:5612/api/curriculum/subject/${encodeURIComponent(subjectName)}`);
+                const response = await fetch(`${API_URL}/curriculum/subject/${encodeURIComponent(subjectName)}`);
                 const data = await response.json();
                 if (data.success && data.lessons) {
                     const combined = [...data.lessons];
@@ -131,7 +132,7 @@ const SubjectDetail = () => {
     const fetchYoutubeRecommended = async () => {
         setIsLoadingYT(true);
         try {
-            const response = await fetch('http://localhost:5612/api/youtube/videos', {
+            const response = await fetch(`${API_URL}/youtube/videos`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

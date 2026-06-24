@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiUsers, FiArrowLeft, FiStar, FiBookOpen, FiAward, FiFileText, FiDownload } from 'react-icons/fi';
 import CartoonButton from '../components/CartoonButton';
+import { API_URL } from '../api/config';
 
 const TeacherStudents = () => {
     const navigate = useNavigate();
@@ -16,7 +17,7 @@ const TeacherStudents = () => {
 
     const fetchStudents = async () => {
         try {
-            const response = await fetch('http://localhost:5612/api/teacher/students');
+            const response = await fetch(`${API_URL}/teacher/students`);
             const data = await response.json();
             setStudents(data.students || []);
         } catch (error) {
@@ -28,7 +29,7 @@ const TeacherStudents = () => {
 
     const handleDownloadReport = async (studentId, studentName) => {
         try {
-            const response = await fetch(`http://localhost:5612/api/reports/generate-report/${studentId}`);
+            const response = await fetch(`${API_URL}/reports/generate-report/${studentId}`);
 
             if (response.ok) {
                 const blob = await response.blob();

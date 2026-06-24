@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiSave, FiArrowLeft, FiPlus, FiTrash2, FiVideo, FiFileText, FiAward } from 'react-icons/fi';
-import axios from 'axios';
+import api from '../api/axios';
 import CartoonButton from '../components/CartoonButton';
 import { useLearning } from '../context/LearningContext';
 
@@ -33,7 +33,7 @@ const TeacherEditLesson = () => {
 
     const fetchLesson = async () => {
         try {
-            const response = await axios.get(`http://localhost:5612/api/curriculum/lesson/${id}`);
+            const response = await api.get(`/curriculum/lesson/${id}`);
             if (response.data.success) {
                 setLessonData(response.data.lesson);
             }
@@ -84,9 +84,9 @@ const TeacherEditLesson = () => {
         try {
             let response;
             if (isNew) {
-                response = await axios.post('http://localhost:5612/api/curriculum/lesson', lessonData);
+                response = await api.post('/curriculum/lesson', lessonData);
             } else {
-                response = await axios.put(`http://localhost:5612/api/curriculum/lesson/${id}`, lessonData);
+                response = await api.put(`/curriculum/lesson/${id}`, lessonData);
             }
 
             if (response.data.success) {

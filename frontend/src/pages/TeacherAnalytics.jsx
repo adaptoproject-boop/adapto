@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import axios from 'axios';
+import api from '../api/axios';
 import { FiArrowLeft } from 'react-icons/fi';
 import {
     Chart as ChartJS,
@@ -49,7 +49,7 @@ const TeacherAnalytics = () => {
         const fetchAnalytics = async () => {
             try {
                 // Fetch Real-Time Analytics from Backend
-                const response = await axios.get('http://localhost:5612/api/teacher/analytics');
+                const response = await api.get('/teacher/analytics');
                 const data = response.data;
 
                 setAnalyticsData({
