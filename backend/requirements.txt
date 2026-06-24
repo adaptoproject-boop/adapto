@@ -32,4 +32,4 @@ gunicorn==21.2.0
 
 # Video Generation
 moviepy==1.0.3
-Pillow==10.2.0
+Pillow==10.4.0
