@@ -20,6 +20,9 @@ export const translations = {
         feature_fun_desc: "Gamified learning with stars and rewards.",
         feature_safe: "Child Safe",
         feature_safe_desc: "Secure environment for kids to learn.",
+        welcome_featured_lessons: "Try a Free Lesson! 🎥",
+        welcome_featured_subtitle: "Play any of these popular video lessons and start learning instantly. Sign up to take quizzes and earn stars!",
+        welcome_take_quiz: "Take Quiz",
 
         // Auth
         auth_login_title: "Welcome Back!",
@@ -149,6 +152,9 @@ export const translations = {
         feature_fun_desc: "सितारों और पुरस्कारों के साथ खेल-खेल में सीखें।",
         feature_safe: "बच्चों के लिए सुरक्षित",
         feature_safe_desc: "बच्चों के सीखने के लिए सुरक्षित वातावरण।",
+        welcome_featured_lessons: "एक मुफ़्त पाठ आज़माएं! 🎥",
+        welcome_featured_subtitle: "इन लोकप्रिय वीडियो पाठों में से कोई भी चलाएं और तुरंत सीखना शुरू करें। क्विज़ लेने और सितारे अर्जित करने के लिए साइन अप करें!",
+        welcome_take_quiz: "क्विज़ शुरू करें",
 
         // Auth
         auth_login_title: "स्वागत है!",
@@ -277,6 +283,9 @@ export const translations = {
         feature_fun_desc: "तारे आणि बक्षिसांसह खेळता खेळता शिका.",
         feature_safe: "मुलांसाठी सुरक्षित",
         feature_safe_desc: "मुलांच्या शिकण्यासाठी सुरक्षित वातावरण.",
+        welcome_featured_lessons: "एक विनामूल्य धडा पहा! 🎥",
+        welcome_featured_subtitle: "या लोकप्रिय व्हिडिओ धड्यांपैकी कोणताही एक प्ले करा आणि त्वरित शिकण्यास प्रारंभ करा. प्रश्नमंजुषा सोडवण्यासाठी आणि तारे मिळवण्यासाठी नोंदणी करा!",
+        welcome_take_quiz: "क्विझ सोडवा",
 
         // Auth
         auth_login_title: "स्वागत आहे!",
