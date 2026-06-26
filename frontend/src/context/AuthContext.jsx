@@ -25,12 +25,13 @@ export const AuthProvider = ({ children }) => {
                 role
             });
 
-            setUserInfo(data);
+            const userData = { ...data, originalRole: data.role };
+            setUserInfo(userData);
             setCurrentView(role);
-            localStorage.setItem('userInfo', JSON.stringify(data));
+            localStorage.setItem('userInfo', JSON.stringify(userData));
             localStorage.setItem('currentView', role);
 
-            return { success: true, data };
+            return { success: true, data: userData };
         } catch (error) {
             console.error('Login error:', error);
             return {
@@ -52,12 +53,13 @@ export const AuthProvider = ({ children }) => {
                 role
             });
 
-            setUserInfo(data);
+            const userData = { ...data, originalRole: data.role };
+            setUserInfo(userData);
             setCurrentView(role);
-            localStorage.setItem('userInfo', JSON.stringify(data));
+            localStorage.setItem('userInfo', JSON.stringify(userData));
             localStorage.setItem('currentView', role);
 
-            return { success: true, data };
+            return { success: true, data: userData };
         } catch (error) {
             console.error('Registration error:', error);
             return {
@@ -72,8 +74,13 @@ export const AuthProvider = ({ children }) => {
      * No re-login required for family accounts.
      */
     const switchView = (view) => {
-        if (userInfo && userInfo.role === 'parent') {
-            const updatedUser = { ...userInfo, role: view };
+        const baseRole = userInfo?.originalRole || (userInfo?.role === 'kid' ? 'parent' : userInfo?.role);
+        if (userInfo && baseRole === 'parent') {
+            const updatedUser = { 
+                ...userInfo, 
+                role: view,
+                originalRole: 'parent'
+            };
             setUserInfo(updatedUser);
             setCurrentView(view);
             localStorage.setItem('userInfo', JSON.stringify(updatedUser));

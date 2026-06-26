@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 from dotenv import load_dotenv
 import os
@@ -53,17 +53,22 @@ app.register_blueprint(report_bp, url_prefix='/api/reports')
 app.register_blueprint(video_bp, url_prefix='/api/video')
 app.register_blueprint(curriculum_bp, url_prefix='/api/curriculum')
 
-# Explicitly configure CORS to be very permissive for development
-CORS(app, resources={r"/api/*": {"origins": "*"}}, 
-     supports_credentials=True,
+# CORS — allow all origins (Bearer token auth, no cookies needed)
+CORS(app,
+     resources={r"/api/*": {"origins": "*"}},
+     supports_credentials=False,
      methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
      allow_headers=["Content-Type", "Authorization", "X-Requested-With", "Accept"])
 
 @app.after_request
 def add_cors_headers(response):
+    # Ensure CORS headers are always present, even on error responses
     response.headers['Access-Control-Allow-Origin'] = '*'
     response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
-    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, X-Requested-With, Accept'
+    # Handle preflight
+    if response.status_code == 404 and request.method == 'OPTIONS':
+        response.status_code = 200
     return response
 
 @app.route('/api/routes')

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaStar, FaCheck, FaTimes, FaArrowUp, FaArrowDown, FaMinus, FaRedo, FaYoutube, FaFilePdf } from 'react-icons/fa';
 import { useLearning } from '../context/LearningContext';
+import { useAuth } from '../context/AuthContext';
 import { mockLessons, contentStyleLabels } from '../mockData';
 import { API_URL } from '../api/config';
+import { motion } from 'framer-motion';
 
 import {
     Chart as ChartJS,
@@ -29,6 +31,8 @@ ChartJS.register(
 
 const ParentDashboard = () => {
     const { userProgress, getLessonResults, resetProgress, t, teacherMaterials, curriculumLessons } = useLearning();
+    const { switchView } = useAuth();
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
 
     // Combine curriculum lessons and teacher materials
@@ -164,6 +168,32 @@ const ParentDashboard = () => {
 
             <div className="max-w-6xl mx-auto space-y-8 relative z-10">
 
+                {/* Switch to Kid Banner for new parents */}
+                {lessonResults.length === 0 && (
+                    <motion.div 
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="p-6 bg-gradient-to-r from-purple-100 via-pink-50 to-pink-100 rounded-3xl border border-purple-200/50 shadow-md flex flex-col md:flex-row items-center justify-between gap-6"
+                    >
+                        <div className="flex items-center gap-4 text-center md:text-left flex-col md:flex-row">
+                            <span className="text-5xl animate-bounce">👧</span>
+                            <div>
+                                <h3 className="text-xl font-bold text-gray-700">Set up your child's learning journey!</h3>
+                                <p className="text-gray-500 text-sm">Switch to Kid View to allow your child to watch videos, play games, and take quizzes.</p>
+                            </div>
+                        </div>
+                        <button
+                            onClick={() => {
+                                switchView('kid');
+                                navigate('/dashboard');
+                            }}
+                            className="px-6 py-3 bg-gradient-to-r from-coral to-pink-500 hover:from-coral-dark hover:to-pink-600 text-white rounded-2xl font-bold shadow-lg transition-all hover:-translate-y-0.5 flex items-center gap-2 whitespace-nowrap"
+                        >
+                            <FaStar className="text-yellow-300" /> Switch to Kid View & Start Learning
+                        </button>
+                    </motion.div>
+                )}
+
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
@@ -180,11 +210,15 @@ const ParentDashboard = () => {
                         >
                             <FaFilePdf /> {loading ? 'Generating...' : t('dash_report', 'Download Report')}
                         </button>
-                        <Link to="/dashboard">
-                            <button className="px-4 py-2 bg-coral text-white rounded-xl font-bold shadow-md hover:bg-coral-dark flex items-center gap-2">
-                                <FaStar className="text-yellow-300" /> {t('parent_back_learning')}
-                            </button>
-                        </Link>
+                        <button
+                            onClick={() => {
+                                switchView('kid');
+                                navigate('/dashboard');
+                            }}
+                            className="px-4 py-2 bg-coral text-white rounded-xl font-bold shadow-md hover:bg-coral-dark flex items-center gap-2 transition-all hover:-translate-y-0.5"
+                        >
+                            <FaStar className="text-yellow-300" /> {t('parent_back_learning')}
+                        </button>
 
                         <div className="glass-card px-6 py-3 flex items-center gap-3">
                             <div className="w-12 h-12 bg-gradient-to-br from-pink-300 to-purple-300 rounded-full flex items-center justify-center text-2xl">

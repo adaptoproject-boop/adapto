@@ -6,6 +6,8 @@ export const translations = {
         nav_register: "Register",
         nav_dashboard: "Dashboard",
         nav_logout: "Logout",
+        parent_switch_kid: "Switch to Kid View",
+        parent_switch_parent: "Switch to Parent View",
 
         // Welcome Page
         welcome_title: "Adaptive E-Learning for Kids",
@@ -133,6 +135,8 @@ export const translations = {
         nav_register: "रजिस्टर",
         nav_dashboard: "डैशबोर्ड",
         nav_logout: "लॉगआउट",
+        parent_switch_kid: "बच्चे के रूप में देखें",
+        parent_switch_parent: "अभिभावक के रूप में देखें",
 
         // Welcome Page
         welcome_title: "बच्चों के लिए स्मार्ट ई-लर्निंग",
@@ -259,6 +263,8 @@ export const translations = {
         nav_register: "रजिस्टर",
         nav_dashboard: "डॅशबोर्ड",
         nav_logout: "लॉगआउट",
+        parent_switch_kid: "मुलाच्या रूपात पहा",
+        parent_switch_parent: "पालकांच्या रूपात पहा",
 
         // Welcome Page
         welcome_title: "मुलांसाठी अनुकूल ई-लर्निंग",

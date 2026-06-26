@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 import { useLearning } from '../context/LearningContext';
 
 const Navbar = () => {
     const location = useLocation();
-    const { userInfo, logout } = useAuth();
+    const navigate = useNavigate();
+    const { userInfo, logout, switchView } = useAuth();
     const learningContext = useLearning();
     if (!learningContext) return null;
     const { t, setLanguage, userProgress } = learningContext;
@@ -99,6 +100,26 @@ const Navbar = () => {
 
                     {userInfo ? (
                         <div className="flex items-center gap-3 pl-4 border-l border-gray-200">
+                            {(userInfo.originalRole === 'parent' || userInfo.role === 'parent' || userInfo.role === 'kid') && (
+                                <button
+                                    onClick={() => {
+                                        if (userInfo.role === 'parent') {
+                                            switchView('kid');
+                                            navigate('/dashboard');
+                                        } else {
+                                            switchView('parent');
+                                            navigate('/parent');
+                                        }
+                                    }}
+                                    className="px-3 py-1.5 bg-gradient-to-r from-coral to-pink-500 hover:from-coral-dark hover:to-pink-600 text-white rounded-xl text-xs font-bold shadow-md transition-all hover:-translate-y-0.5 flex items-center gap-1.5"
+                                >
+                                    {userInfo.role === 'parent' ? (
+                                        <>👧 {t('parent_switch_kid')}</>
+                                    ) : (
+                                        <>👨‍👩‍👧 {t('parent_switch_parent')}</>
+                                    )}
+                                </button>
+                            )}
                             <div className="flex flex-col items-end hidden sm:flex">
                                 <span className="text-sm font-bold text-gray-700">{userInfo.name}</span>
                                 <span className="text-xs text-gray-400 capitalize">{userInfo.role}</span>
