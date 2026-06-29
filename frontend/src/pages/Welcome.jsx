@@ -299,11 +299,10 @@ const Welcome = () => {
                                                     <span className={`px-2.5 py-1 text-xs font-bold rounded-full ${style.badge}`}>
                                                         {video.subject}
                                                     </span>
-                                                    <span className={`px-2 py-0.5 text-[10px] font-extrabold uppercase rounded-full ${
-                                                        video.difficulty === 'Easy' ? 'bg-emerald-100 text-emerald-800' :
-                                                        video.difficulty === 'Medium' ? 'bg-amber-100 text-amber-800' :
-                                                        'bg-rose-100 text-rose-800'
-                                                    }`}>
+                                                    <span className={`px-2 py-0.5 text-[10px] font-extrabold uppercase rounded-full ${video.difficulty === 'Easy' ? 'bg-emerald-100 text-emerald-800' :
+                                                            video.difficulty === 'Medium' ? 'bg-amber-100 text-amber-800' :
+                                                                'bg-rose-100 text-rose-800'
+                                                        }`}>
                                                         {video.difficulty || 'Easy'}
                                                     </span>
                                                 </div>
